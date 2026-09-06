@@ -751,8 +751,13 @@
     </variable>
 
     <variable name="LiveTVOSDPrimaryLabel">
-        <value condition="Skin.HasSetting(pvr.osd.showprogramtitle) + !String.IsEmpty(VideoPlayer.Title)">$INFO[VideoPlayer.Title]</value>
+        <value condition="Skin.HasSetting(pvr.osd.showprogramtitle) + !String.IsEmpty(Player.Title)">$INFO[Player.Title]</value>
         <value>$INFO[VideoPlayer.ChannelNumberLabel,,. ]$INFO[VideoPlayer.ChannelName]</value>
+    </variable>
+
+    <variable name="VideoOSDHeaderTitle">
+        <value condition="VideoPlayer.Content(livetv) + Skin.HasSetting(pvr.osd.showprogramtitle) + !String.IsEmpty(Player.Title)">$INFO[Player.Title]</value>
+        <value>$INFO[VideoPlayer.Title]</value>
     </variable>
 
     <variable name="PlayerTitle">
@@ -766,6 +771,7 @@
 
     <variable name="PlayerBigTitle">
         <value condition="!Player.HasVideo">$INFO[MusicPlayer.Artist]</value>
+        <value condition="VideoPlayer.Content(livetv)">$VAR[LiveTVOSDPrimaryLabel]</value>
         <value condition="VideoPlayer.Content(movies) + !Skin.HasSetting(OSD.hide.year)">$INFO[VideoPlayer.Title] $INFO[VideoPlayer.Year,(,)]</value>
         <value condition="VideoPlayer.Content(movies)">$INFO[VideoPlayer.Title]</value>
         <value condition="VideoPlayer.Content(episodes)">$INFO[VideoPlayer.TvShowTitle] - S0$INFO[VideoPlayer.Season]E$INFO[VideoPlayer.Episode]</value>

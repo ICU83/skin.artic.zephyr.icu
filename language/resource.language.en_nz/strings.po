@@ -2628,3 +2628,11 @@ msgstr ""
 #~ msgctxt "#31149"
 #~ msgid "Replace widget fanart with home background slideshow"
 #~ msgstr "Replace widget fanart with home background slideshow"
+
+msgctxt "#31723"
+msgid "Show current programme instead of channel name in Live TV OSD"
+msgstr ""
+
+msgctxt "#31724"
+msgid "Only show album cover in Music OSD (hide CD/DiscArt)"
+msgstr ""

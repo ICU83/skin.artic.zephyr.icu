@@ -17,7 +17,7 @@
         <!-- SIDE OSD -->
         
         <include content="DialogInfoOverlay">
-            <param name="headerinfo" value="$INFO[VideoPlayer.Title]" />
+            <param name="headerinfo" value="$VAR[VideoOSDHeaderTitle]" />
             <param name="plotinfo" value="$INFO[VideoPlayer.Tagline,[B],[/B][CR][CR]]$INFO[VideoPlayer.Plot]" />
             <param name="ondirection" value="18" />
         </include>

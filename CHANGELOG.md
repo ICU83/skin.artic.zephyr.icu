@@ -4,6 +4,20 @@ Dieses Dokument trennt die **ICU-Entwicklung** von der geerbten Upstream-Histori
 
 ## ICU-Releases
 
+### 1.0.23
+
+- ICU-Startdialog bereinigt: das geerbte `misc/matrix.png`-/„Reloaded“-Overlay wird beim Start nicht mehr über dem ICU-Startbild eingeblendet.
+- Live-TV-OSD verwendet für den laufenden EPG-Sendungstitel unter Kodi Piers/v22 `Player.Title`; bei leerem EPG-Titel bleibt der Sendername als Fallback erhalten.
+- Live-TV-Titelumschaltung an die tatsächlich verwendeten OSD-Pfade inklusive `PlayerBigTitle` angebunden.
+- Neue OSD-Einstellungen wieder vollständig über die Lokalisierungs-IDs `31723` und `31724` eingebunden; beide IDs sind in allen vorhandenen Sprachkatalogen registriert.
+- Deutsche Übersetzungen für beide ICU-OSD-Optionen enthalten; andere noch nicht übersetzte Sprachen verwenden den englischen Quelltext als Fallback.
+
+### 1.0.22
+
+- Music-OSD-Option **„Nur Albumcover anzeigen“** bleibt in den Skin-Einstellungen lesbar und schaltbar, auch wenn **„CD und Hülle“** aktuell deaktiviert ist.
+- ICU-Startbildschirm wird ohne die starke `Background`-Farbdiffusion dargestellt; der alte „Arctic Zephyr“-Textoverlay wurde vom dedizierten ICU-Startbild entfernt.
+- Live-TV-OSD-Umschaltung auf den laufenden Sendungstitel an die tatsächlich gerenderte Variable `PlayerBigTitle` angebunden.
+
 ### 1.0.21
 
 - Eigenen ICU-Startbildschirm als dedizierte Grafik `media/common/startup_icu.png` hinzugefügt.

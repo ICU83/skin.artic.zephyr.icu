@@ -1328,7 +1328,6 @@
                             <label>31724</label>
                             <selected>Skin.HasSetting(osd.music.coveronly)</selected>
                             <onclick>Skin.ToggleSetting(osd.music.coveronly)</onclick>
-                            <enable>Skin.HasSetting(ShowMusicCD)</enable>
                         </control>
                         <control type="radiobutton" id="9280" description="Background">
                             <width>1360</width>

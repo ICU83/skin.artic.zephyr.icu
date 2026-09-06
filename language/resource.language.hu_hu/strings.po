@@ -2672,3 +2672,11 @@ msgstr ""
 #~ msgctxt "#31055"
 #~ msgid "In Progress"
 #~ msgstr "Folyamatban"
+
+msgctxt "#31723"
+msgid "Show current programme instead of channel name in Live TV OSD"
+msgstr ""
+
+msgctxt "#31724"
+msgid "Only show album cover in Music OSD (hide CD/DiscArt)"
+msgstr ""

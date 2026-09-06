@@ -156,7 +156,6 @@
                     <align>left</align>
                     <selected>Skin.HasSetting(osd.music.coveronly)</selected>
                     <onclick>Skin.ToggleSetting(osd.music.coveronly)</onclick>
-                    <enable>Skin.HasSetting(ShowMusicCD)</enable>
                 </control>
                 <control type="button" id="115">
                     <include>DefContextButtonGradient</include>
