@@ -1,0 +1,656 @@
+<?xml version='1.0' encoding='utf-8'?>
+<menus>
+    <menu name="mainmenu" container="300">
+        <allow widgets="true" backgrounds="true" submenus="true" />
+        <item name="videos">
+            <label>$LOCALIZE[3]</label>
+            <label2>Common Shortcut</label2>
+            <action>ActivateWindow(Videos,VideoLibrary)</action>
+            <icon>special://skin/extras/icons/video-addons.png</icon>
+        </item>
+        <item name="movies">
+            <label>$LOCALIZE[20342]</label>
+            <label2>Common Shortcut</label2>
+            <action>ActivateWindow(Videos,MovieTitles,return)</action>
+            <icon>special://skin/extras/icons/film.png</icon>
+        </item>
+        <item name="tvshows">
+            <label>$LOCALIZE[20343]</label>
+            <label2>Common Shortcut</label2>
+            <action>ActivateWindow(Videos,TVShowTitles,return)</action>
+            <icon>special://skin/extras/icons/tv.png</icon>
+        </item>
+        <item name="music">
+            <label>$LOCALIZE[2]</label>
+            <label2>Common Shortcut</label2>
+            <action>ActivateWindow(Music)</action>
+            <icon>special://skin/extras/icons/songs.png</icon>
+        </item>
+        <item name="livetv">
+            <label>$LOCALIZE[31103]</label>
+            <label2>Common Shortcut</label2>
+            <action>ActivateWindow(Tvchannels)</action>
+            <icon>special://skin/extras/icons/livetv.png</icon>
+        </item>
+        <item name="pictures">
+            <label>$LOCALIZE[1]</label>
+            <label2>Common Shortcut</label2>
+            <action>ActivateWindow(Pictures)</action>
+            <icon>special://skin/extras/icons/pictures.png</icon>
+        </item>
+        <item name="programs">
+            <label>$LOCALIZE[0]</label>
+            <label2>Common Shortcut</label2>
+            <action>ActivateWindow(Programs)</action>
+            <icon>special://skin/extras/icons/addons.png</icon>
+        </item>
+        <item name="settings">
+            <label>$LOCALIZE[10004]</label>
+            <label2>Common Shortcut</label2>
+            <action>ActivateWindow(Settings)</action>
+            <icon>special://skin/extras/icons/settings.png</icon>
+            <protect type="action" heading="$LOCALIZE[31361]" message="$LOCALIZE[31362]" />
+        </item>
+        <item name="power">
+            <label>$LOCALIZE[33060]</label>
+            <label2>Common Shortcut</label2>
+            <action>ActivateWindow(shutdownmenu)</action>
+            <icon>special://skin/extras/icons/power.png</icon>
+        </item>
+    </menu>
+    <menu name="powermenu">
+        <allow widgets="true" backgrounds="true" submenus="true" />
+        <defaults>
+            <action when="before" condition="Window.IsActive(DialogButtonMenu.xml)">Close</action>
+        </defaults>
+        <item name="powermenu-01">
+            <label>$LOCALIZE[31195]</label>
+            <label2>Power Menu Shortcut</label2>
+            <action>ReloadSkin()</action>
+        </item>
+        <item name="powermenu-02">
+            <label>$LOCALIZE[13012]</label>
+            <label2>Power Menu Shortcut</label2>
+            <action>Quit()</action>
+            <visible>System.ShowExitButton</visible>
+        </item>
+        <item name="powermenu-03">
+            <label>$LOCALIZE[20046]</label>
+            <label2>Power Menu Shortcut</label2>
+            <action>mastermode</action>
+            <visible>System.HasLocks</visible>
+        </item>
+        <item name="powermenu-04">
+            <label>$LOCALIZE[31360]</label>
+            <label2>Power Menu Shortcut</label2>
+            <action>Dialog.Close(all,true)</action>
+            <action>System.LogOff</action>
+            <visible>[System.HasLoginScreen | Integer.IsGreater(System.ProfileCount,1)] + System.Loggedon</visible>
+        </item>
+        <item name="powermenu-05">
+            <label>$LOCALIZE[13005]</label>
+            <label2>Power Menu Shortcut</label2>
+            <action>Powerdown()</action>
+            <visible>System.CanPowerDown</visible>
+        </item>
+        <item name="powermenu-06">
+            <label>$LOCALIZE[20151]</label>
+            <label2>Power Menu Shortcut</label2>
+            <action>CancelAlarm(shutdowntimer)</action>
+            <visible>System.HasAlarm(shutdowntimer)</visible>
+        </item>
+        <item name="powermenu-07">
+            <label>$LOCALIZE[20150]</label>
+            <label2>Power Menu Shortcut</label2>
+            <action>AlarmClock(shutdowntimer,Shutdown())</action>
+            <visible>!System.HasAlarm(shutdowntimer)</visible>
+            <visible>System.CanPowerDown | System.CanSuspend | System.CanHibernate</visible>
+        </item>
+        <item name="powermenu-08">
+            <label>$LOCALIZE[31364]</label>
+            <label2>Power Menu Shortcut</label2>
+            <action>noop</action>
+            <visible>System.HasAlarm(shutdowntimer)</visible>
+        </item>
+        <item name="powermenu-09">
+            <label>$LOCALIZE[13011]</label>
+            <label2>Power Menu Shortcut</label2>
+            <action>Suspend()</action>
+            <visible>System.CanSuspend</visible>
+        </item>
+        <item name="powermenu-10">
+            <label>$LOCALIZE[13013]</label>
+            <label2>Power Menu Shortcut</label2>
+            <action>Reset()</action>
+            <visible>System.CanReboot</visible>
+        </item>
+        <item name="powermenu-11">
+            <label>$LOCALIZE[31232]</label>
+            <label2>Power Menu Shortcut</label2>
+            <action>System.ExecWait("/usr/sbin/rebootfromnand")</action>
+            <action>Reset()</action>
+            <visible>System.PathExist("/dev/env")</visible>
+        </item>
+        <item name="powermenu-12">
+            <label>$LOCALIZE[31156]</label>
+            <label2>Power Menu Shortcut</label2>
+            <action>ActivateWindowAndFocus(skinsettings,9108,2)</action>
+            <visible>System.Loggedon</visible>
+        </item>
+        <item name="powermenu-13">
+            <label>$LOCALIZE[130]</label>
+            <label2>Power Menu Shortcut</label2>
+            <action>ActivateWindow(systeminfo)</action>
+            <visible>System.Loggedon</visible>
+        </item>
+        <item name="powermenu-14">
+            <label>$LOCALIZE[10003]</label>
+            <label2>Power Menu Shortcut</label2>
+            <action>ActivateWindow(filemanager)</action>
+            <visible>System.Loggedon</visible>
+        </item>
+        <item name="powermenu-15">
+            <label>$LOCALIZE[5]</label>
+            <label2>Power Menu Shortcut</label2>
+            <action>ActivateWindow(settings)</action>
+            <visible>System.Loggedon</visible>
+            <protect type="action" heading="$LOCALIZE[31361]" message="$LOCALIZE[31362]" />
+        </item>
+    </menu>
+    <menu name="x1111">
+        <allow widgets="true" backgrounds="true" submenus="true" />
+        <item name="x1111-01">
+            <label>$LOCALIZE[20342]</label>
+            <label2>Movie Hub Shortcut</label2>
+            <action>ActivateWindow(Videos,MovieTitles,return)</action>
+            <icon>special://skin/extras/icons/film.png</icon>
+        </item>
+        <item name="x1111-02">
+            <label>$LOCALIZE[31173]</label>
+            <label2>Movie Hub Shortcut</label2>
+            <action>ActivateWindow(Videos,RecentlyAddedMovies,return)</action>
+            <icon>special://skin/extras/icons/recentlyadded.png</icon>
+        </item>
+        <item name="x1111-03">
+            <label>$LOCALIZE[31174]</label>
+            <label2>Movie Hub Shortcut</label2>
+            <action>ActivateWindow(Videos,special://skin/extras/playlists/RecentMovies.xsp,return)</action>
+            <icon>special://skin/extras/icons/recent.png</icon>
+        </item>
+        <item name="x1111-04">
+            <label>$LOCALIZE[31175]</label>
+            <label2>Movie Hub Shortcut</label2>
+            <action>PlayMedia(special://skin/extras/playlists/RandomMovies.xsp)</action>
+            <icon>special://skin/extras/icons/signpost.png</icon>
+        </item>
+        <item name="x1111-05">
+            <label>$LOCALIZE[137]</label>
+            <label2>Movie Hub Shortcut</label2>
+            <action>RunScript(script.globalsearch,tvshows=true&amp;episodes=true&amp;movies=true)</action>
+            <icon>special://skin/extras/icons/search.png</icon>
+        </item>
+        <item name="x1111-06">
+            <label>$LOCALIZE[135]</label>
+            <label2>Movie Hub Shortcut</label2>
+            <action>ActivateWindow(Videos,MovieGenres,return)</action>
+            <icon>special://skin/extras/icons/genre.png</icon>
+        </item>
+        <item name="x1111-07">
+            <label>$LOCALIZE[20348]</label>
+            <label2>Movie Hub Shortcut</label2>
+            <action>ActivateWindow(Videos,MovieDirectors,return)</action>
+            <icon>special://skin/extras/icons/director.png</icon>
+        </item>
+        <item name="x1111-08">
+            <label>$LOCALIZE[344]</label>
+            <label2>Movie Hub Shortcut</label2>
+            <action>ActivateWindow(Videos,MovieActors,return)</action>
+            <icon>special://skin/extras/icons/actor.png</icon>
+        </item>
+        <item name="x1111-09">
+            <label>$LOCALIZE[20434]</label>
+            <label2>Movie Hub Shortcut</label2>
+            <action>ActivateWindow(Videos,MovieSets,return)</action>
+            <icon>special://skin/extras/icons/year.png</icon>
+        </item>
+        <item name="x1111-10">
+            <label>$LOCALIZE[136]</label>
+            <label2>Movie Hub Shortcut</label2>
+            <action>ActivateWindow(videos,special://videoplaylists/,return)</action>
+            <icon>special://skin/extras/icons/playlist.png</icon>
+        </item>
+        <item name="x1111-11">
+            <label>$LOCALIZE[1214]</label>
+            <label2>Movie Hub Shortcut</label2>
+            <action>ActivateWindow(Videos,Files,return)</action>
+            <icon>special://skin/extras/icons/files.png</icon>
+        </item>
+        <item name="x1111-12">
+            <label>$LOCALIZE[24001]</label>
+            <label2>Movie Hub Shortcut</label2>
+            <action>ActivateWindow(videos,addons://sources/video/,return)</action>
+            <icon>special://skin/extras/icons/video-addons.png</icon>
+        </item>
+        <item name="x1111-13">
+            <label>$LOCALIZE[653]</label>
+            <label2>Movie Hub Shortcut</label2>
+            <action>UpdateLibrary(video)</action>
+            <icon>special://skin/extras/icons/update.png</icon>
+        </item>
+    </menu>
+    <menu name="x1112">
+        <allow widgets="true" backgrounds="true" submenus="true" />
+        <item name="x1112-01">
+            <label>$LOCALIZE[20343]</label>
+            <label2>Episode Hub Shortcut</label2>
+            <action>ActivateWindow(Videos,TvShowTitles,return)</action>
+            <icon>special://skin/extras/icons/tv.png</icon>
+        </item>
+        <item name="x1112-02">
+            <label>$LOCALIZE[31173]</label>
+            <label2>Episode Hub Shortcut</label2>
+            <action>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</action>
+            <icon>special://skin/extras/icons/recentlyadded.png</icon>
+        </item>
+        <item name="x1112-03">
+            <label>$LOCALIZE[31174]</label>
+            <label2>Episode Hub Shortcut</label2>
+            <action>ActivateWindow(Videos,special://skin/extras/playlists/RecentEpisodes.xsp,return)</action>
+            <icon>special://skin/extras/icons/recent.png</icon>
+        </item>
+        <item name="x1112-04">
+            <label>$LOCALIZE[31175]</label>
+            <label2>Episode Hub Shortcut</label2>
+            <action>PlayMedia(special://skin/extras/playlists/RandomEpisodes.xsp)</action>
+            <icon>special://skin/extras/icons/signpost.png</icon>
+        </item>
+        <item name="x1112-05">
+            <label>$LOCALIZE[137]</label>
+            <label2>Episode Hub Shortcut</label2>
+            <action>RunScript(script.globalsearch,tvshows=true&amp;episodes=true&amp;movies=true)</action>
+            <icon>special://skin/extras/icons/search.png</icon>
+        </item>
+        <item name="x1112-06">
+            <label>$LOCALIZE[135]</label>
+            <label2>Episode Hub Shortcut</label2>
+            <action>ActivateWindow(Videos,TvShowGenres,return)</action>
+            <icon>special://skin/extras/icons/genre.png</icon>
+        </item>
+        <item name="x1112-07">
+            <label>$LOCALIZE[20388]</label>
+            <label2>Episode Hub Shortcut</label2>
+            <action>ActivateWindow(Videos,TvShowStudios,return)</action>
+            <icon>special://skin/extras/icons/director.png</icon>
+        </item>
+        <item name="x1112-08">
+            <label>$LOCALIZE[344]</label>
+            <label2>Episode Hub Shortcut</label2>
+            <action>ActivateWindow(Videos,TvShowActors,return)</action>
+            <icon>special://skin/extras/icons/actor.png</icon>
+        </item>
+        <item name="x1112-09">
+            <label>$LOCALIZE[652]</label>
+            <label2>Episode Hub Shortcut</label2>
+            <action>ActivateWindow(Videos,TvShowYears,return)</action>
+            <icon>special://skin/extras/icons/year.png</icon>
+        </item>
+        <item name="x1112-10">
+            <label>$LOCALIZE[136]</label>
+            <label2>Episode Hub Shortcut</label2>
+            <action>ActivateWindow(videos,special://videoplaylists/,return)</action>
+            <icon>special://skin/extras/icons/playlist.png</icon>
+        </item>
+        <item name="x1112-11">
+            <label>$LOCALIZE[1214]</label>
+            <label2>Episode Hub Shortcut</label2>
+            <action>ActivateWindow(Videos,Files,return)</action>
+            <icon>special://skin/extras/icons/files.png</icon>
+        </item>
+        <item name="x1112-12">
+            <label>$LOCALIZE[24001]</label>
+            <label2>Episode Hub Shortcut</label2>
+            <action>ActivateWindow(videos,addons://sources/video/,return)</action>
+            <icon>special://skin/extras/icons/video-addons.png</icon>
+        </item>
+        <item name="x1112-13">
+            <label>$LOCALIZE[653]</label>
+            <label2>Episode Hub Shortcut</label2>
+            <action>UpdateLibrary(video)</action>
+            <icon>special://skin/extras/icons/update.png</icon>
+        </item>
+    </menu>
+    <menu name="x1113">
+        <allow widgets="true" backgrounds="true" submenus="true" />
+    </menu>
+    <menu name="x1114">
+        <allow widgets="true" backgrounds="true" submenus="true" />
+    </menu>
+    <menu name="x1115">
+        <allow widgets="true" backgrounds="true" submenus="true" />
+    </menu>
+    <menu name="x1116">
+        <allow widgets="true" backgrounds="true" submenus="true" />
+    </menu>
+    <menu name="x1117">
+        <allow widgets="true" backgrounds="true" submenus="true" />
+    </menu>
+    <menu name="x1118">
+        <allow widgets="true" backgrounds="true" submenus="true" />
+    </menu>
+    <menu name="x1119">
+        <allow widgets="true" backgrounds="true" submenus="true" />
+    </menu>
+    <groupings>
+        <group name="legacy-group-001" label="$ADDON[script.skinshortcuts 32029]">
+            <shortcut name="legacy-shortcut-001" label="$LOCALIZE[3]" icon="DefaultVideo.png" type="$LOCALIZE[3]">
+                <action>ActivateWindow(Videos,VideoLibrary)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-002" label="$LOCALIZE[342]" icon="DefaultMovies.png" type="$LOCALIZE[20342]">
+                <action>ActivateWindow(Videos,videodb://movies/titles/,return)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-003" label="$LOCALIZE[20343]" icon="DefaultTVShows.png" type="$LOCALIZE[20343]">
+                <action>ActivateWindow(Videos,videodb://tvshows/titles/,return)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-004" label="$LOCALIZE[2]" icon="DefaultAddonMusic.png" type="$LOCALIZE[2]">
+                <action>ActivateWindow(Music,musicdb://,return)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-005" label="$LOCALIZE[133]" icon="DefaultMusicArtists.png" type="$LOCALIZE[2]">
+                <action>ActivateWindow(Music,musicdb://artists/,return)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-006" label="$LOCALIZE[132]" icon="DefaultMusicAlbums.png" type="$LOCALIZE[2]">
+                <action>ActivateWindow(Music,musicdb://albums/,return)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-007" label="$LOCALIZE[20389]" icon="DefaultMusicVideos.png" type="$LOCALIZE[20389]">
+                <action>ActivateWindow(Videos,videodb://musicvideos/titles/,return)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-008" label="$LOCALIZE[20244]" icon="DefaultAddonProgram.png" type="$LOCALIZE[10001]" visible="System.Platform.Android">
+                <action>ActivateWindow(Programs,androidapp://sources/apps,return)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-009" label="LibreELEC" icon="DefaultLibreELEC.png" type="$LOCALIZE[10001]" visible="System.AddonIsEnabled(service.libreelec.settings)">
+                <action>RunAddon(service.libreelec.settings)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-010" label="CoreELEC" icon="DefaultCoreELEC.png" type="$LOCALIZE[10001]" visible="System.AddonIsEnabled(service.coreelec.settings)">
+                <action>RunAddon(service.coreelec.settings)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-011" label="$LOCALIZE[10001]" icon="DefaultAddonProgram.png" type="$LOCALIZE[10001]">
+                <action>ActivateWindow(Programs,Addons,return)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-012" label="$LOCALIZE[1037]" icon="DefaultAddonVideo.png" type="$LOCALIZE[1037]">
+                <action>ActivateWindow(Videos,Addons,return)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-013" label="$LOCALIZE[1038]" icon="DefaultAddonMusic.png" type="$LOCALIZE[1038]">
+                <action>ActivateWindow(MusicLibrary,Addons,return)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-014" label="$LOCALIZE[1039]" icon="DefaultAddonPicture.png" type="$LOCALIZE[1039]">
+                <action>ActivateWindow(Pictures,Addons,return)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-015" label="$LOCALIZE[10821]" icon="DefaultAddonGame.png" type="$LOCALIZE[10821]">
+                <action>ActivateWindow(Games)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-016" label="$LOCALIZE[4]" icon="DefaultAddonTvInfo.png" type="$LOCALIZE[4]">
+                <action>ActivateWindow(TVGuide)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-017" label="$LOCALIZE[19023]" icon="DefaultAddonTvInfo.png" type="$LOCALIZE[19023]">
+                <action>ActivateWindow(TVChannels)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-018" label="$LOCALIZE[1]" icon="DefaultPicture.png" type="$LOCALIZE[1]">
+                <action>ActivateWindow(Pictures)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-019" label="$LOCALIZE[12600]" icon="DefaultAddonWeather.png" type="$LOCALIZE[12600]">
+                <action>ActivateWindow(Weather)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-020" label="$LOCALIZE[33060]" icon="DefaultAddonNone.png" type="$LOCALIZE[33060]">
+                <action>ActivateWindow(shutdownmenu)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-021" label="$LOCALIZE[341]" icon="DefaultVCD.png" type="$LOCALIZE[341]">
+                <action>PlayDisc</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-022" label="$LOCALIZE[31193]" icon="special://skin/extras/icons/tv.png" type="TVHub">
+                <action>ActivateWindow(1112)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-023" label="$LOCALIZE[31192]" icon="special://skin/extras/icons/film.png" type="MovieHub">
+                <action>ActivateWindow(1111)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-024" label="Hub 1119" icon="special://skin/extras/icons/addons.png" type="Hub 1119">
+                <action>ActivateWindow(1119)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-025" label="Hub 1118" icon="special://skin/extras/icons/addons.png" type="Hub 1118">
+                <action>ActivateWindow(1118)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-026" label="Hub 1117" icon="special://skin/extras/icons/addons.png" type="Hub 1117">
+                <action>ActivateWindow(1117)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-027" label="Hub 1116" icon="special://skin/extras/icons/addons.png" type="Hub 1116">
+                <action>ActivateWindow(1116)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-028" label="Hub 1115" icon="special://skin/extras/icons/addons.png" type="Hub 1115">
+                <action>ActivateWindow(1115)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-029" label="Hub 1114" icon="special://skin/extras/icons/addons.png" type="Hub 1114">
+                <action>ActivateWindow(1114)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-030" label="Hub 1113" icon="special://skin/extras/icons/addons.png" type="Hub 1113">
+                <action>ActivateWindow(1113)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-031" label="$LOCALIZE[31212]" icon="special://skin/extras/icons/director.png" type="themoviedb.org episodes">
+                <action>ActivateWindow(1105)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-032" label="$LOCALIZE[31208]" icon="special://skin/extras/icons/director.png" type="themoviedb.org movies">
+                <action>ActivateWindow(1104)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-033" label="$LOCALIZE[31433]" icon="special://skin/extras/icons/shipping.png" type="$ADDON[script.skinshortcuts 32010]" browse="videos">
+                <path>plugin://script.skin.helper.service/?action=smartshortcuts</path>
+            </shortcut>
+        </group>
+        <group name="legacy-group-002" label="$ADDON[script.skinshortcuts 32030]">
+            <content source="nodes" target="video" />
+            <group name="legacy-group-003" label="$ADDON[script.skinshortcuts 32040]">
+                <content source="playlists" target="video" />
+            </group>
+            <group name="legacy-group-004" label="$ADDON[script.skinshortcuts 32010]">
+                <shortcut name="legacy-shortcut-034" label="$LOCALIZE[1037]" icon="DefaultAddonVideo.png" type="$ADDON[script.skinshortcuts 32014]">
+                    <action>ActivateWindow(Videos,Addons,return)</action>
+                </shortcut>
+                <content source="addons" target="videos" />
+            </group>
+            <group name="legacy-group-005" label="$ADDON[script.skinshortcuts 32075]">
+                <content source="sources" target="video" />
+                <shortcut name="legacy-shortcut-035" label="UPnP" icon="DefaultNetwork.png" browse="videos">
+                    <path>upnp://</path>
+                </shortcut>
+            </group>
+            <group name="legacy-group-006" label="$LOCALIZE[31434]">
+                <group name="legacy-group-007" label="$LOCALIZE[342]">
+                    <shortcut name="legacy-shortcut-036" label="$LOCALIZE[31048]" icon="special://skin/extras/icons/timer.png">
+                        <action>ActivateWindow(Videos,special://skin/extras/playlists/InProgressMovies.xsp,return)</action>
+                    </shortcut>
+                    <shortcut name="legacy-shortcut-037" label="$LOCALIZE[31049]" icon="special://skin/extras/icons/favourites.png">
+                        <action>ActivateWindow(Videos,special://skin/extras/playlists/TopRatedMovies.xsp,return)</action>
+                    </shortcut>
+                    <shortcut name="legacy-shortcut-038" label="$LOCALIZE[31317]" icon="special://skin/extras/icons/favourites.png">
+                        <action>ActivateWindow(Videos,special://skin/extras/playlists/Top20UserRatedMovies.xsp,return)</action>
+                    </shortcut>
+                    <shortcut name="legacy-shortcut-039" label="$LOCALIZE[31050]" icon="special://skin/extras/icons/favourites.png">
+                        <action>ActivateWindow(Videos,special://skin/extras/playlists/Top250Movies.xsp,return)</action>
+                    </shortcut>
+                    <shortcut name="legacy-shortcut-040" label="$LOCALIZE[31051]" icon="DefaultMovies.png">
+                        <action>ActivateWindow(Videos,special://skin/extras/playlists/UnwatchedMovies.xsp,return)</action>
+                    </shortcut>
+                </group>
+                <group name="legacy-group-008" label="$LOCALIZE[20343]">
+                    <shortcut name="legacy-shortcut-041" label="$LOCALIZE[31053]" icon="DefaultRecentlyAddedMovies.png">
+                        <action>ActivateWindow(Videos,special://skin/extras/playlists/NewShows.xsp,return)</action>
+                    </shortcut>
+                    <shortcut name="legacy-shortcut-042" label="$LOCALIZE[31323]" icon="DefaultRecentlyAddedMovies.png">
+                        <action>ActivateWindow(Videos,special://skin/extras/playlists/NewUnwatchedShows.xsp,return)</action>
+                    </shortcut>
+                    <shortcut name="legacy-shortcut-043" label="$LOCALIZE[31054]" icon="DefaultMusicRecentlyPlayed.png">
+                        <action>ActivateWindow(Videos,special://skin/extras/playlists/RecentTvShows.xsp,return)</action>
+                    </shortcut>
+                    <shortcut name="legacy-shortcut-044" label="$LOCALIZE[626]" icon="special://skin/extras/icons/timer.png">
+                        <action>ActivateWindow(Videos,special://skin/extras/playlists/InProgressTvShows.xsp,return)</action>
+                    </shortcut>
+                    <shortcut name="legacy-shortcut-045" label="$LOCALIZE[31056]" icon="DefaultTVShows.png">
+                        <action>ActivateWindow(Videos,special://skin/extras/playlists/RandomTvShows.xsp,return)</action>
+                    </shortcut>
+                    <shortcut name="legacy-shortcut-046" label="$LOCALIZE[31057]" icon="DefaultTVShows.png">
+                        <action>ActivateWindow(Videos,special://skin/extras/playlists/TopRatedTvShows.xsp,return)</action>
+                    </shortcut>
+                </group>
+            </group>
+        </group>
+        <group name="legacy-group-009" label="$ADDON[script.skinshortcuts 32031]">
+            <content source="nodes" target="music" />
+            <group name="legacy-group-010" label="$ADDON[script.skinshortcuts 32040]">
+                <content source="playlists" target="music" />
+            </group>
+            <group name="legacy-group-011" label="$ADDON[script.skinshortcuts 32011]">
+                <shortcut name="legacy-shortcut-047" label="$LOCALIZE[1038]" icon="DefaultAddonMusic.png" type="$ADDON[script.skinshortcuts 32019]">
+                    <action>ActivateWindow(MusicLibrary,Addons,return)</action>
+                </shortcut>
+                <content source="addons" target="music" />
+            </group>
+            <group name="legacy-group-012" label="$ADDON[script.skinshortcuts 32075]">
+                <content source="sources" target="music" />
+                <shortcut name="legacy-shortcut-048" label="UPnP" icon="DefaultNetwork.png" browse="music">
+                    <path>upnp://</path>
+                </shortcut>
+            </group>
+        </group>
+        <group name="legacy-group-013" label="$ADDON[script.skinshortcuts 32017]" visible="System.GetBool(pvrmanager.enabled)">
+            <content source="pvr" target="tv" />
+            <group name="legacy-group-014" label="$LOCALIZE[19023]">
+                <content source="pvr" target="tv" />
+            </group>
+            <group name="legacy-group-015" label="$LOCALIZE[19024]">
+                <content source="pvr" target="radio" />
+            </group>
+        </group>
+        <group name="legacy-group-016" label="$ADDON[script.skinshortcuts 32017]" visible="PVR.HasTVChannels">
+            <content source="pvr" target="tv" />
+            <group name="legacy-group-017" label="$LOCALIZE[19023]">
+                <content source="pvr" target="tv" />
+            </group>
+        </group>
+        <group name="legacy-group-018" label="$ADDON[script.skinshortcuts 32087]" visible="PVR.HasRadioChannels">
+            <content source="pvr" target="radio" />
+            <group name="legacy-group-019" label="$LOCALIZE[19024]">
+                <content source="pvr" target="radio" />
+            </group>
+        </group>
+        <group name="legacy-group-020" label="$LOCALIZE[31447]" visible="System.AddonIsEnabled(script.service.gto)">
+            <shortcut name="legacy-shortcut-049" label="$ADDON[script.service.gto 30116]" icon="DefaultTVShows.png" type="$LOCALIZE[31103]">
+                <action>RunPlugin(plugin://script.service.gto?action=scrape)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-050" label="$ADDON[script.service.gto 30115]" icon="DefaultTVShows.png" type="$LOCALIZE[31103]">
+                <action>RunPlugin(plugin://plugin.service.gto?action=change_scraper)</action>
+            </shortcut>
+        </group>
+        <group name="legacy-group-021" label="$ADDON[script.skinshortcuts 32020]">
+            <content source="sources" target="pictures" />
+        </group>
+        <group name="legacy-group-022" label="$ADDON[script.skinshortcuts 32007]">
+            <group name="legacy-group-023" label="$ADDON[script.skinshortcuts 32009]">
+                <shortcut name="legacy-shortcut-051" label="$LOCALIZE[10001]" icon="DefaultAddonProgram.png" type="$ADDON[script.skinshortcuts 32021]">
+                    <action>ActivateWindow(Programs,Addons,return)</action>
+                </shortcut>
+                <content source="addons" target="executable" />
+            </group>
+            <group name="legacy-group-024" label="$ADDON[script.skinshortcuts 32010]">
+                <shortcut name="legacy-shortcut-052" label="$LOCALIZE[1037]" icon="DefaultAddonVideo.png" type="$ADDON[script.skinshortcuts 32014]">
+                    <action>ActivateWindow(Videos,Addons,return)</action>
+                </shortcut>
+                <content source="addons" target="videos" />
+            </group>
+            <group name="legacy-group-025" label="$ADDON[script.skinshortcuts 32011]">
+                <shortcut name="legacy-shortcut-053" label="$LOCALIZE[1038]" icon="DefaultAddonMusic.png" type="$ADDON[script.skinshortcuts 32019]">
+                    <action>ActivateWindow(MusicLibrary,Addons,return)</action>
+                </shortcut>
+                <content source="addons" target="music" />
+            </group>
+            <group name="legacy-group-026" label="$ADDON[script.skinshortcuts 32012]">
+                <shortcut name="legacy-shortcut-054" label="$LOCALIZE[1039]" icon="DefaultAddonPicture.png" type="$ADDON[script.skinshortcuts 32020]">
+                    <action>ActivateWindow(Pictures,Addons,return)</action>
+                </shortcut>
+                <content source="addons" target="pictures" />
+            </group>
+        </group>
+        <group name="legacy-group-027" label="$LOCALIZE[1036]">
+            <shortcut name="legacy-shortcut-055" label="$LOCALIZE[1036]" icon="favourites.png" type="$LOCALIZE[1036]">
+                <action>ActivateWindow(favouritesbrowser)</action>
+            </shortcut>
+            <content source="favourites" />
+        </group>
+        <group name="legacy-group-028" label="$LOCALIZE[10821]">
+            <shortcut name="legacy-shortcut-056" label="$LOCALIZE[10821]" icon="DefaultAddonGame.png" type="$ADDON[script.skinshortcuts 32021]">
+                <action>ActivateWindow(Games)</action>
+            </shortcut>
+        </group>
+        <group name="legacy-group-029" label="$LOCALIZE[400]">
+            <shortcut name="legacy-shortcut-057" label="$LOCALIZE[400]" icon="DefaultAddonWeather.png" type="$LOCALIZE[400]">
+                <action>ActivateWindow(Weather)</action>
+            </shortcut>
+        </group>
+        <group name="legacy-group-030" label="$LOCALIZE[10004]">
+            <content source="settings" />
+            <shortcut name="legacy-shortcut-058" label="LibreELEC" icon="DefaultLibreELEC.png" type="$LOCALIZE[10001]" visible="System.AddonIsEnabled(service.libreelec.settings)">
+                <action>RunAddon(service.libreelec.settings)</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-059" label="CoreELEC" icon="DefaultCoreELEC.png" type="$LOCALIZE[10001]" visible="System.AddonIsEnabled(service.coreelec.settings)">
+                <action>RunAddon(service.coreelec.settings)</action>
+            </shortcut>
+        </group>
+        <group name="legacy-group-031" label="$ADDON[script.skinshortcuts 32054]">
+            <content source="commands" />
+            <shortcut name="legacy-shortcut-060" label="$LOCALIZE[31232]" icon="special://skin/extras/icons/sysinfo.png" type="$LOCALIZE[10001]">
+                <action>System.ExecWait("/usr/sbin/rebootfromnand")</action>
+                <action>Reset()</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-061" label="$LOCALIZE[341]" icon="special://skin/extras/icons/vcd.png" type="$LOCALIZE[427]">
+                <action>PlayDisc</action>
+            </shortcut>
+            <shortcut name="legacy-shortcut-062" label="$LOCALIZE[13391]" icon="special://skin/extras/icons/vcd_eject.png" type="$LOCALIZE[427]">
+                <action>EjectTray()</action>
+            </shortcut>
+        </group>
+    </groupings>
+    <icons>
+        <source label="Skin Icons">special://skin/extras/icons/</source>
+        <source label="$LOCALIZE[1024]" icon="DefaultFolder.png">browse</source>
+    </icons>
+    <dialogs>
+        <subdialog buttonID="9101" mode="widget1" setfocus="309">
+            <onclose condition="widgetType=custom" action="menu" menu="{item}.customwidget" />
+        </subdialog>
+        <subdialog buttonID="406" menu="{customWidget}" />
+        <subdialog buttonID="9102" mode="widget2" setfocus="309" suffix=".2">
+            <onclose condition="widgetType.2=custom" action="menu" menu="{item}.customwidget.2" />
+        </subdialog>
+        <subdialog buttonID="407" menu="{customWidget}" suffix=".2" />
+        <subdialog buttonID="9103" mode="widget3" setfocus="309" suffix=".3">
+            <onclose condition="widgetType.3=custom" action="menu" menu="{item}.customwidget.3" />
+        </subdialog>
+        <subdialog buttonID="408" menu="{customWidget}" suffix=".3" />
+        <subdialog buttonID="9104" mode="widget4" setfocus="309" suffix=".4">
+            <onclose condition="widgetType.4=custom" action="menu" menu="{item}.customwidget.4" />
+        </subdialog>
+        <subdialog buttonID="409" menu="{customWidget}" suffix=".4" />
+        <subdialog buttonID="9105" mode="widget5" setfocus="309" suffix=".5">
+            <onclose condition="widgetType.5=custom" action="menu" menu="{item}.customwidget.5" />
+        </subdialog>
+        <subdialog buttonID="410" menu="{customWidget}" suffix=".5" />
+        <subdialog buttonID="9106" mode="widget6" setfocus="309" suffix=".6">
+            <onclose condition="widgetType.6=custom" action="menu" menu="{item}.customwidget.6" />
+        </subdialog>
+        <subdialog buttonID="411" menu="{customWidget}" suffix=".6" />
+    </dialogs>
+    <overrides>
+        <action replace="ActivateWindow(3201)">ActivateWindow(1111)</action>
+        <action replace="ActivateWindow(3202)">ActivateWindow(1112)</action>
+        <action replace="ActivateWindow(3204)">ActivateWindow(1104)</action>
+        <action replace="ActivateWindow(3205)">ActivateWindow(1105)</action>
+        <icons>
+            <source>special://skin/extras/icons/</source>
+        </icons>
+    </overrides>
+</menus>

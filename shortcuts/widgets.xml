@@ -1,0 +1,398 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<widgets>
+    <group name="legacy-widget-group-001" label="$LOCALIZE[342]">
+        <widget name="MoviesTitles" label="$LOCALIZE[10024]" icon="DefaultMovies.png" target="video">
+            <path>library://video/movies/titles.xml</path>
+        </widget>
+        <widget name="NewMovies" label="$LOCALIZE[31045]" icon="DefaultRecentlyAddedMovies.png" target="video">
+            <path>special://skin/extras/playlists/NewMovies.xsp</path>
+        </widget>
+        <widget name="NewUnwatchedMovies" label="$LOCALIZE[31321]" icon="DefaultRecentlyAddedMovies.png" target="video">
+            <path>special://skin/extras/playlists/NewUnwatchedMovies.xsp</path>
+        </widget>
+        <widget name="RecentMovies" label="$LOCALIZE[31046]" icon="DefaultMusicRecentlyPlayed.png" target="video">
+            <path>special://skin/extras/playlists/RecentMovies.xsp</path>
+        </widget>
+        <widget name="RandomMovies" label="$LOCALIZE[31047]" icon="DefaultMovies.png" target="video">
+            <path>special://skin/extras/playlists/RandomMovies.xsp</path>
+        </widget>
+        <widget name="InProgressMovies" label="$LOCALIZE[31048]" icon="special://skin/extras/icons/timer.png" target="video">
+            <path>special://skin/extras/playlists/InProgressMovies.xsp</path>
+        </widget>
+        <widget name="TopRatedMovies" label="$LOCALIZE[31049]" icon="special://skin/extras/icons/favourites.png" target="video">
+            <path>special://skin/extras/playlists/TopRatedMovies.xsp</path>
+        </widget>
+        <widget name="Top20UserRatedMovies" label="$LOCALIZE[31317]" icon="special://skin/extras/icons/favourites.png" target="video">
+            <path>special://skin/extras/playlists/Top20UserRatedMovies.xsp</path>
+        </widget>
+        <widget name="Top250Movies" label="$LOCALIZE[31050]" icon="special://skin/extras/icons/favourites.png" target="video">
+            <path>special://skin/extras/playlists/Top250Movies.xsp</path>
+        </widget>
+        <widget name="UnwatchedMovies" label="$LOCALIZE[31051]" icon="DefaultMovies.png" target="video">
+            <path>special://skin/extras/playlists/UnwatchedMovies.xsp</path>
+        </widget>
+        <widget name="MovieSets" label="$LOCALIZE[31052]" icon="DefaultMovies.png" target="video">
+            <path>videodb://movies/sets/</path>
+        </widget>
+        <widget name="RecommendedMovies" label="$ADDON[service.library.data.provider 32006]" icon="DefaultMovies.png" target="video" visible="System.AddonIsEnabled(service.library.data.provider)">
+            <path>plugin://service.library.data.provider?type=recommendedmovies&amp;reload=$INFO[Window.Property(recommendedmovies)]</path>
+        </widget>
+        <widget name="embuary-01" label="$ADDON[script.embuary.helper 32013]" icon="DefaultMovies.png" target="video">
+            <path>plugin://script.embuary.helper/?info=getinprogress&amp;type=movie&amp;reload=$INFO[Window(Home).Property(EmbuaryWidgetUpdate)]</path>
+        </widget>
+        <widget name="embuary-02" label="$ADDON[script.embuary.helper 32007]" icon="DefaultMovies.png" target="video">
+            <path>plugin://script.embuary.helper/?info=getsimilar&amp;type=movie&amp;reload=$INFO[Window(Home).Property(EmbuaryWidgetUpdate)]</path>
+        </widget>
+        <widget name="embuary-03" label="$ADDON[script.embuary.helper 32014]" icon="DefaultMovies.png" target="video">
+            <path>plugin://script.embuary.helper/?info=getsimilar&amp;type=movie&amp;pos=0&amp;reload=$INFO[Window(Home).Property(EmbuaryWidgetUpdate)]</path>
+        </widget>
+        <widget name="embuary-04" label="$ADDON[script.embuary.helper 32009]" icon="DefaultMovies.png" target="video">
+            <path>plugin://script.embuary.helper/?info=getbygenre&amp;type=movie&amp;reload=$INFO[Window(Home).Property(EmbuaryWidgetUpdate)]</path>
+        </widget>
+        <widget name="embuary-05" label="$ADDON[script.embuary.helper 32012]" icon="DefaultMovies.png" target="video">
+            <path>plugin://script.embuary.helper/?info=getbyargs&amp;sort_args=%7B%22order%22%3A+%22descending%22%2C+%22method%22%3A+%22rating%22%7D&amp;type=movie&amp;limit=50&amp;reload=$INFO[Window(Home).Property(EmbuaryWidgetUpdate)]</path>
+        </widget>
+        <widget name="embuary-06" label="$ADDON[script.embuary.info 32042]" icon="DefaultMovies.png" target="video">
+            <path>plugin://script.embuary.info/movie/trending</path>
+        </widget>
+        <widget name="embuary-07" label="$ADDON[script.embuary.info 32032]" icon="DefaultMovies.png" target="video">
+            <path>plugin://script.embuary.info/movie/popular</path>
+        </widget>
+        <widget name="embuary-08" label="$ADDON[script.embuary.info 32029]" icon="DefaultMovies.png" target="video">
+            <path>plugin://script.embuary.info/movie/top_rated</path>
+        </widget>
+        <widget name="embuary-09" label="$ADDON[script.embuary.info 32050]" icon="DefaultMovies.png" target="video">
+            <path>plugin://script.embuary.info/discover/movie/all</path>
+        </widget>
+        <widget name="4KMovies" label="$LOCALIZE[31509]" icon="DefaultMovies.png" target="video">
+            <path>special://skin/extras/playlists/4KMovies.xsp</path>
+        </widget>
+        <widget name="HDMovies" label="$LOCALIZE[31554]" icon="DefaultMovies.png" target="video">
+            <path>special://skin/extras/playlists/HDMovies.xsp</path>
+        </widget>
+        <widget name="Genres" label="$LOCALIZE[135]" icon="special://skin/extras/icons/genre.png" target="video">
+            <path>library://video/movies/genres.xml</path>
+        </widget>
+        <widget name="embuary-10" label="$LOCALIZE[31438]" icon="DefaultGenre.png" target="video">
+            <path>plugin://script.embuary.helper/?info=getgenre&amp;type=movie</path>
+        </widget>
+    </group>
+    <group name="legacy-widget-group-002" label="$LOCALIZE[20343]">
+        <group name="legacy-widget-group-003" label="$LOCALIZE[20343]">
+            <widget name="TvShowsTitles" label="$LOCALIZE[10024]" icon="DefaultMovies.png" target="video">
+                <path>library://video/tvshows/titles.xml</path>
+            </widget>
+            <widget name="NewTvShows" label="$LOCALIZE[31053]" icon="DefaultRecentlyAddedMovies.png" target="video">
+                <path>special://skin/extras/playlists/NewShows.xsp</path>
+            </widget>
+            <widget name="NewUnwatchedTvShows" label="$LOCALIZE[31323]" icon="DefaultRecentlyAddedMovies.png" target="video">
+                <path>special://skin/extras/playlists/NewUnwatchedShows.xsp</path>
+            </widget>
+            <widget name="UnwatchedTvShows" label="$LOCALIZE[31518]" icon="DefaultRecentlyAddedMovies.png" target="video">
+                <path>special://skin/extras/playlists/UnwatchedTvShows.xsp</path>
+            </widget>
+            <widget name="RecentTvShows" label="$LOCALIZE[31054]" icon="DefaultMusicRecentlyPlayed.png" target="video">
+                <path>special://skin/extras/playlists/RecentTvShows.xsp</path>
+            </widget>
+            <widget name="InProgress" label="$LOCALIZE[626]" icon="special://skin/extras/icons/timer.png" target="video">
+                <path>special://skin/extras/playlists/InProgressTvShows.xsp</path>
+            </widget>
+            <widget name="RandomTvShows" label="$LOCALIZE[31056]" icon="DefaultTVShows.png" target="video">
+                <path>special://skin/extras/playlists/RandomTvShows.xsp</path>
+            </widget>
+            <widget name="TopRatedTvShows" label="$LOCALIZE[31057]" icon="DefaultTVShows.png" target="video">
+                <path>special://skin/extras/playlists/TopRatedTvShows.xsp</path>
+            </widget>
+            <widget name="embuary-11" label="$ADDON[script.embuary.helper 32012]" icon="DefaultTVShows.png" target="video">
+                <path>plugin://script.embuary.helper/?info=getbyargs&amp;sort_args=%7B%22order%22%3A+%22descending%22%2C+%22method%22%3A+%22rating%22%7D&amp;type=tvshow&amp;limit=50&amp;reload=$INFO[Window(Home).Property(EmbuaryWidgetUpdate)]</path>
+            </widget>
+            <widget name="embuary-12" label="$ADDON[script.embuary.info 32043]" icon="DefaultTVShows.png" target="video">
+                <path>plugin://script.embuary.info/tv/trending</path>
+            </widget>
+            <widget name="embuary-13" label="$ADDON[script.embuary.info 32034]" icon="DefaultTVShows.png" target="video">
+                <path>plugin://script.embuary.info/tv/popular</path>
+            </widget>
+            <widget name="embuary-14" label="$ADDON[script.embuary.info 32033]" icon="DefaultTVShows.png" target="video">
+                <path>plugin://script.embuary.info/tv/top_rated</path>
+            </widget>
+            <widget name="embuary-15" label="$ADDON[script.embuary.info 32051]" icon="DefaultTVShows.png" target="video">
+                <path>plugin://script.embuary.info/discover/tv/all</path>
+            </widget>
+            <widget name="embuary-16" label="$LOCALIZE[31438]" icon="DefaultGenre.png" target="video">
+                <path>plugin://script.embuary.helper/?info=getgenre&amp;type=tvshow</path>
+            </widget>
+        </group>
+        <group name="legacy-widget-group-004" label="$LOCALIZE[20360]">
+            <widget name="NewEpisodes" label="$LOCALIZE[31058]" icon="DefaultRecentlyAddedMovies.png" target="video">
+                <path>special://skin/extras/playlists/NewEpisodes.xsp</path>
+            </widget>
+            <widget name="NewUnwatchedEpisodes" label="$LOCALIZE[31322]" icon="DefaultRecentlyAddedMovies.png" target="video">
+                <path>special://skin/extras/playlists/NewUnwatchedEpisodes.xsp</path>
+            </widget>
+            <widget name="Recent Episodes" label="$LOCALIZE[31059]" icon="DefaultMusicRecentlyPlayed.png" target="video">
+                <path>special://skin/extras/playlists/RecentEpisodes.xsp</path>
+            </widget>
+            <widget name="RandomEpisodes" label="$LOCALIZE[31060]" icon="DefaultTVShows.png" target="video">
+                <path>special://skin/extras/playlists/RandomEpisodes.xsp</path>
+            </widget>
+            <widget name="UnwatchedEpisodes" label="$LOCALIZE[31061]" icon="DefaultTVShows.png" target="video">
+                <path>special://skin/extras/playlists/UnwatchedEpisodes.xsp</path>
+            </widget>
+            <widget name="InProgressEpisodes" label="$LOCALIZE[31062]" icon="special://skin/extras/icons/timer.png" target="video">
+                <path>special://skin/extras/playlists/InProgressEpisodes.xsp</path>
+            </widget>
+            <widget name="TopRatedEpisodes" label="$LOCALIZE[31063]" icon="DefaultTVShows.png" target="video">
+                <path>special://skin/extras/playlists/TopRatedEpisodes.xsp</path>
+            </widget>
+            <widget name="RecommendedEpisodes" label="$ADDON[service.library.data.provider 32010]" icon="DefaultTVShows.png" target="video" visible="System.AddonIsEnabled(service.library.data.provider)">
+                <path>plugin://service.library.data.provider?type=recommendedepisodes&amp;reload=$INFO[Window.Property(recommendedepisodes)]</path>
+            </widget>
+            <widget name="embuary-17" label="$ADDON[script.embuary.helper 32013]" icon="DefaultTVShows.png" target="video">
+                <path>plugin://script.embuary.helper/?info=getinprogress&amp;type=tvshow&amp;reload=$INFO[Window(Home).Property(EmbuaryWidgetUpdate)]</path>
+            </widget>
+            <widget name="embuary-18" label="$ADDON[script.embuary.helper 32008]" icon="DefaultTVShows.png" target="video">
+                <path>plugin://script.embuary.helper/?info=getnextup&amp;type=tvshow&amp;reload=$INFO[Window(Home).Property(EmbuaryWidgetUpdate)]</path>
+            </widget>
+            <widget name="embuary-19" label="$ADDON[script.embuary.info 32059]" icon="DefaultTVShows.png" target="video">
+                <path>plugin://script.embuary.info/nextaired/week</path>
+            </widget>
+        </group>
+    </group>
+    <group name="legacy-widget-group-005" label="$LOCALIZE[31434]" visible="System.AddonIsEnabled(script.skin.helper.widgets)">
+        <widget name="library-mixed-01" label="$ADDON[script.skin.helper.widgets 32078]" icon="DefaultMovies.png" type="mixed" target="video">
+            <path>plugin://script.skin.helper.widgets/?action=recentshowsandmovies&amp;mediatype=media&amp;tag=&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</path>
+        </widget>
+        <widget name="library-mixed-02" label="$ADDON[script.skin.helper.widgets 32079]" icon="DefaultMovies.png" type="mixed" target="video">
+            <path>plugin://script.skin.helper.widgets/?action=randomshowsandmovies&amp;mediatype=media&amp;tag=&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</path>
+        </widget>
+        <widget name="library-mixed-03" label="$ADDON[script.skin.helper.widgets 32088]" icon="DefaultMovies.png" type="mixed" target="video">
+            <path>plugin://script.skin.helper.widgets/?action=unwatchedshowsandmovies&amp;mediatype=media&amp;tag=&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</path>
+        </widget>
+        <widget name="library-mixed-04" label="$ADDON[script.skin.helper.widgets 32084]" icon="DefaultMovies.png" type="mixed" target="video">
+            <path>plugin://script.skin.helper.widgets/?action=recommendedmoviesandshows&amp;mediatype=media&amp;tag=&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</path>
+        </widget>
+        <widget name="library-mixed-05" label="$ADDON[script.skin.helper.widgets 32070]" icon="DefaultMovies.png" type="mixed" target="video">
+            <path>plugin://script.skin.helper.widgets/?action=inprogressshowsandmovies&amp;mediatype=media&amp;tag=&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</path>
+        </widget>
+        <widget name="library-mixed-06" label="$ADDON[script.skin.helper.widgets 32080]" icon="DefaultMovies.png" type="mixed" target="video">
+            <path>plugin://script.skin.helper.widgets/?action=inprogressepisodesandmovies&amp;mediatype=media&amp;tag=&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</path>
+        </widget>
+    </group>
+    <group name="legacy-widget-group-006" label="$LOCALIZE[31464]" visible="System.AddonIsEnabled(service.library.data.provider)">
+        <widget name="RandomMoviesAndEpisodes" label="$LOCALIZE[31465]" icon="DefaultMovies.png" target="video">
+            <path>plugin://service.library.data.provider?type=randommovies+randomepisodes&amp;reload=$INFO[Window.Property(randommovies)]$INFO[Window.Property(randomepisodes)]</path>
+        </widget>
+        <widget name="RecentVideos" label="$LOCALIZE[31466]" icon="DefaultMovies.png" target="video">
+            <path>plugin://service.library.data.provider?type=recentvideos&amp;reload=$INFO[Window.Property(recentvideos)]</path>
+        </widget>
+    </group>
+    <group name="legacy-widget-group-007" label="$LOCALIZE[249]">
+        <group name="legacy-widget-group-008" label="$LOCALIZE[132]">
+            <widget name="NewAlbums" label="$LOCALIZE[31064]" icon="DefaultMusicRecentlyAdded.png" type="albums" target="music">
+                <path>musicdb://recentlyaddedalbums/</path>
+            </widget>
+            <widget name="RecentAlbums" label="$LOCALIZE[31065]" icon="DefaultMusicRecentlyPlayed.png" type="albums" target="music">
+                <path>musicdb://recentlyplayedalbums/</path>
+            </widget>
+            <widget name="TopAlbums" label="$LOCALIZE[31066]" icon="DefaultMusicAlbums.png" type="albums" target="music">
+                <path>musicdb://top100/albums/</path>
+            </widget>
+            <widget name="RandomAlbums" label="$LOCALIZE[31067]" icon="DefaultMusicAlbums.png" type="albums" target="music">
+                <path>special://skin/extras/playlists/RandomAlbums.xsp</path>
+            </widget>
+            <widget name="RecommendedAlbums" label="$ADDON[service.library.data.provider 32018]" icon="DefaultMusicAlbums.png" target="music" visible="System.AddonIsEnabled(service.library.data.provider)">
+                <path>plugin://service.library.data.provider?type=recommendedalbums&amp;reload=$INFO[Window.Property(recommendedalbums)]</path>
+            </widget>
+        </group>
+        <group name="legacy-widget-group-009" label="$LOCALIZE[134]">
+            <widget name="TopSongs" label="$LOCALIZE[31285]" icon="DefaultMusicSongs.png" target="music">
+                <path>musicdb://top100/songs/</path>
+            </widget>
+            <widget name="RandomSongs" label="$LOCALIZE[31286]" icon="DefaultMusicSongs.png" target="music">
+                <path>special://skin/extras/playlists/RandomSongs.xsp</path>
+            </widget>
+            <widget name="RecentlyAddedSongs" label="$LOCALIZE[31435]" icon="DefaultMusicSongs.png" target="music">
+                <path>special://skin/extras/playlists/RecentlyAddedSongs.xsp</path>
+            </widget>
+            <widget name="MostPlayedSongs.xsp" label="$LOCALIZE[31436]" icon="DefaultMusicSongs.png" target="music">
+                <path>special://skin/extras/playlists/MostPlayedSongs.xsp</path>
+            </widget>
+        </group>
+    </group>
+    <group name="legacy-widget-group-010" label="$LOCALIZE[31314]">
+        <group name="legacy-widget-group-011" label="$LOCALIZE[133]">
+            <widget name="RandomArtists" label="$LOCALIZE[31068]" icon="DefaultMusicArtists.png" type="artists" target="music">
+                <path>special://skin/extras/playlists/RandomArtists.xsp</path>
+            </widget>
+            <widget name="RandomArtistsBiography" label="$LOCALIZE[31313]" icon="DefaultMusicArtists.png" type="artists" target="music">
+                <path>special://skin/extras/playlists/RandomArtistsBiography.xsp</path>
+            </widget>
+            <widget name="RecentlyAddedArtists" label="$LOCALIZE[31315]" icon="DefaultMusicArtists.png" type="artists" target="music">
+                <path>special://skin/extras/playlists/RecentlyAddedArtists.xsp</path>
+            </widget>
+            <widget name="RecentlyAddedArtistsBiography" label="$LOCALIZE[31316]" icon="DefaultMusicArtists.png" type="artists" target="music">
+                <path>special://skin/extras/playlists/RecentlyAddedArtistsBiography.xsp</path>
+            </widget>
+        </group>
+        <group name="legacy-widget-group-012" label="$LOCALIZE[344]">
+            <widget name="random-actors-01" label="$LOCALIZE[344]" icon="DefaultMusicArtists.png" type="actors" target="video">
+                <path>library://video/movies/actors.xml/</path>
+            </widget>
+            <widget name="random-actors-02" label="$LOCALIZE[31320]" icon="DefaultMusicArtists.png" type="actors" target="video">
+                <path>videodb://movies/actors/</path>
+            </widget>
+            <widget name="random-actors-03" label="$ADDON[script.embuary.info 32057]" icon="DefaultMusicArtists.png" target="video">
+                <path>plugin://script.embuary.info/discover/person</path>
+            </widget>
+        </group>
+    </group>
+    <group name="legacy-widget-group-013" label="$LOCALIZE[31103]">
+        <group name="legacy-widget-group-014" label="$LOCALIZE[31517]" visible="Skin.HasSetting(home.vertical.widgets)">
+            <widget name="epg-lastplayed" label="$LOCALIZE[31043]" icon="DefaultMovies.png" target="pvr" source="epg">
+                <path>pvr://channels/tv/*?view=lastplayed</path>
+            </widget>
+            <widget name="epg-channels" label="$LOCALIZE[31044]" icon="DefaultTVShows.png" target="pvr" source="epg">
+                <path>pvr://channels/tv/*</path>
+            </widget>
+            <widget name="epg-timers" label="$LOCALIZE[19040]" icon="DefaultAddonPVRClient.png" target="pvr" source="epg">
+                <path>pvr://timers/tv/timers</path>
+            </widget>
+        </group>
+        <widget name="LastPlayedChannels" label="$LOCALIZE[31043]" icon="DefaultTVShows.png" target="pvr">
+            <path>pvr://channels/tv/*?view=lastplayed</path>
+        </widget>
+        <widget name="AllChannels" label="$LOCALIZE[31044]" icon="DefaultTVShows.png" target="pvr">
+            <path>pvr://channels/tv/*</path>
+        </widget>
+        <widget name="AllChannelGroups" label="$LOCALIZE[19173]" icon="DefaultTVShows.png" target="tvguide">
+            <path>pvr://channels/tv/</path>
+        </widget>
+        <widget name="ActiveRecordings" label="$LOCALIZE[31510]" icon="DefaultAddonPVRClient.png" target="pvr">
+            <path>pvr://recordings/tv/active?view=flat</path>
+        </widget>
+        <widget name="GroupedActiveRecordings" label="$LOCALIZE[31511]" icon="DefaultAddonPVRClient.png" target="pvr">
+            <path>pvr://recordings/tv/active?view=grouped</path>
+        </widget>
+        <widget name="DeletedRecordings" label="$LOCALIZE[19184]" icon="DefaultAddonPVRClient.png" target="pvr">
+            <path>pvr://recordings/tv/deleted?view=flat</path>
+        </widget>
+        <widget name="GroupedDeletedRecordings" label="$LOCALIZE[31512]" icon="DefaultAddonPVRClient.png" target="pvr">
+            <path>pvr://recordings/tv/deleted?view=grouped</path>
+        </widget>
+        <widget name="Timers" label="$LOCALIZE[19040]" icon="DefaultAddonPVRClient.png" target="pvr">
+            <path>pvr://timers/tv/timers</path>
+        </widget>
+        <group name="legacy-widget-group-015" label="$LOCALIZE[31447]">
+            <widget name="GTO" label="$ADDON[script.service.gto 30104]: $INFO[Window(Home).Property(GTO.Provider)]" icon="DefaultTVShows.png" target="pvr" visible="System.AddonIsEnabled(script.service.gto)">
+                <path>plugin://script.service.gto?action=getcontent&amp;ts=$INFO[Window(Home).Property(GTO.timestamp)]</path>
+            </widget>
+        </group>
+    </group>
+    <group name="legacy-widget-group-016" label="$LOCALIZE[19021]">
+        <widget name="RadioAllChannels" label="$LOCALIZE[19216]" icon="DefaultAddonPVRClient.png" target="pvr">
+            <path>pvr://channels/radio/*</path>
+        </widget>
+        <widget name="RadioLastPlayedChannels" label="$LOCALIZE[31516]" icon="DefaultAddonPVRClient.png" target="pvr">
+            <path>pvr://channels/radio/*?view=lastplayed</path>
+        </widget>
+        <widget name="RadioActiveRecordings" label="$LOCALIZE[10706]" icon="DefaultAddonPVRClient.png" target="pvr">
+            <path>pvr://recordings/radio/active?view=flat</path>
+        </widget>
+        <widget name="RadioTimers" label="$LOCALIZE[10708]" icon="DefaultAddonPVRClient.png" target="pvr">
+            <path>pvr://timers/radio/timers</path>
+        </widget>
+    </group>
+    <group name="legacy-widget-group-017" label="$LOCALIZE[8]">
+        <widget name="weatherdaily" label="$LOCALIZE[31288]" icon="special://skin/extras/icons/sun.png" type="widget" target="weather" visible="!String.IsEmpty(Window(Weather).Property(Daily.IsFetched))">
+            <path>$INCLUDE[skinshortcuts-template-WeatherDailyInfoContent]</path>
+        </widget>
+        <widget name="weatherhourly" label="$LOCALIZE[31289]" icon="special://skin/extras/icons/sun.png" type="widget" target="weather" visible="!String.IsEmpty(Window(Weather).Property(Hourly.IsFetched))">
+            <path>$INCLUDE[skinshortcuts-template-WeatherHourlyInfoContent]</path>
+        </widget>
+    </group>
+    <group name="legacy-widget-group-018" label="$LOCALIZE[130]">
+        <widget name="systeminfo" label="$LOCALIZE[130]" icon="special://skin/extras/icons/sysinfo.png" type="system" target="system">
+            <path>$INCLUDE[skinshortcuts-template-SystemInfoContent]</path>
+        </widget>
+    </group>
+    <group name="legacy-widget-group-019" label="$LOCALIZE[5]">
+        <widget name="settings" label="$LOCALIZE[5]" icon="special://skin/extras/icons/sysinfo.png" type="system" target="system">
+            <path>$INCLUDE[skinshortcuts-template-SettingsInfoContent]</path>
+        </widget>
+    </group>
+    <group name="legacy-widget-group-020" label="$LOCALIZE[1034]">
+        <widget name="mysubmenu" label="$LOCALIZE[1034]" icon="DefaultAddon.png" type="addons" target="programs" slot="widget">
+            <path>$INCLUDE[skinshortcuts-mainmenu-submenu]</path>
+        </widget>
+        <widget name="movie-genres" label="$LOCALIZE[135]" icon="special://skin/extras/icons/genre.png" target="video" slot="widget">
+            <path>library://video/movies/genres.xml</path>
+        </widget>
+    </group>
+    <group name="legacy-widget-group-021" label="$ADDON[script.skinshortcuts 32020]">
+        <content source="sources" target="pictures"/>
+    </group>
+    <widget name="legacy-widget-097" label="$LOCALIZE[31042]" icon="DefaultFolder.png" visible="System.AddonIsEnabled(script.skin.helper.service)" browse="true">
+        <path>plugin://script.skin.helper.service/?action=widgets&amp;path=skinplaylists,librarydataprovider,scriptwidgets,smartshortcuts,pvr</path>
+    </widget>
+    <group name="legacy-widget-group-022" label="$ADDON[script.skinshortcuts 32030]">
+        <content source="nodes" target="videos"/>
+        <group name="legacy-widget-group-023" label="$ADDON[script.skinshortcuts 32040]">
+            <content source="playlists" target="videos"/>
+        </group>
+        <group name="legacy-widget-group-024" label="$ADDON[script.skinshortcuts 32010]">
+            <content source="addons" target="videos"/>
+        </group>
+        <group name="legacy-widget-group-025" label="$ADDON[script.skinshortcuts 32075]">
+            <content source="sources" target="videos"/>
+        </group>
+    </group>
+    <group name="legacy-widget-group-026" label="$ADDON[script.skinshortcuts 32031]">
+        <content source="nodes" target="music"/>
+        <group name="legacy-widget-group-027" label="$ADDON[script.skinshortcuts 32040]">
+            <content source="playlists" target="music"/>
+        </group>
+        <group name="legacy-widget-group-028" label="$ADDON[script.skinshortcuts 32011]">
+            <content source="addons" target="music"/>
+        </group>
+        <group name="legacy-widget-group-029" label="$ADDON[script.skinshortcuts 32075]">
+            <content source="sources" target="music"/>
+        </group>
+    </group>
+    <group name="legacy-widget-group-030" label="$LOCALIZE[1036]">
+        <widget name="favourites" label="$LOCALIZE[1036]" icon="DefaultFavourites.png" type="favourite" target="favouritesbrowser">
+            <path>favourites://</path>
+        </widget>
+    </group>
+    <group name="legacy-widget-group-031" label="$ADDON[script.skinshortcuts 32007]">
+        <group name="legacy-widget-group-032" label="$ADDON[script.skinshortcuts 32010]">
+            <content source="addons" target="videos"/>
+        </group>
+        <group name="legacy-widget-group-033" label="$ADDON[script.skinshortcuts 32011]">
+            <content source="addons" target="music"/>
+        </group>
+        <group name="legacy-widget-group-034" label="$ADDON[script.skinshortcuts 32012]">
+            <content source="addons" target="pictures"/>
+        </group>
+        <group name="legacy-widget-group-035" label="$ADDON[script.skinshortcuts 32009]">
+            <content source="addons" target="executable"/>
+        </group>
+        <widget name="addon-programs" label="$LOCALIZE[10001]" icon="DefaultAddonProgram.png" type="program" target="programs">
+            <path>addons://sources/executable/</path>
+        </widget>
+        <widget name="addon-android-apps" label="$LOCALIZE[20244]" icon="DefaultAddonProgram.png" type="program" target="programs" visible="System.Platform.Android">
+            <path>androidapp://sources/apps/</path>
+        </widget>
+        <widget name="addon-video" label="$LOCALIZE[1037]" icon="DefaultAddonVideo.png" type="video" target="video">
+            <path>addons://sources/video/</path>
+        </widget>
+        <widget name="addon-music" label="$LOCALIZE[1038]" icon="DefaultAddonMusic.png" type="music" target="music">
+            <path>addons://sources/audio/</path>
+        </widget>
+        <widget name="addon-pictures" label="$LOCALIZE[1039]" icon="DefaultAddonPicture.png" type="picture" target="pictures">
+            <path>addons://sources/image/</path>
+        </widget>
+    </group>
+    <group name="legacy-widget-group-036" label="$LOCALIZE[31473]">
+        <widget name="custom" label="$LOCALIZE[31473]" icon="DefaultAddonProgram.png" type="custom" target="video"/>
+        </group>
+</widgets>

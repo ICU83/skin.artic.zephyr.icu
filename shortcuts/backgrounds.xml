@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<backgrounds>
+    <background name="playlistBackground" label="$LOCALIZE[136]" type="playlist">
+        <source label="$LOCALIZE[20034]">special://profile/playlists/video/</source>
+        <source label="$LOCALIZE[136]">special://profile/playlists/music/</source>
+    </background>
+    <background name="browse" label="$LOCALIZE[1024]" type="browse">
+        <source label="Skin backgrounds">special://skin/extras/backgrounds/</source>
+        <source label="$LOCALIZE[1024]">browse</source>
+    </background>
+    <background name="multi" label="$LOCALIZE[20445]" type="multi">
+        <source label="$LOCALIZE[1024]">browse</source>
+    </background>
+    <background name="playlist" label="$LOCALIZE[136]" type="playlist">
+        <source label="$LOCALIZE[20034]">special://profile/playlists/video/</source>
+        <source label="$LOCALIZE[136]">special://profile/playlists/music/</source>
+    </background>
+</backgrounds>

@@ -1,0 +1,26 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors / IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Python/cache artifacts used by local validation tools
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local build / packaging artifacts
+*.zip
+*.tar.gz
+build/
+dist/
+.worktrees/
+
+# Logs
+*.log
