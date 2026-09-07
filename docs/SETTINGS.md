@@ -1,6 +1,6 @@
 # Anleitung: Skin-Einstellungen
 
-Diese Anleitung beschreibt die wichtigsten Einstellungsbereiche von **Artic: Zephyr ICU 1.0.23**. Je nach Kodi-Sprache können einzelne Bezeichnungen leicht abweichen.
+Diese Anleitung beschreibt die wichtigsten Einstellungsbereiche von **Artic: Zephyr ICU 1.0.24**. Je nach Kodi-Sprache können einzelne Bezeichnungen leicht abweichen.
 
 ## Einstellungen öffnen
 

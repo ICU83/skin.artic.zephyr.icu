@@ -4,6 +4,16 @@ Dieses Dokument trennt die **ICU-Entwicklung** von der geerbten Upstream-Histori
 
 ## ICU-Releases
 
+### 1.0.24
+
+- Projekt-Infotext in den Skin-Einstellungen auf ein echtes mehrzeiliges Textfeld umgestellt, damit `[CR]`-Zeilenumbrüche korrekt dargestellt werden.
+- SkinSettings-Projektbereich (Button 9108) und optionales Settings-Logo vollständig auf **Artic: Zephyr ICU** umgestellt; geerbte Reloaded-/AZR-Bezeichnungen, Infotext und `misc/matrix.png`-Branding aus SkinSettings entfernt.
+- AURO-3D-Audioerkennung für Kodi-Listen, Hubs und OSD ergänzt.
+- Erkennung bevorzugt explizite Codec-Werte `auro3d` / `auro_3d` und nutzt zusätzlich Dateinamen-Muster wie `auro-3d`, `auro3d`, `auro_3d` und `auro 3d`.
+- Neue AURO-3D-Flag-Assets für weiße, farbige und OSD-Icon-Sätze hinzugefügt.
+- Bei Dateinamen mit AURO-3D wird das AURO-3D-Logo als zusätzliches Audio-Flag angezeigt; Atmos/DTS:X bzw. der von Kodi gemeldete Trägercodec bleiben parallel sichtbar.
+- AURO-3D-Flag-Grafiken auf die visuelle Höhe des Dolby-Atmos-Logos abgestimmt.
+
 ### 1.0.23
 
 - ICU-Startdialog bereinigt: das geerbte `misc/matrix.png`-/„Reloaded“-Overlay wird beim Start nicht mehr über dem ICU-Startbild eingeblendet.

@@ -91,8 +91,8 @@ msgid "Colored icon media flags"
 msgstr ""
 
 msgctxt "#31018"
-msgid "Arctic: Zephyr - Reloaded"
-msgstr "Arctic: Zephyr - Reloaded"
+msgid "Artic: Zephyr ICU"
+msgstr ""
 
 msgctxt "#31019"
 msgid "Supported Addons"
@@ -555,7 +555,7 @@ msgid "All colors are reset to their default values"
 msgstr ""
 
 msgctxt "#31137"
-msgid "[CR]Arctic: Zephyr - Reloaded is based on the third iteration of the Arctic skin created by jurialmunkey. [CR]Arctic focuses on being simple, clean and minimalistic with a light spin.[CR]If you have any thoughts on this Skin, feel free to let me know at [CR][CR]https://forum.kodi.tv/showthread.php?tid=337862"
+msgid "[CR]Artic: Zephyr ICU is a Kodi Piers / v22 skin based on Arctic: Zephyr by jurialmunkey and Arctic: Zephyr Reloaded / Mod by beatmasterRS. [CR]The ICU edition adds native Skin Shortcuts V3 integration and ongoing Kodi Piers-specific improvements.[CR]Project, documentation and releases:[CR][CR]https://github.com/ICU83/skin.artic.zephyr.icu"
 msgstr ""
 
 msgctxt "#31138"
@@ -2159,7 +2159,7 @@ msgid "Try to lock skin colors/theme/fonts"
 msgstr ""
 
 msgctxt "#31553"
-msgid "Show logo AZR in settings"
+msgid "Show Artic: Zephyr ICU logo in settings"
 msgstr ""
 
 msgctxt "#31554"

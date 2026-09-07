@@ -214,6 +214,14 @@
                     <aspectratio align="center">keep</aspectratio>
                     <visible>!String.IsEmpty(VideoPlayer.AudioCodec) + Skin.HasSetting(furniture.flagiconsosdnoicons)</visible>
                 </control>
+                <control type="image" description="AURO-3D secondary audio flag">
+                    <width min="20" max="90">auto</width>
+                    <height>56</height>
+                    <centertop>53%</centertop>
+                    <texture colordiffuse="$VAR[OSDPanelWhite70]">flags3/audio/auro3d.png</texture>
+                    <aspectratio align="center">keep</aspectratio>
+                    <visible>$EXP[HasAURO3DPlayerMarker] + !String.IsEqual(VideoPlayer.AudioCodec,auro3d) + !String.IsEqual(VideoPlayer.AudioCodec,auro_3d) + Skin.HasSetting(furniture.flagiconsosdnoicons)</visible>
+                </control>
                 <control type="image">
                     <width min="20" max="70">auto</width>
                     <height>45</height>
@@ -309,6 +317,14 @@
                     <texture fallback="flags/fallback.png">$VAR[ListItemAudioCodec,flags/color/audio/,.png]</texture>
                     <aspectratio align="center">keep</aspectratio>
                     <visible>!String.IsEmpty(VideoPlayer.AudioCodec) + Skin.HasSetting(furniture.flagiconsosdnoicons)</visible>
+                </control>
+                <control type="image" description="AURO-3D secondary audio flag">
+                    <width min="20" max="98">auto</width>
+                    <height>55</height>
+                    <centertop>53%</centertop>
+                    <texture>flags/color/audio/auro3d.png</texture>
+                    <aspectratio align="center">keep</aspectratio>
+                    <visible>$EXP[HasAURO3DPlayerMarker] + !String.IsEqual(VideoPlayer.AudioCodec,auro3d) + !String.IsEqual(VideoPlayer.AudioCodec,auro_3d) + Skin.HasSetting(furniture.flagiconsosdnoicons)</visible>
                 </control>
                 <control type="image">
                     <width min="20" max="70">auto</width>
@@ -531,6 +547,14 @@
                 <aspectratio align="center">keep</aspectratio>
                 <visible>Skin.HasSetting(furniture.flagiconsosd) + !String.IsEmpty(VideoPlayer.AudioCodec) + Skin.HasSetting(furniture.flagiconsosdnoicons)</visible>
             </control>
+            <control type="image" description="AURO-3D secondary audio flag">
+                <width min="20" max="90">auto</width>
+                <height>56</height>
+                <centertop>53%</centertop>
+                <texture colordiffuse="$VAR[OSDPanelWhite70]">flags3/audio/auro3d.png</texture>
+                <aspectratio align="center">keep</aspectratio>
+                <visible>Skin.HasSetting(furniture.flagiconsosd) + $EXP[HasAURO3DPlayerMarker] + !String.IsEqual(VideoPlayer.AudioCodec,auro3d) + !String.IsEqual(VideoPlayer.AudioCodec,auro_3d) + Skin.HasSetting(furniture.flagiconsosdnoicons)</visible>
+            </control>
             <control type="image">
                 <width min="20" max="70">auto</width>
                 <height>45</height>
@@ -667,6 +691,14 @@
                 <texture fallback="flags/fallback.png">$VAR[ListItemAudioCodec,flags/color/audio/,.png]</texture>
                 <aspectratio align="center">keep</aspectratio>
                 <visible>Skin.HasSetting(furniture.flagiconsosd) + !String.IsEmpty(VideoPlayer.AudioCodec) + Skin.HasSetting(furniture.flagiconsosdnoicons)</visible>
+            </control>
+            <control type="image" description="AURO-3D secondary audio flag">
+                <width min="20" max="98">auto</width>
+                <height>55</height>
+                <centertop>53%</centertop>
+                <texture>flags/color/audio/auro3d.png</texture>
+                <aspectratio align="center">keep</aspectratio>
+                <visible>Skin.HasSetting(furniture.flagiconsosd) + $EXP[HasAURO3DPlayerMarker] + !String.IsEqual(VideoPlayer.AudioCodec,auro3d) + !String.IsEqual(VideoPlayer.AudioCodec,auro_3d) + Skin.HasSetting(furniture.flagiconsosdnoicons)</visible>
             </control>
             <control type="image">
                 <width min="20" max="70">auto</width>

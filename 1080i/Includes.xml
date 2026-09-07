@@ -108,6 +108,28 @@
         | String.Contains(ListItem.FileNameAndPath,dts-x) | String.Contains(ListItem.FileNameAndPath,dtsx)
         | [VideoPlayer.IsFullscreen + [String.IsEqual(VideoPlayer.AudioCodec,dtshd_ma_x) | String.IsEqual(VideoPlayer.AudioCodec,dtshd_ma_x_imax) | String.Contains(Player.FileNameAndPath,dts-x) | String.Contains(Player.FileNameAndPath,dtsx)]]
     </expression>
+    <expression name="HasAURO3DListItemMarker">
+        String.Contains(ListItem.FileNameAndPath,auro-3d) | String.Contains(ListItem.FileNameAndPath,Auro-3D) | String.Contains(ListItem.FileNameAndPath,AURO-3D)
+        | String.Contains(ListItem.FileNameAndPath,auro3d) | String.Contains(ListItem.FileNameAndPath,Auro3D) | String.Contains(ListItem.FileNameAndPath,AURO3D)
+        | String.Contains(ListItem.FileNameAndPath,auro_3d) | String.Contains(ListItem.FileNameAndPath,Auro_3D) | String.Contains(ListItem.FileNameAndPath,AURO_3D)
+        | String.Contains(ListItem.FileNameAndPath,auro 3d) | String.Contains(ListItem.FileNameAndPath,Auro 3D) | String.Contains(ListItem.FileNameAndPath,AURO 3D)
+    </expression>
+    <expression name="HasAURO3DPlayerMarker">
+        String.Contains(Player.FileNameAndPath,auro-3d) | String.Contains(Player.FileNameAndPath,Auro-3D) | String.Contains(Player.FileNameAndPath,AURO-3D)
+        | String.Contains(Player.FileNameAndPath,auro3d) | String.Contains(Player.FileNameAndPath,Auro3D) | String.Contains(Player.FileNameAndPath,AURO3D)
+        | String.Contains(Player.FileNameAndPath,auro_3d) | String.Contains(Player.FileNameAndPath,Auro_3D) | String.Contains(Player.FileNameAndPath,AURO_3D)
+        | String.Contains(Player.FileNameAndPath,auro 3d) | String.Contains(Player.FileNameAndPath,Auro 3D) | String.Contains(Player.FileNameAndPath,AURO 3D)
+    </expression>
+    <expression name="HasAURO3DHubMarker">
+        String.Contains(Container(9500).ListItem.FileNameAndPath,auro-3d) | String.Contains(Container(9500).ListItem.FileNameAndPath,Auro-3D) | String.Contains(Container(9500).ListItem.FileNameAndPath,AURO-3D)
+        | String.Contains(Container(9500).ListItem.FileNameAndPath,auro3d) | String.Contains(Container(9500).ListItem.FileNameAndPath,Auro3D) | String.Contains(Container(9500).ListItem.FileNameAndPath,AURO3D)
+        | String.Contains(Container(9500).ListItem.FileNameAndPath,auro_3d) | String.Contains(Container(9500).ListItem.FileNameAndPath,Auro_3D) | String.Contains(Container(9500).ListItem.FileNameAndPath,AURO_3D)
+        | String.Contains(Container(9500).ListItem.FileNameAndPath,auro 3d) | String.Contains(Container(9500).ListItem.FileNameAndPath,Auro 3D) | String.Contains(Container(9500).ListItem.FileNameAndPath,AURO 3D)
+    </expression>
+    <expression name="IsAudioCodecAURO3D">
+        String.IsEqual(ListItem.AudioCodec,auro3d) | String.IsEqual(ListItem.AudioCodec,auro_3d) | $EXP[HasAURO3DListItemMarker]
+        | [VideoPlayer.IsFullscreen + [String.IsEqual(VideoPlayer.AudioCodec,auro3d) | String.IsEqual(VideoPlayer.AudioCodec,auro_3d) | $EXP[HasAURO3DPlayerMarker]]]
+    </expression>
     <expression name="IsAudioCodecAACFamily">
         [!VideoPlayer.IsFullscreen + [String.IsEqual(ListItem.AudioCodec,aac_latm) | String.IsEqual(ListItem.AudioCodec,aac_lc) | String.IsEqual(ListItem.AudioCodec,aac_ltp) | String.IsEqual(ListItem.AudioCodec,aac_ssr) | String.IsEqual(ListItem.AudioCodec,he_aac) | String.IsEqual(ListItem.AudioCodec,he_aac_v2)]]
         | [VideoPlayer.IsFullscreen + [String.IsEqual(VideoPlayer.AudioCodec,aac_latm) | String.IsEqual(VideoPlayer.AudioCodec,aac_lc) | String.IsEqual(VideoPlayer.AudioCodec,aac_ltp) | String.IsEqual(VideoPlayer.AudioCodec,aac_ssr) | String.IsEqual(VideoPlayer.AudioCodec,he_aac) | String.IsEqual(VideoPlayer.AudioCodec,he_aac_v2)]]

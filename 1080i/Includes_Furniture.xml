@@ -746,6 +746,14 @@
                 <aspectratio align="center">keep</aspectratio>
                 <visible>Skin.HasSetting(furniture.flagicons) + !Skin.HasSetting(furniture.flags.audiocodec) + !String.IsEmpty(ListItem.AudioCodec) + !Skin.HasSetting(furniture.coloredicons)</visible>
             </control>
+            <control type="image" description="AURO-3D secondary audio flag">
+                <width min="20" max="108">auto</width>
+                <height>64</height>
+                <centertop>50%</centertop>
+                <texture colordiffuse="Dark1">flags3/audio/auro3d.png</texture>
+                <aspectratio align="center">keep</aspectratio>
+                <visible>Skin.HasSetting(furniture.flagicons) + !Skin.HasSetting(furniture.flags.audiocodec) + $EXP[HasAURO3DListItemMarker] + !String.IsEqual(ListItem.AudioCodec,auro3d) + !String.IsEqual(ListItem.AudioCodec,auro_3d) + !Skin.HasSetting(furniture.coloredicons)</visible>
+            </control>
             <control type="image" description="Audio Channels">
                 <width min="20" max="80">auto</width>
                 <height>45</height>
@@ -1198,6 +1206,14 @@
                 <texture fallback="flags/fallback.png">$VAR[ListItemAudioCodec,flags/color/audio/,.png]</texture>
                 <aspectratio align="center">keep</aspectratio>
                 <visible>Skin.HasSetting(furniture.flagicons) + !Skin.HasSetting(furniture.flags.audiocodec) + !String.IsEmpty(ListItem.AudioCodec)</visible>
+            </control>
+            <control type="image" description="AURO-3D secondary audio flag">
+                <width min="20" max="108">auto</width>
+                <height>60</height>
+                <centertop>50%</centertop>
+                <texture>flags/color/audio/auro3d.png</texture>
+                <aspectratio align="center">keep</aspectratio>
+                <visible>Skin.HasSetting(furniture.flagicons) + !Skin.HasSetting(furniture.flags.audiocodec) + $EXP[HasAURO3DListItemMarker] + !String.IsEqual(ListItem.AudioCodec,auro3d) + !String.IsEqual(ListItem.AudioCodec,auro_3d)</visible>
             </control>
             <control type="image" description="Audio Channels">
                 <width min="20" max="80">auto</width>
@@ -1675,6 +1691,14 @@
                 <aspectratio align="center">keep</aspectratio>
                 <visible>Skin.HasSetting(furniture.flagicons) + !String.IsEmpty(Container(9500).ListItem.AudioCodec) + !Skin.HasSetting(furniture.coloredicons)</visible>
             </control>
+            <control type="image" description="AURO-3D secondary audio flag">
+                <width min="20" max="108">auto</width>
+                <height>64</height>
+                <centertop>50%</centertop>
+                <texture colordiffuse="Dark1">flags3/audio/auro3d.png</texture>
+                <aspectratio align="center">keep</aspectratio>
+                <visible>Skin.HasSetting(furniture.flagicons) + $EXP[HasAURO3DHubMarker] + !String.IsEqual(Container(9500).ListItem.AudioCodec,auro3d) + !String.IsEqual(Container(9500).ListItem.AudioCodec,auro_3d) + !Skin.HasSetting(furniture.coloredicons)</visible>
+            </control>
             <control type="image">
                 <width min="20" max="80">auto</width>
                 <height>45</height>
@@ -2057,6 +2081,14 @@
                 <texture fallback="flags/fallback.png">$VAR[HubAudioCodec,flags/color/audio/,.png]</texture>
                 <aspectratio align="center">keep</aspectratio>
                 <visible>Skin.HasSetting(furniture.flagicons) + !String.IsEmpty(Container(9500).ListItem.AudioCodec)</visible>
+            </control>
+            <control type="image" description="AURO-3D secondary audio flag">
+                <width min="20" max="108">auto</width>
+                <height>60</height>
+                <centertop>50%</centertop>
+                <texture>flags/color/audio/auro3d.png</texture>
+                <aspectratio align="center">keep</aspectratio>
+                <visible>Skin.HasSetting(furniture.flagicons) + $EXP[HasAURO3DHubMarker] + !String.IsEqual(Container(9500).ListItem.AudioCodec,auro3d) + !String.IsEqual(Container(9500).ListItem.AudioCodec,auro_3d)</visible>
             </control>
             <control type="image">
                 <width min="20" max="80">auto</width>

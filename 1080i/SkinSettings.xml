@@ -130,7 +130,7 @@
                     <onup>9100</onup>
                     <ondown>9100</ondown>
                     <orientation>vertical</orientation>
-                    <control type="togglebutton" id="9108" description="AZR">
+                    <control type="togglebutton" id="9108" description="ICU">
                         <textoffsetx>30</textoffsetx>
                         <usealttexture>ControlGroup(9100).HasFocus(9108)</usealttexture>
                         <alttexturenofocus colordiffuse="$VAR[ColorHighlightOtherBar]" border="5">common/gradient-box-wide-cut.png</alttexturenofocus>
@@ -2004,7 +2004,7 @@
                         </control>
                     </control>
 
-                    <!-- Reloaded -->
+                    <!-- Artic Zephyr ICU -->
                     <control type="grouplist" id="9900">
                         <description>Control Area</description>
                         <usecontrolcoords>true</usecontrolcoords>
@@ -2022,7 +2022,7 @@
                             <height>75</height>
                             <align>center</align>
                             <aligny>center</aligny>
-                            <label>Arctic [COLOR=$VAR[ColorHighlight]]Zephyr[/COLOR]</label>
+                            <label>Artic [COLOR=$VAR[ColorHighlight]]Zephyr[/COLOR]</label>
                             <font>EpisodeNumber</font>
                             <textcolor>PanelWhite100</textcolor>
                         </control>
@@ -2033,18 +2033,25 @@
                             <label></label>
                             <enable>false</enable>
                         </control>
-                        <control type="image" id="9902">
-                            <aspectratio scalediffuse="false">keep</aspectratio>
+                        <control type="label" id="9902">
+                            <description>ICU project mark</description>
+                            <width>100%</width>
                             <height>47</height>
-                            <left>385</left>
-                            <texture>misc/matrix.png</texture>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <label>ICU</label>
+                            <font>EpisodeNumber</font>
+                            <textcolor>PanelWhite100</textcolor>
                         </control>
-                        <control type="button" id="9907">
+                        <control type="textbox" id="9907">
                             <width>1360</width>
                             <height>279</height>
-                            <include>DefSettingsButtonLabelInfo</include>
+                            <font>Tiny</font>
+                            <textcolor>PanelWhite100</textcolor>
+                            <align>center</align>
+                            <aligny>center</aligny>
                             <label>31137</label>
-                            <enable>false</enable>
+                            <autoscroll>false</autoscroll>
                         </control>
                         <control type="label">
                             <width>300</width>
@@ -3032,7 +3039,7 @@
                             <selected>Skin.HasSetting(hide.busydialog)</selected>
                             <onclick>Skin.ToggleSetting(hide.busydialog)</onclick>
                         </control>
-                        <control type="radiobutton" id="12029" description="settings show logo AZR">
+                        <control type="radiobutton" id="12029" description="settings show logo ICU">
                             <width>1360</width>
                             <visible>ControlGroup(9100).HasFocus(9107)</visible>
                             <include>DefSettingsButtonGradientSkinSettings</include>
@@ -3226,15 +3233,17 @@
             <orientation>vertical</orientation>
             <control type="label">
                 <description>Loading</description>
-                <label>Arctic [COLOR=$VAR[ColorHighlight]]Zephyr[/COLOR]</label>
+                <label>Artic [COLOR=$VAR[ColorHighlight]]Zephyr[/COLOR]</label>
                 <font>Large</font>
                 <textcolor>Dark1</textcolor>
             </control>
-            <control type="image">
-                <aspectratio scalediffuse="false">keep</aspectratio>
-                <height>26</height>
+            <control type="label">
+                <description>ICU settings logo</description>
+                <height>30</height>
                 <left>66</left>
-                <texture>misc/matrix.png</texture>
+                <label>ICU</label>
+                <font>EpisodeNumber</font>
+                <textcolor>Dark1</textcolor>
             </control>
         </control>
     </controls>
