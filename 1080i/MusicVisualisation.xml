@@ -443,8 +443,12 @@
                         <param name="visible" value="!Skin.HasSetting(ShowMusicCd)" />
                     </include>
                     <include content="MusicVisualisationInfoMatrx">
+                        <param name="left" value="432" />
+                        <param name="visible" value="Skin.HasSetting(ShowMusicCd) + Skin.HasSetting(osd.music.coveronly)" />
+                    </include>
+                    <include content="MusicVisualisationInfoMatrx">
                         <param name="left" value="560" />
-                        <param name="visible" value="Skin.HasSetting(ShowMusicCd)" />
+                        <param name="visible" value="Skin.HasSetting(ShowMusicCd) + !Skin.HasSetting(osd.music.coveronly)" />
                     </include>
                 </control>
             </control>

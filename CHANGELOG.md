@@ -4,6 +4,12 @@ Dieses Dokument trennt die **ICU-Entwicklung** von der geerbten Upstream-Histori
 
 ## ICU-Releases
 
+### 1.0.27
+
+- Music-OSD nutzt bei aktivem **Nur Albumcover** (`osd.music.coveronly`) den durch ausgeblendete CD/Fake-CD frei werdenden Platz.
+- Der Reloaded-Info-Bereich beginnt in diesem Modus 128 px weiter links bei `x=432`; mit sichtbarer CD/Fake-CD bleibt `x=560` unverändert.
+- Der vorhandene Modus ohne Albumcover bleibt unverändert und nutzt weiterhin seine bisherige Vollbreiten-Geometrie.
+
 ### 1.0.26
 
 - Extra-Fanart-Slideshow aus dem Musik-Navigationsbereich auch im Music Fullscreen (`MusicVisualisation.xml`) verfügbar gemacht.

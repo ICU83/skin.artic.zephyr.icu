@@ -58,7 +58,7 @@ Beispiel:
 
 ```bash
 cd ..
-zip -r skin.artic.zephyr.icu-1.0.26.zip skin.artic.zephyr.icu \
+zip -r skin.artic.zephyr.icu-1.0.27.zip skin.artic.zephyr.icu \
   -x 'skin.artic.zephyr.icu/.git/*' \
      'skin.artic.zephyr.icu/.worktrees/*' \
      'skin.artic.zephyr.icu/*.zip'

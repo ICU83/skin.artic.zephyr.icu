@@ -1,3 +1,7 @@
+1.0.27
+- Reclaimed the 128 px freed in Music OSD when CD/Fake CD is hidden by album-cover-only mode.
+- Cover-only Reloaded Music OSD now starts at x=432; the DiscArt layout remains unchanged at x=560.
+
 1.0.26
 - Added optional local Extra Fanart slideshow support to Music Fullscreen.
 - Uses Player.Art fanart/fanart1..20 and artist.fanart1..20, mirroring the music navigation slideshow pattern.
