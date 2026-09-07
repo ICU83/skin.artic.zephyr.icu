@@ -4,6 +4,11 @@ Dieses Dokument trennt die **ICU-Entwicklung** von der geerbten Upstream-Histori
 
 ## ICU-Releases
 
+### 1.0.25
+
+- Fehlenden Text bei SkinSettings-Button 9221 behoben.
+- Der englische Basis-Sprachkatalog trennt den PO-Eintrag `#31723` nun korrekt vom vorherigen Eintrag, sodass Kodi die Lokalisierungs-ID `31723` lädt.
+
 ### 1.0.24
 
 - Projekt-Infotext in den Skin-Einstellungen auf ein echtes mehrzeiliges Textfeld umgestellt, damit `[CR]`-Zeilenumbrüche korrekt dargestellt werden.

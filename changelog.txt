@@ -1,3 +1,6 @@
+1.0.25
+- Fixed missing text for SkinSettings button 9221 by correcting the en_gb PO entry separation for localization string 31723.
+
 1.0.24
 - Updated SkinSettings project area (button 9108) to Artic: Zephyr ICU branding and project information.
 - Added AURO-3D audio codec detection by codec value and filename patterns.
