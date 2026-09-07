@@ -1367,6 +1367,14 @@
                             <selected>!Skin.HasSetting(ArtistSlideShow.Disabled)</selected>
                             <onclick>Skin.ToggleSetting(ArtistSlideShow.Disabled)</onclick>
                         </control>
+                        <control type="radiobutton" id="9238" description="Enable Extra Fanart in music visualisation">
+                            <width>1360</width>
+                            <visible>ControlGroup(9100).HasFocus(9103)</visible>
+                            <include>DefSettingsButtonGradientSkinSettings</include>
+                            <label>31259</label>
+                            <selected>Skin.HasSetting(EnableExtraFanart)</selected>
+                            <onclick>Skin.ToggleSetting(EnableExtraFanart)</onclick>
+                        </control>
                         <control type="radiobutton" id="9227" description="Show slideshow in background">
                             <width>1360</width>
                             <visible>ControlGroup(9100).HasFocus(9103)</visible>

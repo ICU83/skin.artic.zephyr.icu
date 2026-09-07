@@ -468,6 +468,7 @@
     </variable>
     
     <variable name="Visualisation_Image">
+        <value condition="Skin.HasSetting(EnableExtraFanart) + !String.IsEmpty(Control.GetLabel(4398))">$INFO[Control.GetLabel(4398)]</value>
         <value condition="System.AddonIsEnabled(script.artistslideshow) + !Skin.HasSetting(ArtistSlideShow.Disabled) + !String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.Image))">$INFO[Window(Visualisation).Property(ArtistSlideshow.Image)]</value>
         <value condition="Skin.HasSetting(musicvis.fanartfallback) + !String.IsEmpty(Player.Art(fanart)) + [String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.Image)) | !System.AddonIsEnabled(script.artistslideshow) | Skin.HasSetting(ArtistSlideShow.Disabled)]">$INFO[Player.Art(album.fanart),,]$INFO[Player.Art(fanart)]</value>
         <value condition="!String.IsEmpty(Skin.String(fanart.fallback.music)) + [String.IsEmpty(Player.Art(fanart)) | !Skin.HasSetting(musicvis.fanartfallback)] + [String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.Image)) | Skin.HasSetting(ArtistSlideShow.Disabled)]">$INFO[Skin.String(fanart.fallback.music)]</value>

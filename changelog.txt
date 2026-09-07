@@ -1,3 +1,8 @@
+1.0.26
+- Added optional local Extra Fanart slideshow support to Music Fullscreen.
+- Uses Player.Art fanart/fanart1..20 and artist.fanart1..20, mirroring the music navigation slideshow pattern.
+- Exposed the existing Extra Fanart toggle in Music OSD settings so navigation and Music Fullscreen use the same setting.
+
 1.0.25
 - Fixed missing text for SkinSettings button 9221 by correcting the en_gb PO entry separation for localization string 31723.
 

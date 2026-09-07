@@ -7,7 +7,7 @@ Dieses Repository wird von **ICU83** weitergeführt. Die ursprünglichen Autoren
 ## Aktueller Stand
 
 - Add-on-ID: `skin.artic.zephyr.icu`
-- Version: **1.0.25**
+- Version: **1.0.26**
 - Kodi: **Piers / v22**
 - `xbmc.gui`: **5.18.0**
 - Skin Shortcuts: **3.0.2~beta16 oder neuer innerhalb der V3-Linie**
@@ -45,6 +45,7 @@ Der ICU-Zweig enthält unter anderem:
 - normalisierte Video-Codec-Flags für Kodi Piers,
 - Live-TV-OSD-Option für `VideoPlayer.Title` statt Sendername,
 - Music-OSD-Option **„Nur Albumcover anzeigen“** ohne CD/DiscArt/Fake-CD,
+- optionale Extra-Fanart-Slideshow im Music Fullscreen mit eigenem Music-OSD-Schalter,
 - ICU-Projekticon und eigener ICU-Startbildschirm.
 
 ## Herkunft und Credits

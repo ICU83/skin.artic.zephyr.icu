@@ -4,6 +4,13 @@ Dieses Dokument trennt die **ICU-Entwicklung** von der geerbten Upstream-Histori
 
 ## ICU-Releases
 
+### 1.0.26
+
+- Extra-Fanart-Slideshow aus dem Musik-Navigationsbereich auch im Music Fullscreen (`MusicVisualisation.xml`) verfügbar gemacht.
+- Die Slideshow verwendet die Artwork-Slots `fanart`, `fanart1` bis `fanart20` sowie `artist.fanart1` bis `artist.fanart20` des aktuell laufenden Titels.
+- Die bestehende Option **Extra Fanart** ist nun zusätzlich in den Music-OSD-Einstellungen erreichbar und steuert Navigation und Music Fullscreen gemeinsam.
+- Bei aktivierter Option hat die lokale Extra-Fanart-Slideshow Vorrang; Artist Slideshow und die bestehenden Fanart-/Fallback-Pfade bleiben als Fallback erhalten.
+
 ### 1.0.25
 
 - Fehlenden Text bei SkinSettings-Button 9221 behoben.

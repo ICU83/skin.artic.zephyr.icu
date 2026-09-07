@@ -1,6 +1,6 @@
 # Anleitung: Skin-Einstellungen
 
-Diese Anleitung beschreibt die wichtigsten Einstellungsbereiche von **Artic: Zephyr ICU 1.0.25**. Je nach Kodi-Sprache können einzelne Bezeichnungen leicht abweichen.
+Diese Anleitung beschreibt die wichtigsten Einstellungsbereiche von **Artic: Zephyr ICU 1.0.26**. Je nach Kodi-Sprache können einzelne Bezeichnungen leicht abweichen.
 
 ## Einstellungen öffnen
 
@@ -99,6 +99,11 @@ Wenn ein Skin-Theme eigene Farben vorgibt, können einzelne Optionen abhängig v
 ---
 
 ## Video- / Musik-OSD
+
+### Extra Fanart im Music Fullscreen
+
+Unter den Music-OSD-Einstellungen ist die bestehende Option **Zusätzliche Fanart** (`EnableExtraFanart`) nun ebenfalls erreichbar. Im Music Fullscreen werden dann die Artwork-Slots `fanart`, `fanart1` bis `fanart20` sowie `artist.fanart1` bis `artist.fanart20` des aktuell laufenden Titels als zufällige Slideshow verwendet. Derselbe Schalter steuert damit die Extra-Fanart-Nutzung in der Musiknavigation und im Music Fullscreen. Ist er deaktiviert oder sind keine Extra-Fanarts vorhanden, bleiben Artist Slideshow sowie die vorhandenen Fanart-/Fallback-Regeln aktiv.
+
 
 Der Bereich enthält getrennte Optionen für Video- und Musik-Wiedergabe sowie Live TV.
 
