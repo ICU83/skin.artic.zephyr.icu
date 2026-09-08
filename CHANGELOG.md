@@ -4,6 +4,11 @@ Dieses Dokument trennt die **ICU-Entwicklung** von der geerbten Upstream-Histori
 
 ## ICU-Releases
 
+### 1.0.28
+
+- Mindestabhängigkeit von `script.skinshortcuts` innerhalb der V3-Linie von `3.0.2~beta16` auf `3.0.1` abgesenkt.
+- Aktuelle Installations-, Kompatibilitäts- und Skin-Shortcuts-V3-Dokumentation auf den Mindeststand `3.0.1` angepasst.
+
 ### 1.0.27
 
 - Music-OSD nutzt bei aktivem **Nur Albumcover** (`osd.music.coveronly`) den durch ausgeblendete CD/Fake-CD frei werdenden Platz.

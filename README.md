@@ -7,10 +7,10 @@ Dieses Repository wird von **ICU83** weitergeführt. Die ursprünglichen Autoren
 ## Aktueller Stand
 
 - Add-on-ID: `skin.artic.zephyr.icu`
-- Version: **1.0.27**
+- Version: **1.0.28**
 - Kodi: **Piers / v22**
 - `xbmc.gui`: **5.18.0**
-- Skin Shortcuts: **3.0.2~beta16 oder neuer innerhalb der V3-Linie**
+- Skin Shortcuts: **3.0.1 oder neuer innerhalb der V3-Linie**
 - Native V3-Konfiguration in `shortcuts/`
 - 6 Widget-Slots pro unterstütztem Menüeintrag
 - 9 Custom Hubs (`1111` bis `1119`)

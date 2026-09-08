@@ -3,7 +3,7 @@
 ## Testumgebung
 
 - sauberes Kodi-Piers-/v22-Profil,
-- `script.skinshortcuts` **3.0.2~beta16 oder kompatibler neuerer V3-Stand**,
+- `script.skinshortcuts` **3.0.1 oder kompatibler neuerer V3-Stand**,
 - ICU aus dem zu prüfenden ZIP installiert.
 
 ## Grundinstallation

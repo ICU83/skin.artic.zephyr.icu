@@ -6,7 +6,7 @@ ICU verwendet `script.skinshortcuts` **nativ in der V3-Struktur**. Der Port verm
 
 ## Abhängigkeit
 
-`addon.xml` verlangt derzeit `script.skinshortcuts` **3.0.2~beta16**. Dieser Mindeststand wurde gewählt, weil frühere V3-Stände Probleme mit verschachtelten Library-/Addon-Pickern hatten, die insbesondere bei Emby-Nodes sichtbar werden konnten.
+`addon.xml` verlangt derzeit `script.skinshortcuts` **3.0.1**. ICU verwendet weiterhin die native V3-Struktur; kompatible neuere V3-Stände können ebenfalls verwendet werden.
 
 ## V3-Konfigurationsdateien
 

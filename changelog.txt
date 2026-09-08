@@ -1,3 +1,7 @@
+1.0.28
+- Lowered the minimum script.skinshortcuts V3 dependency from 3.0.2~beta16 to 3.0.1.
+- Updated current compatibility and installation documentation for the 3.0.1 minimum.
+
 1.0.27
 - Reclaimed the 128 px freed in Music OSD when CD/Fake CD is hidden by album-cover-only mode.
 - Cover-only Reloaded Music OSD now starts at x=432; the DiscArt layout remains unchanged at x=560.

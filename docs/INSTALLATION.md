@@ -2,10 +2,10 @@
 
 ## Voraussetzungen
 
-Artic: Zephyr ICU 1.0.27 ist für **Kodi Piers / v22** ausgelegt. `addon.xml` verlangt:
+Artic: Zephyr ICU 1.0.28 ist für **Kodi Piers / v22** ausgelegt. `addon.xml` verlangt:
 
 - `xbmc.gui` 5.18.0
-- `script.skinshortcuts` 3.0.2~beta16
+- `script.skinshortcuts` 3.0.1
 - `script.globalsearch` 5.0.0
 - `script.image.resource.select` 0.0.5
 - `resource.images.weathericons.white` 0.0.6
