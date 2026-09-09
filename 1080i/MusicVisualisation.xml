@@ -22,7 +22,7 @@
             <include>Dimensions_Fullscreen</include>
         </control>
         
-        <control type="fadelabel" id="4398" description="Music fullscreen extra fanart slideshow">
+        <control type="fadelabel" id="4398" description="Music fullscreen album extra fanart slideshow">
             <top>-900</top>
             <width>2560</width>
             <height>0</height>
@@ -31,27 +31,40 @@
             <randomize>true</randomize>
             <resetonlabelchange>true</resetonlabelchange>
             <visible>Skin.HasSetting(EnableExtraFanart)</visible>
-            <label>$INFO[Player.Art(fanart)]</label>
-            <label>$INFO[Player.Art(fanart1)]</label>
-            <label>$INFO[Player.Art(fanart2)]</label>
-            <label>$INFO[Player.Art(fanart3)]</label>
-            <label>$INFO[Player.Art(fanart4)]</label>
-            <label>$INFO[Player.Art(fanart5)]</label>
-            <label>$INFO[Player.Art(fanart6)]</label>
-            <label>$INFO[Player.Art(fanart7)]</label>
-            <label>$INFO[Player.Art(fanart8)]</label>
-            <label>$INFO[Player.Art(fanart9)]</label>
-            <label>$INFO[Player.Art(fanart10)]</label>
-            <label>$INFO[Player.Art(fanart11)]</label>
-            <label>$INFO[Player.Art(fanart12)]</label>
-            <label>$INFO[Player.Art(fanart13)]</label>
-            <label>$INFO[Player.Art(fanart14)]</label>
-            <label>$INFO[Player.Art(fanart15)]</label>
-            <label>$INFO[Player.Art(fanart16)]</label>
-            <label>$INFO[Player.Art(fanart17)]</label>
-            <label>$INFO[Player.Art(fanart18)]</label>
-            <label>$INFO[Player.Art(fanart19)]</label>
-            <label>$INFO[Player.Art(fanart20)]</label>
+            <label>$INFO[Player.Art(album.fanart)]</label>
+            <label>$INFO[Player.Art(album.fanart1)]</label>
+            <label>$INFO[Player.Art(album.fanart2)]</label>
+            <label>$INFO[Player.Art(album.fanart3)]</label>
+            <label>$INFO[Player.Art(album.fanart4)]</label>
+            <label>$INFO[Player.Art(album.fanart5)]</label>
+            <label>$INFO[Player.Art(album.fanart6)]</label>
+            <label>$INFO[Player.Art(album.fanart7)]</label>
+            <label>$INFO[Player.Art(album.fanart8)]</label>
+            <label>$INFO[Player.Art(album.fanart9)]</label>
+            <label>$INFO[Player.Art(album.fanart10)]</label>
+            <label>$INFO[Player.Art(album.fanart11)]</label>
+            <label>$INFO[Player.Art(album.fanart12)]</label>
+            <label>$INFO[Player.Art(album.fanart13)]</label>
+            <label>$INFO[Player.Art(album.fanart14)]</label>
+            <label>$INFO[Player.Art(album.fanart15)]</label>
+            <label>$INFO[Player.Art(album.fanart16)]</label>
+            <label>$INFO[Player.Art(album.fanart17)]</label>
+            <label>$INFO[Player.Art(album.fanart18)]</label>
+            <label>$INFO[Player.Art(album.fanart19)]</label>
+            <label>$INFO[Player.Art(album.fanart20)]</label>
+            <pauseatend>HomeTimePerImage</pauseatend>
+        </control>
+        
+        <control type="fadelabel" id="4397" description="Music fullscreen artist extra fanart fallback slideshow">
+            <top>-900</top>
+            <width>2560</width>
+            <height>0</height>
+            <scroll>false</scroll>
+            <scrollout>false</scrollout>
+            <randomize>true</randomize>
+            <resetonlabelchange>true</resetonlabelchange>
+            <visible>Skin.HasSetting(EnableExtraFanart)</visible>
+            <label>$INFO[Player.Art(artist.fanart)]</label>
             <label>$INFO[Player.Art(artist.fanart1)]</label>
             <label>$INFO[Player.Art(artist.fanart2)]</label>
             <label>$INFO[Player.Art(artist.fanart3)]</label>

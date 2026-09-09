@@ -4,6 +4,18 @@ Dieses Dokument trennt die **ICU-Entwicklung** von der geerbten Upstream-Histori
 
 ## ICU-Releases
 
+### 1.0.30
+
+- Home-„Now Playing“ verwendet bei aktivierter Extra-Fanart-Slideshow dieselbe Priorität wie Music Fullscreen: Album-Fanart vor Interpret-Fanart.
+- Album-Fanarts (`Player.Art(album.fanart)` sowie `album.fanart1` bis `album.fanart20`) und Interpret-Fanarts (`artist.fanart` bis `artist.fanart20`) laufen in getrennten Slideshow-Pools.
+- Interpret-Fanart wird nur verwendet, wenn kein Album-Fanart verfügbar ist; Artist Slideshow bleibt danach als weiterer Fallback erhalten.
+
+### 1.0.29
+
+- Music Fullscreen priorisiert bei aktivierter Extra-Fanart-Slideshow jetzt Album-Fanarts vor Interpret-Fanarts.
+- Album-Fanarts (`Player.Art(album.fanart)` sowie `album.fanart1` bis `album.fanart20`) und Interpret-Fanarts werden in getrennten Slideshow-Pools geführt.
+- Interpret-Fanart wird nur verwendet, wenn für das laufende Album kein Album-Fanart verfügbar ist; Artist Slideshow bleibt danach als weiterer Fallback erhalten.
+
 ### 1.0.28
 
 - Mindestabhängigkeit von `script.skinshortcuts` innerhalb der V3-Linie von `3.0.2~beta16` auf `3.0.1` abgesenkt.

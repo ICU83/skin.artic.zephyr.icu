@@ -1,3 +1,13 @@
+1.0.30
+- Home Now Playing Extra Fanart now prioritizes album fanart before artist fanart.
+- Album and artist fanart use separate slideshow pools; artist fanart is only used when album fanart is unavailable.
+- Artist Slideshow remains the next fallback.
+
+1.0.29
+- Music Fullscreen Extra Fanart now prioritizes album fanart before artist fanart.
+- Album and artist Extra Fanart use separate slideshow pools; artist fanart is only used if album fanart is unavailable.
+- Artist Slideshow remains the next fallback.
+
 1.0.28
 - Lowered the minimum script.skinshortcuts V3 dependency from 3.0.2~beta16 to 3.0.1.
 - Updated current compatibility and installation documentation for the 3.0.1 minimum.

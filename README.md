@@ -7,7 +7,7 @@ Dieses Repository wird von **ICU83** weitergeführt. Die ursprünglichen Autoren
 ## Aktueller Stand
 
 - Add-on-ID: `skin.artic.zephyr.icu`
-- Version: **1.0.28**
+- Version: **1.0.30**
 - Kodi: **Piers / v22**
 - `xbmc.gui`: **5.18.0**
 - Skin Shortcuts: **3.0.1 oder neuer innerhalb der V3-Linie**

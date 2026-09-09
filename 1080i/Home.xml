@@ -15,6 +15,72 @@
     <onload condition="System.AddonIsEnabled(script.wikipedia) + String.IsEmpty(Skin.String(Wikipedia.Format.Link))">Skin.SetString(Wikipedia.Format.Link,[COLOR=Dark2]{}[/COLOR])</onload>
     <onunload condition="Skin.HasSetting(home.netflix.autoplay.trailer)">ClearProperty(listitem.trailer,home)</onunload>
     <controls>
+        <control type="fadelabel" id="4396" description="Home now playing album extra fanart slideshow">
+            <top>-900</top>
+            <width>2560</width>
+            <height>0</height>
+            <scroll>false</scroll>
+            <scrollout>false</scrollout>
+            <randomize>true</randomize>
+            <resetonlabelchange>true</resetonlabelchange>
+            <visible>Skin.HasSetting(EnableExtraFanart) + Skin.HasSetting(extended.nowplaying) + Player.HasAudio</visible>
+            <label>$INFO[Player.Art(album.fanart)]</label>
+            <label>$INFO[Player.Art(album.fanart1)]</label>
+            <label>$INFO[Player.Art(album.fanart2)]</label>
+            <label>$INFO[Player.Art(album.fanart3)]</label>
+            <label>$INFO[Player.Art(album.fanart4)]</label>
+            <label>$INFO[Player.Art(album.fanart5)]</label>
+            <label>$INFO[Player.Art(album.fanart6)]</label>
+            <label>$INFO[Player.Art(album.fanart7)]</label>
+            <label>$INFO[Player.Art(album.fanart8)]</label>
+            <label>$INFO[Player.Art(album.fanart9)]</label>
+            <label>$INFO[Player.Art(album.fanart10)]</label>
+            <label>$INFO[Player.Art(album.fanart11)]</label>
+            <label>$INFO[Player.Art(album.fanart12)]</label>
+            <label>$INFO[Player.Art(album.fanart13)]</label>
+            <label>$INFO[Player.Art(album.fanart14)]</label>
+            <label>$INFO[Player.Art(album.fanart15)]</label>
+            <label>$INFO[Player.Art(album.fanart16)]</label>
+            <label>$INFO[Player.Art(album.fanart17)]</label>
+            <label>$INFO[Player.Art(album.fanart18)]</label>
+            <label>$INFO[Player.Art(album.fanart19)]</label>
+            <label>$INFO[Player.Art(album.fanart20)]</label>
+            <pauseatend>HomeTimePerImage</pauseatend>
+        </control>
+
+        <control type="fadelabel" id="4395" description="Home now playing artist extra fanart fallback slideshow">
+            <top>-900</top>
+            <width>2560</width>
+            <height>0</height>
+            <scroll>false</scroll>
+            <scrollout>false</scrollout>
+            <randomize>true</randomize>
+            <resetonlabelchange>true</resetonlabelchange>
+            <visible>Skin.HasSetting(EnableExtraFanart) + Skin.HasSetting(extended.nowplaying) + Player.HasAudio</visible>
+            <label>$INFO[Player.Art(artist.fanart)]</label>
+            <label>$INFO[Player.Art(artist.fanart1)]</label>
+            <label>$INFO[Player.Art(artist.fanart2)]</label>
+            <label>$INFO[Player.Art(artist.fanart3)]</label>
+            <label>$INFO[Player.Art(artist.fanart4)]</label>
+            <label>$INFO[Player.Art(artist.fanart5)]</label>
+            <label>$INFO[Player.Art(artist.fanart6)]</label>
+            <label>$INFO[Player.Art(artist.fanart7)]</label>
+            <label>$INFO[Player.Art(artist.fanart8)]</label>
+            <label>$INFO[Player.Art(artist.fanart9)]</label>
+            <label>$INFO[Player.Art(artist.fanart10)]</label>
+            <label>$INFO[Player.Art(artist.fanart11)]</label>
+            <label>$INFO[Player.Art(artist.fanart12)]</label>
+            <label>$INFO[Player.Art(artist.fanart13)]</label>
+            <label>$INFO[Player.Art(artist.fanart14)]</label>
+            <label>$INFO[Player.Art(artist.fanart15)]</label>
+            <label>$INFO[Player.Art(artist.fanart16)]</label>
+            <label>$INFO[Player.Art(artist.fanart17)]</label>
+            <label>$INFO[Player.Art(artist.fanart18)]</label>
+            <label>$INFO[Player.Art(artist.fanart19)]</label>
+            <label>$INFO[Player.Art(artist.fanart20)]</label>
+            <pauseatend>HomeTimePerImage</pauseatend>
+        </control>
+
         <include>GlobalBackground</include>
 
         <!-- Hidden Lists -->
