@@ -4,6 +4,19 @@ Dieses Dokument trennt die **ICU-Entwicklung** von der geerbten Upstream-Histori
 
 ## ICU-Releases
 
+### 1.0.31
+
+- Kodi-22-„Piers“-Kompatibilität ausgebaut und Skin-Version auf 1.0.31 erhöht.
+- EPG auf 1-Minuten-Auflösung (`170` Timeblocks, `minspertimeblock=1`, `rulerunit=6`) umgestellt und Darstellung kurzer Sendungen, Timer, Fokus, Zeitraster sowie „Jetzt“-Linie optimiert.
+- `MyPVRProviders.xml` ergänzt; TV-/Radio-Provider-Navigation, neue PVR-Labels und Widgets für zuletzt hinzugefügte Sender hinzugefügt.
+- Kodi-22-spezifischen Video-/Audio-/Untertitel-Stream-Selector mit Codec-, Sprach-, HDR-, Auflösungs-, FPS-, Bitraten- und Statusinformationen ergänzt.
+- Wetterbereich auf `Weather.Data(...)` und `Weather.LastUpdated` migriert; Legacy-Fallbacks sowie korrigiertes „Now“-Wettericon beibehalten.
+- `DialogVideoManager.xml` sowie Filmversionen und Extras in `DialogVideoInfo` integriert.
+- Fullscreen-Rendering für Kodi 22 durch explizite Hintergrundfarben abgesichert.
+- Veraltete `ListItem.Thumb`- und `DialogFavourites.xml`-Verwendungen modernisiert.
+- Release-Build auf `media/Textures.xbt` im XBTF-v2-Kompatibilitätsformat umgestellt; Development-Build behält lose Media-Dateien.
+- XML-, ZIP- und Regressionstests für EPG, PVR, Stream-Selector, Wetter und VideoManager durchgeführt.
+
 ### 1.0.30
 
 - Home-„Now Playing“ verwendet bei aktivierter Extra-Fanart-Slideshow dieselbe Priorität wie Music Fullscreen: Album-Fanart vor Interpret-Fanart.

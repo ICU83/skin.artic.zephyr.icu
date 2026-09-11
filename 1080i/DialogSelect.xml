@@ -36,7 +36,8 @@
                 <colordiffuse>Black12</colordiffuse>
                 <texture>common/white.png</texture>
             </control>
-            <include condition="String.IsEmpty(Window(home).Property(SetUserRating))">DialogSelect</include>
+            <include condition="String.IsEmpty(Window(home).Property(SetUserRating)) + ![Window.IsActive(dialogselectvideo) | Window.IsActive(dialogselectaudio) | Window.IsActive(dialogselectsubtitle)]">DialogSelect</include>
+            <include condition="String.IsEmpty(Window(home).Property(SetUserRating)) + [Window.IsActive(dialogselectvideo) | Window.IsActive(dialogselectaudio) | Window.IsActive(dialogselectsubtitle)]">Kodi22StreamSelectLayout</include>
             <include condition="!String.IsEmpty(Window(home).Property(SetUserRating))">DialogSelectUserRating</include>
             <include content="scrollbar_dialog">
                 <param name="scrollid" value="1723"/>
@@ -57,6 +58,7 @@
                 <param name="visible" value="Control.IsVisible(6) + !Control.IsVisible(3) + !Window.IsActive(gamestretchmode) + !Window.IsActive(gamevideofilter) + !Window.IsActive(gamevideorotation) + !Window.IsActive(gameosd)" />
             </include>
             <control type="list" id="6">
+                <visible>![Window.IsActive(dialogselectvideo) | Window.IsActive(dialogselectaudio) | Window.IsActive(dialogselectsubtitle)]</visible>
                 <posx>8</posx>
                 <posy>115</posy>
                 <width>700</width>
@@ -294,7 +296,7 @@
                 <height>450</height>
                 <texture fallback="DefaultAddonNone.png">$VAR[DialogSelectImageBig]</texture>
                 <aspectratio align="center" aligny="bottom">keep</aspectratio>
-                <visible>Control.IsVisible(6)</visible>
+                <visible>Control.IsVisible(6) + ![Window.IsActive(dialogselectvideo) | Window.IsActive(dialogselectaudio) | Window.IsActive(dialogselectsubtitle)]</visible>
             </control>
             <control type="image">
                 <posx>704</posx>

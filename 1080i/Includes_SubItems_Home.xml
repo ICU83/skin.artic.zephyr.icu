@@ -53,7 +53,7 @@
                             <align>left</align>
                             <font>Tiny</font>
                             <textcolor>Dark2</textcolor>
-                            <label>$INFO[Window(Weather).Property(Current.Condition)]</label>
+                            <label>$VAR[Weather22_CurrentCondition]</label>
                         </control>
                         <control type="grouplist">
                             <top>24</top>
@@ -69,7 +69,7 @@
                                 <texturenofocus border="8" colordiffuse="Dark3">common/underline.png</texturenofocus>
                                 <textcolor>Dark2</textcolor>
                                 <disabledcolor>Dark2</disabledcolor>
-                                <label>$LOCALIZE[402]$INFO[Window(Weather).Property(Current.FeelsLike), ,°]</label>
+                                <label>$LOCALIZE[402] $VAR[Weather22_CurrentFeelsLike]°</label>
                                 <enable>false</enable>
                             </control>
                         </control>
@@ -79,7 +79,7 @@
                             <align>left</align>
                             <font>Tiny</font>
                             <textcolor>Dark2</textcolor>
-                            <label>$INFO[Window(Weather).Property(Current.Humidity),, [LOWERCASE]$LOCALIZE[406][/LOWERCASE]]</label>
+                            <label>$VAR[Weather22_CurrentHumidity] [LOWERCASE]$LOCALIZE[406][/LOWERCASE]</label>
                         </control>
                     </control>
                     <control type="grouplist">
@@ -113,7 +113,7 @@
                             <align>left</align>
                             <font>Tiny</font>
                             <textcolor>Dark2</textcolor>
-                            <label>$INFO[Window(Weather).Property(Current.DewPoint),$LOCALIZE[405] ,°]</label>
+                            <label>$INFO[Weather.Data(Current.DewPoint),$LOCALIZE[405] ,°]</label>
                         </control>
                         <control type="grouplist">
                             <top>24</top>
@@ -173,7 +173,7 @@
                             <align>left</align>
                             <font>Tiny</font>
                             <textcolor>Dark2</textcolor>
-                            <label>$INFO[Window(Weather).Property(Current.Wind)]</label>
+                            <label>$VAR[Weather22_CurrentWind]</label>
                         </control>
                         <control type="grouplist">
                             <top>24</top>
@@ -249,7 +249,7 @@
                             <height>300</height>
                             <width>300</width>
                             <aspectratio align="center" aligny="center">keep</aspectratio>
-                            <texture>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Current.FanartCode),,.png]</texture>
+                            <texture>$INFO[Skin.String(weather.icons.path),,/]$VAR[Weather22_CurrentFanartCode].png</texture>
                             <visible>!String.IsEmpty(Skin.String(weather.icons.path))</visible>
                         </control>
                         <control type="multiimage">
@@ -258,7 +258,7 @@
                             <width>300</width>
                             <height>300</height>
                             <aspectratio align="center" aligny="center">keep</aspectratio>
-                            <imagepath>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Current.FanartCode)]</imagepath>
+                            <imagepath>$INFO[Skin.String(weather.icons.path),,/]$VAR[Weather22_CurrentFanartCode]</imagepath>
                             <visible>!String.IsEmpty(Skin.String(weather.icons.path)) + String.Contains(Skin.String(weather.icons.path),animated)</visible>
                         </control>
                         <control type="image">
@@ -267,7 +267,7 @@
                             <height>300</height>
                             <width>300</width>
                             <aspectratio align="center" aligny="center">keep</aspectratio>
-                            <texture>$INFO[Window(Weather).Property(Current.ConditionIcon)]</texture>
+                            <texture>$VAR[Weather22_CurrentConditionIcon]</texture>
                             <visible>String.IsEmpty(Skin.String(weather.icons.path))</visible>
                         </control>
                     </control>
@@ -281,7 +281,7 @@
                 <font>Tiny</font>
                 <textcolor>Dark3</textcolor>
                 <visible>Skin.HasSetting(homemenu.netflix)</visible>
-                <label>$INFO[System.AddonTitle(Weather.plugin)]  •  $INFO[Window(Weather).Property(Updated),$LOCALIZE[12014]: ,]</label>
+                <label>$INFO[System.AddonTitle(Weather.plugin)]  •  $LOCALIZE[12014]: $VAR[Weather22_LastUpdated]</label>
                 <animation effect="slide" start="0" end="0,-10" time="0" condition="!Skin.HasSetting(homemenu.clean.flix)">Conditional</animation>
             </control>
             <control type="textbox">
@@ -292,7 +292,7 @@
                 <font>Tiny</font>
                 <textcolor>Dark3</textcolor>
                 <visible>!Skin.HasSetting(homemenu.netflix)</visible>
-                <label>$INFO[System.AddonTitle(Weather.plugin)][CR]$INFO[Window(Weather).Property(Updated),$LOCALIZE[12014]: ,]</label>
+                <label>$INFO[System.AddonTitle(Weather.plugin)][CR]$LOCALIZE[12014]: $VAR[Weather22_LastUpdated]</label>
                 <animation effect="slide" start="0" end="0,-10" time="0" condition="!Skin.HasSetting(homemenu.clean.flix) + !Skin.HasSetting(homemenu.netflix)">Conditional</animation>
             </control>
         </control>

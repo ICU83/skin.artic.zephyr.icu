@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <window id="502">
+    <backgroundcolor>Background</backgroundcolor>
     <defaultcontrol always="true">50</defaultcontrol>
     <menucontrol>9000</menucontrol>
     <views>50,505,506,507,508,514,500,503,54,57,51,523</views>

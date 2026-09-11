@@ -12,6 +12,7 @@
     <include file="Includes_SubItems_Home.xml"/>
     <include file="Includes_NowPlaying.xml"/>
     <include file="Includes_Custom_Items.xml"/>
+    <include file="Includes_Weather22.xml"/>
     <include file="Includes_Games.xml"/>
 
     <!-- Views -->
@@ -502,9 +503,9 @@
         <!-- Multi Widgets Weather Background -->
         <value condition="Window.IsVisible(home) + String.IsEmpty(Container(301).ListItem.Property(backgroundPlaylist)) + !Container(301).IsUpdating + [$EXP[HomeIsModernMultiWidgets] | $EXP[HomeIsVerticalMultiWidgets]] + !String.IsEmpty(ListItem.Property(FanartCode)) + !String.Contains(Skin.String(weather.fanart.path),multi) + !Skin.HasSetting(home.dontshowfanart) + !String.IsEmpty(Skin.String(weather.fanart.path))">$INFO[Skin.String(weather.fanart.path)]$INFO[ListItem.Property(FanartCode),,.jpg]</value>
         <value condition="Window.IsVisible(home) + String.IsEmpty(Container(301).ListItem.Property(backgroundPlaylist)) + !Container(301).IsUpdating + [$EXP[HomeIsModernMultiWidgets] | $EXP[HomeIsVerticalMultiWidgets]] + !String.IsEmpty(ListItem.Property(FanartCode)) + String.Contains(Skin.String(weather.fanart.path),multi) + !Skin.HasSetting(home.dontshowfanart) + !String.IsEmpty(Skin.String(weather.fanart.path))">$INFO[Skin.String(weather.fanart.path)]$INFO[ListItem.Property(FanartCode)]/</value>
-        <value condition="Window.IsVisible(weather) + !String.IsEmpty(Skin.String(weather.fanart.path))">$INFO[Skin.String(weather.fanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]/</value>
-        <value condition="Window.IsVisible(home) + ![Skin.HasSetting(extended.nowplaying) + Player.Playing + !Skin.HasSetting(home.hide.nowplaying) + [$EXP[HomeIsModernMultiWidgets] | $EXP[HomeIsVerticalMultiWidgets]]] + !String.IsEmpty(Skin.String(weather.fanart.path)) + [String.IsEqual(Container(300).ListItem.Property(widget),weatherdaily) | String.IsEqual(Container(300).ListItem.Property(widget),weatherhourly)] + !Skin.HasSetting(home.dontshowfanart) + String.Contains(Skin.String(weather.fanart.path),multi) + String.IsEmpty(Container(300).ListItem.Property(Background))">$INFO[Skin.String(weather.fanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]/</value>
-        <value condition="Window.IsVisible(home) + ![Skin.HasSetting(extended.nowplaying) + Player.Playing + !Skin.HasSetting(home.hide.nowplaying) + [$EXP[HomeIsModernMultiWidgets] | $EXP[HomeIsVerticalMultiWidgets]]] + !String.IsEmpty(Skin.String(weather.fanart.path)) + [String.IsEqual(Container(300).ListItem.Property(widget),weatherdaily) | String.IsEqual(Container(300).ListItem.Property(widget),weatherhourly)] + !Skin.HasSetting(home.dontshowfanart) + !String.Contains(Skin.String(weather.fanart.path),multi) + String.IsEmpty(Container(300).ListItem.Property(Background))">$INFO[Skin.String(weather.fanart.path)]$INFO[Window(Weather).Property(Current.FanartCode),,.jpg]</value>
+        <value condition="Window.IsVisible(weather) + !String.IsEmpty(Skin.String(weather.fanart.path))">$INFO[Skin.String(weather.fanart.path)]$VAR[Weather22_CurrentFanartCode]/</value>
+        <value condition="Window.IsVisible(home) + ![Skin.HasSetting(extended.nowplaying) + Player.Playing + !Skin.HasSetting(home.hide.nowplaying) + [$EXP[HomeIsModernMultiWidgets] | $EXP[HomeIsVerticalMultiWidgets]]] + !String.IsEmpty(Skin.String(weather.fanart.path)) + [String.IsEqual(Container(300).ListItem.Property(widget),weatherdaily) | String.IsEqual(Container(300).ListItem.Property(widget),weatherhourly)] + !Skin.HasSetting(home.dontshowfanart) + String.Contains(Skin.String(weather.fanart.path),multi) + String.IsEmpty(Container(300).ListItem.Property(Background))">$INFO[Skin.String(weather.fanart.path)]$VAR[Weather22_CurrentFanartCode]/</value>
+        <value condition="Window.IsVisible(home) + ![Skin.HasSetting(extended.nowplaying) + Player.Playing + !Skin.HasSetting(home.hide.nowplaying) + [$EXP[HomeIsModernMultiWidgets] | $EXP[HomeIsVerticalMultiWidgets]]] + !String.IsEmpty(Skin.String(weather.fanart.path)) + [String.IsEqual(Container(300).ListItem.Property(widget),weatherdaily) | String.IsEqual(Container(300).ListItem.Property(widget),weatherhourly)] + !Skin.HasSetting(home.dontshowfanart) + !String.Contains(Skin.String(weather.fanart.path),multi) + String.IsEmpty(Container(300).ListItem.Property(Background))">$INFO[Skin.String(weather.fanart.path)]$VAR[Weather22_CurrentFanartCode].jpg</value>
         <value condition="[!String.IsEmpty(Control.GetLabel(4399)) + Skin.HasSetting(EnableExtraFanart) + !Skin.HasSetting(global.hidefanart) + [!Skin.HasSetting(disable.background.addons.fanart) | [Skin.HasSetting(disable.background.addons.fanart) + !String.Contains(Control.GetLabel(4399),addons) + ![String.Contains(Control.GetLabel(4399),plugin) | String.Contains(Control.GetLabel(4399),script) | String.Contains(Control.GetLabel(4399),service)]]]] + !String.IsEqual(ListItem.DBType,season) + !Container.Content(seasons) + ![String.IsEqual(ListItem.DBType,episode) + !String.IsEmpty(ListItem.Art(thumb)) + Skin.HasSetting(background.episodes.use.thumbnail)]">$INFO[Control.GetLabel(4399)]</value>
 
         <!-- Now Playing -->
@@ -533,8 +534,8 @@
         <value condition="!Skin.HasSetting(home.dontshowfanart) + Window.IsVisible(home) + !String.IsEmpty(Container(301).ListItem.Art(fanart)) + Control.IsVisible(301)">$INFO[Container(301).ListItem.Art(fanart)]</value>
         <value condition="!Skin.HasSetting(home.dontshowfanart) + Window.IsVisible(home) + !String.IsEmpty(Container(301).ListItem.Property(fanart)) + Control.IsVisible(301)">$INFO[Container(301).ListItem.Property(fanart)]</value>
         <!--Multi Widget Weather -->
-        <value condition="[Skin.HasSetting(home.vertical) + Skin.HasSetting(home.vertical.widgets)] + Window.IsVisible(home) + !String.IsEmpty(Skin.String(weather.fanart.path)) + [String.IsEqual(Container(300).ListItem.Property(widget),weatherdaily) | String.IsEqual(Container(300).ListItem.Property(widget),weatherhourly)] + !Skin.HasSetting(home.dontshowfanart) + String.Contains(Skin.String(weather.fanart.path),multi)">$INFO[Skin.String(weather.fanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]/</value>
-        <value condition="[Skin.HasSetting(home.vertical) + Skin.HasSetting(home.vertical.widgets)] + Window.IsVisible(home) + !String.IsEmpty(Skin.String(weather.fanart.path)) + [String.IsEqual(Container(300).ListItem.Property(widget),weatherdaily) | String.IsEqual(Container(300).ListItem.Property(widget),weatherhourly)] + !Skin.HasSetting(home.dontshowfanart) + !String.Contains(Skin.String(weather.fanart.path),multi) + String.IsEmpty(Container(300).ListItem.Property(background)) + [Control.HasFocus(300) | Control.HasFocus(302) | Control.HasFocus(2011)]">$INFO[Skin.String(weather.fanart.path)]$INFO[Window(Weather).Property(Current.FanartCode),,.jpg]</value>
+        <value condition="[Skin.HasSetting(home.vertical) + Skin.HasSetting(home.vertical.widgets)] + Window.IsVisible(home) + !String.IsEmpty(Skin.String(weather.fanart.path)) + [String.IsEqual(Container(300).ListItem.Property(widget),weatherdaily) | String.IsEqual(Container(300).ListItem.Property(widget),weatherhourly)] + !Skin.HasSetting(home.dontshowfanart) + String.Contains(Skin.String(weather.fanart.path),multi)">$INFO[Skin.String(weather.fanart.path)]$VAR[Weather22_CurrentFanartCode]/</value>
+        <value condition="[Skin.HasSetting(home.vertical) + Skin.HasSetting(home.vertical.widgets)] + Window.IsVisible(home) + !String.IsEmpty(Skin.String(weather.fanart.path)) + [String.IsEqual(Container(300).ListItem.Property(widget),weatherdaily) | String.IsEqual(Container(300).ListItem.Property(widget),weatherhourly)] + !Skin.HasSetting(home.dontshowfanart) + !String.Contains(Skin.String(weather.fanart.path),multi) + String.IsEmpty(Container(300).ListItem.Property(background)) + [Control.HasFocus(300) | Control.HasFocus(302) | Control.HasFocus(2011)]">$INFO[Skin.String(weather.fanart.path)]$VAR[Weather22_CurrentFanartCode].jpg</value>
 
         <!--Multi Widget User Background-->
         <value condition="!Skin.HasSetting(home.dontshowfanart) + [[Skin.HasSetting(home.vertical) + Skin.HasSetting(home.vertical.widgets)] | [!Skin.HasSetting(home.vertical) + !Skin.HasSetting(home.classicwidgets) + Skin.HasSetting(home.vertical.widgets)]] + Window.IsVisible(home) + !String.IsEmpty(Container(30111).ListItem.Property(Background)) + String.IsEmpty(Container(301).ListItem.Property(backgroundPlaylist)) + Control.IsVisible(30111) + !Control.HasFocus(30111)">$INFO[Container(30111).ListItem.Property(Background)]</value>
@@ -632,7 +633,7 @@
         <value condition="Window.IsVisible(home) + String.IsEqual(Container(300).ListItem.Property(background),playlistBackground)">$INFO[Container(9988).ListItem.Art(fanart)]</value>
         <value condition="Window.IsVisible(home) + !String.IsEmpty(Container(300).ListItem.Property(Background)) + [String.IsEmpty(Skin.String(fanart.fallback)) | Control.HasFocus(300) | Control.HasFocus(302) | Control.HasFocus(2011)]">$INFO[Container(300).ListItem.Property(Background)]</value>
         <value condition="Window.IsVisible(home) + !String.IsEmpty(Skin.String(home.slideshowpath)) + [[String.IsEqual(Container(300).ListItem.Property(widget),weatherdaily) | String.IsEqual(Container(300).ListItem.Property(widget),weatherhourly)] | String.IsEmpty(Container(300).ListItem.Property(widget)) | Container(301).IsUpdating |  Skin.HasSetting(home.dontshowfanart)]">$INFO[Skin.String(home.slideshowpath)]</value>
-        <value condition="Window.IsVisible(home) + !String.IsEmpty(Skin.String(weather.fanart.path)) + Skin.HasSetting(home.showweatherfanart) + [String.IsEmpty(Container(300).ListItem.Property(widget)) | Container(301).IsUpdating]">$INFO[Skin.String(weather.fanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]/</value>
+        <value condition="Window.IsVisible(home) + !String.IsEmpty(Skin.String(weather.fanart.path)) + Skin.HasSetting(home.showweatherfanart) + [String.IsEmpty(Container(300).ListItem.Property(widget)) | Container(301).IsUpdating]">$INFO[Skin.String(weather.fanart.path)]$VAR[Weather22_CurrentFanartCode]/</value>
         <value condition="Window.IsVisible(home) + !Container(301).IsUpdating + !String.IsEmpty(Skin.String(fanart.fallback))">$INFO[Skin.String(fanart.fallback)]</value>
         <value condition="Window.IsVisible(home) + String.IsEqual(Container(300).ListItem.Property(widgetType),system) + !Skin.HasSetting(home.dontshowfanart) + String.IsEmpty(Container(301).ListItem.Property(backgroundPlaylist))">special://skin/extras/backgrounds/systeminfo.jpg</value>
         <value condition="Window.IsVisible(home) + !Container(301).IsUpdating + !String.IsEmpty(Container(301).ListItem.Property(Background))">$INFO[Container(301).ListItem.Property(Background)]</value>
@@ -1255,6 +1256,23 @@
         <value>$INFO[Container(9500).ListItem.AudioCodec]</value>
     </variable>
 
+    <!-- Kodi 22 Piers stream selector codec normalization -->
+    <variable name="StreamVideoCodec">
+        <value condition="String.IsEqual(ListItem.Property(stream.codec),h265) | String.IsEqual(ListItem.Property(stream.codec),hvc1) | String.IsEqual(ListItem.Property(stream.codec),hev1) | String.IsEqual(ListItem.Property(stream.codec),x265)">hevc</value>
+        <value condition="String.IsEqual(ListItem.Property(stream.codec),avc) | String.IsEqual(ListItem.Property(stream.codec),avc1) | String.IsEqual(ListItem.Property(stream.codec),x264)">h264</value>
+        <value condition="String.IsEqual(ListItem.Property(stream.codec),h262) | String.IsEqual(ListItem.Property(stream.codec),v_mpeg2) | String.IsEqual(ListItem.Property(stream.codec),mpeg2)">mpeg2video</value>
+        <value condition="String.IsEqual(ListItem.Property(stream.codec),mpeg4video) | String.IsEqual(ListItem.Property(stream.codec),mpeg-4 visual) | String.IsEqual(ListItem.Property(stream.codec),mpg4) | String.IsEqual(ListItem.Property(stream.codec),fmp4) | String.IsEqual(ListItem.Property(stream.codec),mp4v)">mpeg4</value>
+        <value>$INFO[ListItem.Property(stream.codec)]</value>
+    </variable>
+
+    <variable name="StreamAudioCodec">
+        <value condition="String.IsEqual(ListItem.Property(stream.codec),truehd_atmos) | String.IsEqual(ListItem.Property(stream.codec),eac3_ddp_atmos)">atmos</value>
+        <value condition="String.IsEqual(ListItem.Property(stream.codec),dtshd_ma_x) | String.IsEqual(ListItem.Property(stream.codec),dtshd_ma_x_imax) | String.IsEqual(ListItem.Property(stream.codec),dtsx)">dts-x</value>
+        <value condition="String.IsEqual(ListItem.Property(stream.codec),aac_latm) | String.IsEqual(ListItem.Property(stream.codec),aac_lc) | String.IsEqual(ListItem.Property(stream.codec),aac_ltp) | String.IsEqual(ListItem.Property(stream.codec),aac_ssr) | String.IsEqual(ListItem.Property(stream.codec),he_aac) | String.IsEqual(ListItem.Property(stream.codec),he_aac_v2)">aac</value>
+        <value condition="String.IsEqual(ListItem.Property(stream.codec),dts_96_24) | String.IsEqual(ListItem.Property(stream.codec),dts_es) | String.IsEqual(ListItem.Property(stream.codec),dts_express)">dts</value>
+        <value>$INFO[ListItem.Property(stream.codec)]</value>
+    </variable>
+
     <variable name="ListItemHDR">
         <value condition="$EXP[IsVideoHDR10Plus]">hdr10+</value>
         <value condition="$EXP[IsVideoHDR10]">hdr10</value>
@@ -1273,7 +1291,7 @@
                 <width>90</width>
                 <height>90</height>
                 <aspectratio align="center" aligny="center">keep</aspectratio>
-                <texture>resource://resource.images.weathericons.default/$INFO[Window(weather).Property(Hourly.$PARAM[DayId].FanartCode),,.png]</texture>
+                <texture>resource://resource.images.weathericons.default/$INFO[Weather.Data(Hourly.$PARAM[DayId].FanartCode),,.png]</texture>
                 <visible>String.IsEmpty(Skin.String(weather.icons.path))</visible>
             </control>
             <control type="image">
@@ -1282,7 +1300,7 @@
                 <width>90</width>
                 <height>90</height>
                 <aspectratio align="center" aligny="center">keep</aspectratio>
-                <texture>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Hourly.$PARAM[DayId].FanartCode),,.png]</texture>
+                <texture>$INFO[Skin.String(weather.icons.path),,/]$INFO[Weather.Data(Hourly.$PARAM[DayId].FanartCode),,.png]</texture>
                 <visible>!String.IsEmpty(Skin.String(weather.icons.path)) + !String.Contains(Skin.String(weather.icons.path),animated)</visible>
             </control>
             <control type="multiimage">
@@ -1291,8 +1309,8 @@
                 <width>90</width>
                 <height>90</height>
                 <aspectratio align="center" aligny="center">keep</aspectratio>
-                <imagepath>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Hourly.$PARAM[DayId].FanartCode)]</imagepath>
-                <visible>!String.IsEmpty(Skin.String(weather.icons.path)) + String.Contains(Skin.String(weather.icons.path),animated) + !String.IsEmpty(Window(weather).Property(Hourly.$PARAM[DayId].FanartCode))</visible>
+                <imagepath>$INFO[Skin.String(weather.icons.path),,/]$INFO[Weather.Data(Hourly.$PARAM[DayId].FanartCode)]</imagepath>
+                <visible>!String.IsEmpty(Skin.String(weather.icons.path)) + String.Contains(Skin.String(weather.icons.path),animated) + !String.IsEmpty(Weather.Data(Hourly.$PARAM[DayId].FanartCode))</visible>
             </control>
             <control type="label">
                 <top>5</top>
@@ -1302,7 +1320,7 @@
                 <width>150</width>
                 <font>Small33</font>
                 <textcolor>PanelWhite100</textcolor>
-                <label>$INFO[Window.Property(Hourly.$PARAM[DayId].Time),[B],[/B]]</label>
+                <label>$INFO[Weather.Data(Hourly.$PARAM[DayId].Time),[B],[/B]]</label>
             </control>
             <control type="label">
                 <top>35</top>
@@ -1313,7 +1331,7 @@
                 <font>Tiny</font>
                 <scroll>false</scroll>
                 <textcolor>PanelWhite100</textcolor>
-                <label>$INFO[Window.Property(Hourly.$PARAM[DayId].Outlook)]</label>
+                <label>$INFO[Weather.Data(Hourly.$PARAM[DayId].Outlook)]</label>
             </control>
             <control type="label">
                 <top>8</top>
@@ -1322,7 +1340,7 @@
                 <align>right</align>
                 <font>Medium</font>
                 <textcolor>PanelWhite100</textcolor>
-                <label>$INFO[Window.Property(Hourly.$PARAM[DayId].Temperature),[B],[/B]]</label>
+                <label>$INFO[Weather.Data(Hourly.$PARAM[DayId].Temperature),[B],[/B]]</label>
             </control>
             <control type="label">
                 <top>8</top>
@@ -1331,7 +1349,7 @@
                 <align>right</align>
                 <font>Tiny</font>
                 <textcolor>PanelWhite100</textcolor>
-                <visible>String.IsEmpty(Window.Property(Hourly.$PARAM[DayId].Temperature))</visible>
+                <visible>String.IsEmpty(Weather.Data(Hourly.$PARAM[DayId].Temperature))</visible>
                 <label> - $LOCALIZE[10006] - </label>
             </control>
         </control>
@@ -1356,7 +1374,7 @@
             <randomize>true</randomize>
             <aspectratio>scale</aspectratio>
             <animation effect="fade" start="100" end="10" condition="true">Conditional</animation>
-            <imagepath background="true">$INFO[Skin.String(weather.fanart.path)]$INFO[Window(Weather).Property(Hourly.$PARAM[weatherfanartcode].FanartCode)]/</imagepath>
+            <imagepath background="true">$INFO[Skin.String(weather.fanart.path)]$INFO[Weather.Data(Hourly.$PARAM[weatherfanartcode].FanartCode)]/</imagepath>
         </control>
         <control type="image">
             <left>0</left>
@@ -1396,7 +1414,7 @@
             <bottom>1</bottom>
             <width>1758</width>
             <height>638</height>
-            <texture>$INFO[Window.Property(Map.$PARAM[InputId].Area)]</texture>
+            <texture>$INFO[Weather.Data(Map.$PARAM[InputId].Area)]</texture>
             <aspectratio align="center" aligny="center">scale</aspectratio>
         </control>
         <control type="image">
@@ -1406,7 +1424,7 @@
             <bottom>1</bottom>
             <width>1758</width>
             <height>638</height>
-            <texture>$INFO[Window.Property(Map.$PARAM[InputId].Layer)]</texture>
+            <texture>$INFO[Weather.Data(Map.$PARAM[InputId].Layer)]</texture>
             <aspectratio align="center" aligny="center">scale</aspectratio>
             <animation type="Conditional" condition="true" reversible="false">
                 <effect type="fade" end="40" start="100" time="0"/>
@@ -1428,7 +1446,7 @@
             <width>1401</width>
             <height>60</height>
             <right>11</right>
-            <texture>$INFO[Window.Property(Map.$PARAM[InputId].Legend)]</texture>
+            <texture>$INFO[Weather.Data(Map.$PARAM[InputId].Legend)]</texture>
             <aspectratio align="right" aligny="bottom">keep</aspectratio>
         </control>
     </include>
@@ -1453,7 +1471,7 @@
                 <randomize>true</randomize>
                 <aspectratio>scale</aspectratio>
                 <animation effect="fade" start="100" end="10" condition="true">Conditional</animation>
-                <imagepath background="true">$INFO[Skin.String(weather.fanart.path)]$INFO[Window.Property(Daily.$PARAM[Daily].FanartCode)]/</imagepath>
+                <imagepath background="true">$INFO[Skin.String(weather.fanart.path)]$INFO[Weather.Data(Daily.$PARAM[Daily].FanartCode)]/</imagepath>
             </control>
             <control type="image" description="Fanart">
                 <visible>!Skin.HasSetting(weather.hidefanart) + !String.Contains(Skin.String(weather.fanart.path),multi) + !String.IsEmpty(Skin.String(weather.fanart.path))</visible>
@@ -1461,7 +1479,7 @@
                 <height>100%</height>
                 <aspectratio>scale</aspectratio>
                 <animation effect="fade" start="100" end="10" condition="true">Conditional</animation>
-                <texture background="true">$INFO[Skin.String(weather.fanart.path)]$INFO[Window.Property(Daily.$PARAM[Daily].FanartCode),,.jpg]</texture>
+                <texture background="true">$INFO[Skin.String(weather.fanart.path)]$INFO[Weather.Data(Daily.$PARAM[Daily].FanartCode),,.jpg]</texture>
             </control>
             <control type="image">
                 <centertop>35%</centertop>
@@ -1469,7 +1487,7 @@
                 <width>240</width>
                 <height>240</height>
                 <aspectratio align="center" aligny="center">keep</aspectratio>
-                <texture>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window.Property(Daily.$PARAM[Daily].FanartCode),,.png]</texture>
+                <texture>$INFO[Skin.String(weather.icons.path),,/]$INFO[Weather.Data(Daily.$PARAM[Daily].FanartCode),,.png]</texture>
                 <visible>!String.IsEmpty(Skin.String(weather.icons.path)) + !String.Contains(Skin.String(weather.icons.path),animated)</visible>
             </control>
             <control type="multiimage">
@@ -1478,8 +1496,8 @@
                 <width>240</width>
                 <height>240</height>
                 <aspectratio align="center" aligny="center">keep</aspectratio>
-                <imagepath>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Daily.$PARAM[Daily].FanartCode)]</imagepath>
-                <visible>!String.IsEmpty(Skin.String(weather.icons.path)) + String.Contains(Skin.String(weather.icons.path),animated) + !String.IsEmpty(Window(weather).Property(Daily.$PARAM[Daily].FanartCode))</visible>
+                <imagepath>$INFO[Skin.String(weather.icons.path),,/]$INFO[Weather.Data(Daily.$PARAM[Daily].FanartCode)]</imagepath>
+                <visible>!String.IsEmpty(Skin.String(weather.icons.path)) + String.Contains(Skin.String(weather.icons.path),animated) + !String.IsEmpty(Weather.Data(Daily.$PARAM[Daily].FanartCode))</visible>
             </control>
             <control type="image">
                 <centertop>35%</centertop>
@@ -1487,7 +1505,7 @@
                 <width>240</width>
                 <height>240</height>
                 <aspectratio align="center" aligny="center">keep</aspectratio>
-                <texture>resource://resource.images.weathericons.default/$INFO[Window.Property(Daily.$PARAM[Daily].FanartCode),,.png]</texture>
+                <texture>resource://resource.images.weathericons.default/$INFO[Weather.Data(Daily.$PARAM[Daily].FanartCode),,.png]</texture>
                 <visible>String.IsEmpty(Skin.String(weather.icons.path))</visible>
             </control>
             <control type="label">
@@ -1497,7 +1515,7 @@
                 <align>center</align>
                 <font>Small</font>
                 <textcolor>PanelWhite100</textcolor>
-                <label fallback="10006">$INFO[Window.Property(Daily.$PARAM[Daily].LongDay)]</label>
+                <label fallback="10006">$INFO[Weather.Data(Daily.$PARAM[Daily].LongDay)]</label>
             </control>
             <control type="label">
                 <centertop>65%</centertop>
@@ -1506,7 +1524,7 @@
                 <align>center</align>
                 <font>LargeBold</font>
                 <textcolor>PanelWhite100</textcolor>
-                <label fallback="10006">$INFO[Window.Property(Daily.$PARAM[Daily].HighTemperature),[B],[/B]]$INFO[Window.Property(Daily.$PARAM[Daily].lowTemperature),  ,]</label>
+                <label fallback="10006">$INFO[Weather.Data(Daily.$PARAM[Daily].HighTemperature),[B],[/B]]$INFO[Weather.Data(Daily.$PARAM[Daily].lowTemperature),  ,]</label>
             </control>
             <control type="textbox">
                 <top>76%</top>
@@ -1516,7 +1534,7 @@
                 <align>center</align>
                 <font>Tiny</font>
                 <textcolor>PanelWhite100</textcolor>
-                <label fallback="10006">$INFO[Window(Weather).Property(Daily.$PARAM[Daily].Outlook)]</label>
+                <label fallback="10006">$INFO[Weather.Data(Daily.$PARAM[Daily].Outlook)]</label>
             </control>
             <control type="image">
                 <left>0</left>
@@ -1559,7 +1577,7 @@
                 <randomize>true</randomize>
                 <aspectratio>scale</aspectratio>
                 <animation effect="fade" start="100" end="10" condition="true">Conditional</animation>
-                <imagepath background="true">$INFO[Skin.String(weather.fanart.path)]$INFO[Window(Weather).Property(Day$PARAM[day].FanartCode)]/</imagepath>
+                <imagepath background="true">$INFO[Skin.String(weather.fanart.path)]$INFO[Weather.Data(Day$PARAM[day].FanartCode)]/</imagepath>
             </control>
             <control type="image" description="Fanart">
                 <visible>!Skin.HasSetting(weather.hidefanart) + !String.Contains(Skin.String(weather.fanart.path),multi) + !String.IsEmpty(Skin.String(weather.fanart.path))</visible>
@@ -1567,7 +1585,7 @@
                 <height>100%</height>
                 <aspectratio>scale</aspectratio>
                 <animation effect="fade" start="100" end="10" condition="true">Conditional</animation>
-                <texture background="true">$INFO[Skin.String(weather.fanart.path)]$INFO[Window.Property(Day$PARAM[day].FanartCode),,.jpg]</texture>
+                <texture background="true">$INFO[Skin.String(weather.fanart.path)]$INFO[Weather.Data(Day$PARAM[day].FanartCode),,.jpg]</texture>
             </control>
             <control type="image">
                 <centertop>35%</centertop>
@@ -1575,7 +1593,7 @@
                 <width>240</width>
                 <height>240</height>
                 <aspectratio align="center" aligny="center">keep</aspectratio>
-                <texture>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Day$PARAM[day].FanartCode),,.png]</texture>
+                <texture>$INFO[Skin.String(weather.icons.path),,/]$INFO[Weather.Data(Day$PARAM[day].FanartCode),,.png]</texture>
                 <visible>!String.IsEmpty(Skin.String(weather.icons.path)) + !String.Contains(Skin.String(weather.icons.path),animated)</visible>
             </control>
             <control type="multiimage">
@@ -1584,7 +1602,7 @@
                 <width>240</width>
                 <height>240</height>
                 <aspectratio align="center" aligny="center">keep</aspectratio>
-                <imagepath>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Day$PARAM[day].FanartCode)]</imagepath>
+                <imagepath>$INFO[Skin.String(weather.icons.path),,/]$INFO[Weather.Data(Day$PARAM[day].FanartCode)]</imagepath>
                 <visible>!String.IsEmpty(Skin.String(weather.icons.path)) + String.Contains(Skin.String(weather.icons.path),animated)</visible>
             </control>
             <control type="image">
@@ -1593,7 +1611,7 @@
                 <width>240</width>
                 <height>240</height>
                 <aspectratio align="center" aligny="center">keep</aspectratio>
-                <texture>$INFO[Window(weather).Property(Day$PARAM[day].OutlookIcon)]</texture>
+                <texture>$INFO[Weather.Data(Day$PARAM[day].OutlookIcon)]</texture>
                 <visible>String.IsEmpty(Skin.String(weather.icons.path))</visible>
             </control>
             <control type="label">
@@ -1612,7 +1630,7 @@
                 <align>center</align>
                 <font>LargeBold</font>
                 <textcolor>PanelWhite100</textcolor>
-                <label fallback="10006">$INFO[Window(Weather).Property(Day$PARAM[day].HighTemp),[B],[/B]°]$INFO[Window(Weather).Property(Day$PARAM[day].LowTemp),  ,°]</label>
+                <label fallback="10006">$INFO[Weather.Data(Day$PARAM[day].HighTemp),[B],[/B]°]$INFO[Weather.Data(Day$PARAM[day].LowTemp),  ,°]</label>
             </control>
             <control type="textbox">
                 <top>76%</top>
@@ -1622,7 +1640,7 @@
                 <align>center</align>
                 <font>Tiny</font>
                 <textcolor>PanelWhite100</textcolor>
-                <label fallback="10006">$INFO[Window(Weather).Property(Day$PARAM[day].Outlook)]</label>
+                <label fallback="10006">$INFO[Weather.Data(Day$PARAM[day].Outlook)]</label>
             </control>
         </control>
         </definition>
@@ -1872,6 +1890,26 @@
                 <selected>ListItem.IsResumable</selected>
                 <visible>!ListItem.IsPlaying</visible>
                 <visible>!String.IsEqual(ListItem.DBType,tvshow)</visible>
+            </control>
+
+            <!-- Kodi core: movie versions / extras -->
+            <control type="radiobutton" id="14">
+                <onfocus>ClearProperty(moviecontent)</onfocus>
+                <onfocus>ClearProperty(ShowDisc)</onfocus>
+                <include>buttondimensions</include>
+                <include content="buttontextures">
+                    <param name="icon" value="buttonsdialogs/manage.png"/>
+                </include>
+                <visible>String.IsEqual(ListItem.DBType,movie)</visible>
+            </control>
+            <control type="radiobutton" id="15">
+                <onfocus>ClearProperty(moviecontent)</onfocus>
+                <onfocus>ClearProperty(ShowDisc)</onfocus>
+                <include>buttondimensions</include>
+                <include content="buttontextures">
+                    <param name="icon" value="buttonsdialogs/more.png"/>
+                </include>
+                <visible>String.IsEqual(ListItem.DBType,movie)</visible>
             </control>
 
             <control type="radiobutton" id="9078">
@@ -2669,6 +2707,282 @@
         </control>
     </include>
 
+    <!-- Kodi 22 Piers: dedicated detailed layout for video/audio/subtitle stream selectors.
+         Video properties: stream.description, stream.codec, stream.language, stream.resolution,
+         stream.bitrate, stream.fps, stream.is3d, stream.stereomode, stream.hdrtype,
+         stream.isdefault, stream.isforced, stream.ishearingimpaired, stream.isvisualimpaired.
+         Audio properties: stream.description, stream.codec, stream.codecdesc, stream.channels,
+         stream.isdefault, stream.isforced, stream.isoriginal, stream.ishearingimpaired, stream.isvisualimpaired.
+         Subtitle properties: stream.description, stream.codec, stream.codecdesc, stream.isdefault,
+         stream.isforced, stream.isoriginal, stream.ishearingimpaired, stream.isvisualimpaired, stream.isexternal. -->
+    <include name="Kodi22StreamStatusBadges">
+        <control type="grouplist">
+            <right>58</right>
+            <top>52</top>
+            <width>285</width>
+            <height>24</height>
+            <orientation>horizontal</orientation>
+            <align>right</align>
+            <itemgap>6</itemgap>
+            <usecontrolcoords>true</usecontrolcoords>
+            <control type="label">
+                <width>34</width><height>22</height><font>Mini</font><align>center</align>
+                <textcolor>$PARAM[textcolor]</textcolor><label>[B]DEF[/B]</label>
+                <visible>ListItem.Property(stream.isdefault)</visible>
+            </control>
+            <control type="label">
+                <width>34</width><height>22</height><font>Mini</font><align>center</align>
+                <textcolor>$PARAM[textcolor]</textcolor><label>[B]FOR[/B]</label>
+                <visible>ListItem.Property(stream.isforced)</visible>
+            </control>
+            <control type="label">
+                <width>34</width><height>22</height><font>Mini</font><align>center</align>
+                <textcolor>$PARAM[textcolor]</textcolor><label>[B]ORG[/B]</label>
+                <visible>ListItem.Property(stream.isoriginal)</visible>
+            </control>
+            <control type="label">
+                <width>30</width><height>22</height><font>Mini</font><align>center</align>
+                <textcolor>$PARAM[textcolor]</textcolor><label>[B]HI[/B]</label>
+                <visible>ListItem.Property(stream.ishearingimpaired)</visible>
+            </control>
+            <control type="label">
+                <width>30</width><height>22</height><font>Mini</font><align>center</align>
+                <textcolor>$PARAM[textcolor]</textcolor><label>[B]VI[/B]</label>
+                <visible>ListItem.Property(stream.isvisualimpaired)</visible>
+            </control>
+            <control type="label">
+                <width>38</width><height>22</height><font>Mini</font><align>center</align>
+                <textcolor>$PARAM[textcolor]</textcolor><label>[B]EXT[/B]</label>
+                <visible>ListItem.Property(stream.isexternal)</visible>
+            </control>
+            <control type="label">
+                <width>30</width><height>22</height><font>Mini</font><align>center</align>
+                <textcolor>$PARAM[textcolor]</textcolor><label>[B]3D[/B]</label>
+                <visible>ListItem.Property(stream.is3d)</visible>
+            </control>
+        </control>
+    </include>
+
+    <include name="Kodi22StreamCodecIcon">
+        <control type="image">
+            <left>24</left><top>18</top><width>62</width><height>34</height>
+            <aspectratio>keep</aspectratio>
+            <texture colordiffuse="$PARAM[color]" fallback="flags/fallback.png">$VAR[StreamVideoCodec,flags/white/source/,.png]</texture>
+            <visible>Window.IsActive(dialogselectvideo) + !String.IsEmpty(ListItem.Property(stream.codec))</visible>
+        </control>
+        <control type="image">
+            <left>24</left><top>18</top><width>62</width><height>34</height>
+            <aspectratio>keep</aspectratio>
+            <texture colordiffuse="$PARAM[color]" fallback="flags/fallback.png">$VAR[StreamAudioCodec,flags3/audio/,.png]</texture>
+            <visible>Window.IsActive(dialogselectaudio) + !String.IsEmpty(ListItem.Property(stream.codec))</visible>
+        </control>
+        <control type="image">
+            <left>39</left><top>15</top><width>32</width><height>32</height>
+            <aspectratio>keep</aspectratio>
+            <texture colordiffuse="$PARAM[color]">buttonsdialogs/subtitles.png</texture>
+            <visible>Window.IsActive(dialogselectsubtitle)</visible>
+        </control>
+    </include>
+
+    <include name="Kodi22StreamSelectLayout">
+        <!-- Compact fallback control. Kodi 22 currently calls SetUseDetails(true), but id 3
+             remains present because CGUIDialogSelect expects both list modes. -->
+        <control type="list" id="3">
+            <left>8</left>
+            <width>1064</width>
+            <posy>115</posy>
+            <height>696</height>
+            <onleft>5</onleft>
+            <onright>1723</onright>
+            <pagecontrol>1723</pagecontrol>
+            <onup>3</onup>
+            <ondown>3</ondown>
+            <itemlayout height="69" width="696">
+                <control type="label">
+                    <left>30</left><right>58</right><height>66</height><font>Small</font><aligny>center</aligny><textcolor>Black70</textcolor>
+                    <label>$VAR[StreamVideoCodec]$INFO[ListItem.Property(stream.hdrtype),  •  ]$INFO[ListItem.Property(stream.resolution),  •  ]</label>
+                    <visible>Window.IsActive(dialogselectvideo)</visible>
+                </control>
+                <control type="label">
+                    <left>30</left><right>58</right><height>66</height><font>Small</font><aligny>center</aligny><textcolor>Black70</textcolor>
+                    <label>$INFO[ListItem.Label]$INFO[ListItem.Property(stream.description),  —  ]</label>
+                    <visible>Window.IsActive(dialogselectaudio) | Window.IsActive(dialogselectsubtitle)</visible>
+                </control>
+                <control type="image">
+                    <right>30</right><centertop>50%</centertop><width>24</width><height>24</height>
+                    <texture colordiffuse="$VAR[ColorHighlight]">osd/minicheck_big.png</texture><visible>ListItem.IsSelected</visible>
+                </control>
+            </itemlayout>
+            <focusedlayout height="69" width="696">
+                <control type="image">
+                    <left>0</left><right>0</right><height>66</height>
+                    <texture border="5" colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                    <animation effect="fade" start="100" end="0" condition="!Control.HasFocus(3)">Conditional</animation>
+                </control>
+                <control type="image">
+                    <width>100%</width><height>66</height>
+                    <texture border="8" colordiffuse="$VAR[ColorHighlightOtherBar]">common/gradient-box-wide-cut.png</texture>
+                    <animation effect="fade" start="100" end="0" condition="!Control.HasFocus(3)">Conditional</animation>
+                </control>
+                <control type="label">
+                    <left>30</left><right>58</right><height>66</height><font>Small</font><aligny>center</aligny><textcolor>Selected</textcolor><scroll>true</scroll>
+                    <label>$VAR[StreamVideoCodec]$INFO[ListItem.Property(stream.hdrtype),  •  ]$INFO[ListItem.Property(stream.resolution),  •  ]</label>
+                    <visible>Window.IsActive(dialogselectvideo) + Control.HasFocus(3)</visible>
+                </control>
+                <control type="label">
+                    <left>30</left><right>58</right><height>66</height><font>Small</font><aligny>center</aligny><textcolor>Black70</textcolor>
+                    <label>$VAR[StreamVideoCodec]$INFO[ListItem.Property(stream.hdrtype),  •  ]$INFO[ListItem.Property(stream.resolution),  •  ]</label>
+                    <visible>Window.IsActive(dialogselectvideo) + !Control.HasFocus(3)</visible>
+                </control>
+                <control type="label">
+                    <left>30</left><right>58</right><height>66</height><font>Small</font><aligny>center</aligny><textcolor>Selected</textcolor><scroll>true</scroll>
+                    <label>$INFO[ListItem.Label]$INFO[ListItem.Property(stream.description),  —  ]</label>
+                    <visible>[Window.IsActive(dialogselectaudio) | Window.IsActive(dialogselectsubtitle)] + Control.HasFocus(3)</visible>
+                </control>
+                <control type="label">
+                    <left>30</left><right>58</right><height>66</height><font>Small</font><aligny>center</aligny><textcolor>Black70</textcolor>
+                    <label>$INFO[ListItem.Label]$INFO[ListItem.Property(stream.description),  —  ]</label>
+                    <visible>[Window.IsActive(dialogselectaudio) | Window.IsActive(dialogselectsubtitle)] + !Control.HasFocus(3)</visible>
+                </control>
+                <control type="image">
+                    <right>30</right><centertop>50%</centertop><width>24</width><height>24</height>
+                    <texture colordiffuse="Selected">osd/minicheck_big.png</texture><visible>ListItem.IsSelected</visible>
+                </control>
+            </focusedlayout>
+        </control>
+
+        <control type="list" id="6">
+            <posx>8</posx>
+            <posy>115</posy>
+            <width>700</width>
+            <height>690</height>
+            <onleft>5</onleft>
+            <onright>1723</onright>
+            <pagecontrol>1723</pagecontrol>
+            <onup>6</onup>
+            <ondown>6</ondown>
+            <scrolltime tween="quadratic" easing="out">200</scrolltime>
+            <itemlayout height="86" width="696">
+                <include content="Kodi22StreamCodecIcon"><param name="color" value="Black70" /></include>
+                <control type="label">
+                    <left>104</left><right>58</right><top>3</top><height>42</height>
+                    <font>Small</font><aligny>center</aligny><textcolor>Black70</textcolor>
+                    <label>$VAR[StreamVideoCodec]$INFO[ListItem.Property(stream.hdrtype),  •  ]$INFO[ListItem.Property(stream.resolution),  •  ]$INFO[ListItem.Property(stream.fps),  •  , fps]$INFO[ListItem.Property(stream.bitrate),  •  , kbps]</label>
+                    <visible>Window.IsActive(dialogselectvideo)</visible>
+                </control>
+                <control type="label">
+                    <left>104</left><right>58</right><top>3</top><height>42</height>
+                    <font>Small</font><aligny>center</aligny><textcolor>Black70</textcolor>
+                    <label>$INFO[ListItem.Label]$INFO[ListItem.Property(stream.description),  —  ]</label>
+                    <visible>Window.IsActive(dialogselectaudio) | Window.IsActive(dialogselectsubtitle)</visible>
+                </control>
+                <control type="label">
+                    <left>104</left><right>320</right><top>43</top><height>30</height>
+                    <font>Mini</font><aligny>center</aligny><textcolor>Black70</textcolor>
+                    <label>$INFO[ListItem.Property(stream.description)]$INFO[ListItem.Property(stream.language),  •  ]$INFO[ListItem.Property(stream.stereomode),  •  ]</label>
+                    <visible>Window.IsActive(dialogselectvideo)</visible>
+                </control>
+                <control type="label">
+                    <left>104</left><right>320</right><top>43</top><height>30</height>
+                    <font>Mini</font><aligny>center</aligny><textcolor>Black70</textcolor>
+                    <label>$VAR[StreamAudioCodec]$INFO[ListItem.Property(stream.codecdesc),  •  ]$INFO[ListItem.Property(stream.channels),  •  ]</label>
+                    <visible>Window.IsActive(dialogselectaudio)</visible>
+                </control>
+                <control type="label">
+                    <left>104</left><right>320</right><top>43</top><height>30</height>
+                    <font>Mini</font><aligny>center</aligny><textcolor>Black70</textcolor>
+                    <label>$INFO[ListItem.Property(stream.codec)]$INFO[ListItem.Property(stream.codecdesc),  •  ]</label>
+                    <visible>Window.IsActive(dialogselectsubtitle)</visible>
+                </control>
+                <include content="Kodi22StreamStatusBadges"><param name="textcolor" value="$VAR[ColorHighlight]" /></include>
+                <control type="image">
+                    <right>28</right><top>17</top><width>24</width><height>24</height>
+                    <texture colordiffuse="$VAR[ColorHighlight]">osd/minicheck_big.png</texture>
+                    <visible>ListItem.IsSelected</visible>
+                </control>
+            </itemlayout>
+            <focusedlayout height="86" width="696">
+                <control type="image">
+                    <left>0</left><right>0</right><height>83</height>
+                    <texture border="5" colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+                    <animation effect="fade" start="100" end="0" condition="!Control.HasFocus(6)">Conditional</animation>
+                </control>
+                <control type="image">
+                    <width>100%</width><height>83</height>
+                    <texture border="8" colordiffuse="$VAR[ColorHighlightOtherBar]">common/gradient-box-wide-cut.png</texture>
+                    <animation effect="fade" start="100" end="0" condition="!Control.HasFocus(6)">Conditional</animation>
+                </control>
+                <include content="Kodi22StreamCodecIcon"><param name="color" value="Selected" /></include>
+                <control type="label">
+                    <left>104</left><right>58</right><top>3</top><height>42</height>
+                    <font>Small</font><aligny>center</aligny><textcolor>Selected</textcolor><scroll>true</scroll>
+                    <label>$VAR[StreamVideoCodec]$INFO[ListItem.Property(stream.hdrtype),  •  ]$INFO[ListItem.Property(stream.resolution),  •  ]$INFO[ListItem.Property(stream.fps),  •  , fps]$INFO[ListItem.Property(stream.bitrate),  •  , kbps]</label>
+                    <visible>Window.IsActive(dialogselectvideo) + Control.HasFocus(6)</visible>
+                </control>
+                <control type="label">
+                    <left>104</left><right>58</right><top>3</top><height>42</height>
+                    <font>Small</font><aligny>center</aligny><textcolor>Black70</textcolor>
+                    <label>$VAR[StreamVideoCodec]$INFO[ListItem.Property(stream.hdrtype),  •  ]$INFO[ListItem.Property(stream.resolution),  •  ]$INFO[ListItem.Property(stream.fps),  •  , fps]$INFO[ListItem.Property(stream.bitrate),  •  , kbps]</label>
+                    <visible>Window.IsActive(dialogselectvideo) + !Control.HasFocus(6)</visible>
+                </control>
+                <control type="label">
+                    <left>104</left><right>58</right><top>3</top><height>42</height>
+                    <font>Small</font><aligny>center</aligny><textcolor>Selected</textcolor><scroll>true</scroll>
+                    <label>$INFO[ListItem.Label]$INFO[ListItem.Property(stream.description),  —  ]</label>
+                    <visible>[Window.IsActive(dialogselectaudio) | Window.IsActive(dialogselectsubtitle)] + Control.HasFocus(6)</visible>
+                </control>
+                <control type="label">
+                    <left>104</left><right>58</right><top>3</top><height>42</height>
+                    <font>Small</font><aligny>center</aligny><textcolor>Black70</textcolor>
+                    <label>$INFO[ListItem.Label]$INFO[ListItem.Property(stream.description),  —  ]</label>
+                    <visible>[Window.IsActive(dialogselectaudio) | Window.IsActive(dialogselectsubtitle)] + !Control.HasFocus(6)</visible>
+                </control>
+                <control type="label">
+                    <left>104</left><right>320</right><top>43</top><height>30</height>
+                    <font>Mini</font><aligny>center</aligny><textcolor>Selected</textcolor><scroll>true</scroll>
+                    <label>$INFO[ListItem.Property(stream.description)]$INFO[ListItem.Property(stream.language),  •  ]$INFO[ListItem.Property(stream.stereomode),  •  ]</label>
+                    <visible>Window.IsActive(dialogselectvideo) + Control.HasFocus(6)</visible>
+                </control>
+                <control type="label">
+                    <left>104</left><right>320</right><top>43</top><height>30</height>
+                    <font>Mini</font><aligny>center</aligny><textcolor>Black70</textcolor>
+                    <label>$INFO[ListItem.Property(stream.description)]$INFO[ListItem.Property(stream.language),  •  ]$INFO[ListItem.Property(stream.stereomode),  •  ]</label>
+                    <visible>Window.IsActive(dialogselectvideo) + !Control.HasFocus(6)</visible>
+                </control>
+                <control type="label">
+                    <left>104</left><right>320</right><top>43</top><height>30</height>
+                    <font>Mini</font><aligny>center</aligny><textcolor>Selected</textcolor><scroll>true</scroll>
+                    <label>$VAR[StreamAudioCodec]$INFO[ListItem.Property(stream.codecdesc),  •  ]$INFO[ListItem.Property(stream.channels),  •  ]</label>
+                    <visible>Window.IsActive(dialogselectaudio) + Control.HasFocus(6)</visible>
+                </control>
+                <control type="label">
+                    <left>104</left><right>320</right><top>43</top><height>30</height>
+                    <font>Mini</font><aligny>center</aligny><textcolor>Black70</textcolor>
+                    <label>$VAR[StreamAudioCodec]$INFO[ListItem.Property(stream.codecdesc),  •  ]$INFO[ListItem.Property(stream.channels),  •  ]</label>
+                    <visible>Window.IsActive(dialogselectaudio) + !Control.HasFocus(6)</visible>
+                </control>
+                <control type="label">
+                    <left>104</left><right>320</right><top>43</top><height>30</height>
+                    <font>Mini</font><aligny>center</aligny><textcolor>Selected</textcolor><scroll>true</scroll>
+                    <label>$INFO[ListItem.Property(stream.codec)]$INFO[ListItem.Property(stream.codecdesc),  •  ]</label>
+                    <visible>Window.IsActive(dialogselectsubtitle) + Control.HasFocus(6)</visible>
+                </control>
+                <control type="label">
+                    <left>104</left><right>320</right><top>43</top><height>30</height>
+                    <font>Mini</font><aligny>center</aligny><textcolor>Black70</textcolor>
+                    <label>$INFO[ListItem.Property(stream.codec)]$INFO[ListItem.Property(stream.codecdesc),  •  ]</label>
+                    <visible>Window.IsActive(dialogselectsubtitle) + !Control.HasFocus(6)</visible>
+                </control>
+                <include content="Kodi22StreamStatusBadges"><param name="textcolor" value="Selected" /></include>
+                <control type="image">
+                    <right>28</right><top>17</top><width>24</width><height>24</height>
+                    <texture colordiffuse="Selected">osd/minicheck_big.png</texture>
+                    <visible>ListItem.IsSelected</visible>
+                </control>
+            </focusedlayout>
+        </control>
+    </include>
+
     <include name="DialogCustomSettings">
         <control type="group">
             <visible allowhiddenfocus="true">ControlGroup(9400).HasFocus() + !Window.IsVisible(DialogBusy.xml)</visible>
@@ -3181,33 +3495,41 @@
 
     <!-- Code from https://github.com/jurialmunkey/skin.arctic.zephyr.2/ -->
     <variable name="Weather_Sunrise">
+        <value condition="!String.IsEmpty(Weather.Data(Current.Sunrise))">$INFO[Weather.Data(Current.Sunrise),$LOCALIZE[31404] ,]</value>
+        <value condition="!String.IsEmpty(Weather.Data(Today.Sunrise))">$INFO[Weather.Data(Today.Sunrise),$LOCALIZE[31404] ,]</value>
         <value condition="!String.IsEmpty(Window(Weather).Property(Current.Sunrise))">$INFO[Window(Weather).Property(Current.Sunrise),$LOCALIZE[31404] ,]</value>
         <value condition="!String.IsEmpty(Window(Weather).Property(Today.Sunrise))">$INFO[Window(Weather).Property(Today.Sunrise),$LOCALIZE[31404] ,]</value>
     </variable>
 
     <variable name="Weather_Sunset">
+        <value condition="!String.IsEmpty(Weather.Data(Current.Sunset))">$INFO[Weather.Data(Current.Sunset),$LOCALIZE[31405] ,]</value>
+        <value condition="!String.IsEmpty(Weather.Data(Today.Sunset))">$INFO[Weather.Data(Today.Sunset),$LOCALIZE[31405] ,]</value>
         <value condition="!String.IsEmpty(Window(Weather).Property(Current.Sunset))">$INFO[Window(Weather).Property(Current.Sunset),$LOCALIZE[31405] ,]</value>
         <value condition="!String.IsEmpty(Window(Weather).Property(Today.Sunset))">$INFO[Window(Weather).Property(Today.Sunset),$LOCALIZE[31405] ,]</value>
     </variable>
 
     <variable name="Weather_LowTemp">
+        <value condition="!String.IsEmpty(Weather.Data(Current.LowTemp))">$INFO[Weather.Data(Current.LowTemp),,°]</value>
+        <value condition="!String.IsEmpty(Weather.Data(Day0.LowTemp))">$INFO[Weather.Data(Day0.LowTemp),,°]</value>
         <value condition="!String.IsEmpty(Window(Weather).Property(Current.LowTemp))">$INFO[Window(Weather).Property(Current.LowTemp),,°]</value>
         <value condition="!String.IsEmpty(Window(Weather).Property(Day0.LowTemp))">$INFO[Window(Weather).Property(Day0.LowTemp),,°]</value>
     </variable>
 
     <variable name="Weather_HighTemp">
+        <value condition="!String.IsEmpty(Weather.Data(Current.HighTemp))">$INFO[Weather.Data(Current.HighTemp),,°]</value>
+        <value condition="!String.IsEmpty(Weather.Data(Day0.HighTemp))">$INFO[Weather.Data(Day0.HighTemp),,°]</value>
         <value condition="!String.IsEmpty(Window(Weather).Property(Current.HighTemp))">$INFO[Window(Weather).Property(Current.HighTemp),,°]</value>
         <value condition="!String.IsEmpty(Window(Weather).Property(Day0.HighTemp))">$INFO[Window(Weather).Property(Day0.HighTemp),,°]</value>
     </variable>
 
     <variable name="Weather_UVIndex_Label">
-        <value condition="!String.IsEmpty(Window(Weather).Property(Current.UVIndex))">$LOCALIZE[403]</value>
-        <value condition="!String.IsEmpty(Window(Weather).Property(Current.Precipitation))">$INFO[Window(Weather).Property(Current.Precipitation),$LOCALIZE[1448] ,]</value>
+        <value condition="!String.IsEmpty(Weather.Data(Current.UVIndex))">$LOCALIZE[403]</value>
+        <value condition="!String.IsEmpty(Weather.Data(Current.Precipitation))">$INFO[Weather.Data(Current.Precipitation),$LOCALIZE[1448] ,]</value>
     </variable>
 
     <variable name="Weather_UVIndex_Info">
-        <value condition="!String.IsEmpty(Window(Weather).Property(Current.UVIndex))">$INFO[Window(Weather).Property(Current.UVIndex)]</value>
-        <value condition="!String.IsEmpty(Window(Weather).Property(Current.Cloudiness))">$INFO[Window(Weather).Property(Current.Cloudiness),$LOCALIZE[31068] ,]</value>
+        <value condition="!String.IsEmpty(Weather.Data(Current.UVIndex))">$INFO[Weather.Data(Current.UVIndex)]</value>
+        <value condition="!String.IsEmpty(Weather.Data(Current.Cloudiness))">$INFO[Weather.Data(Current.Cloudiness),$LOCALIZE[31068] ,]</value>
     </variable>
 
     <variable name="SetTMDBHelperWidgetContainer">

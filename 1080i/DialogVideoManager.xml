@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Kodi 22: movie versions / extras manager -->
+<window>
+    <defaultcontrol always="true">50</defaultcontrol>
+    <controls>
+        <include>GlobalOverlay</include>
+        <control type="group">
+            <include>DefDialogBackground</include>
+
+            <control type="label" id="2">
+                <include content="DefDialogHeader">
+                    <param name="width" value="920"/>
+                </include>
+            </control>
+            <include content="Kodi_Logo">
+                <param name="dimensions" value="40"/>
+                <param name="top" value="40"/>
+                <param name="left" value="40"/>
+            </include>
+
+            <control type="image">
+                <top>95</top>
+                <left>40</left>
+                <width>1000</width>
+                <height>1</height>
+                <colordiffuse>Black12</colordiffuse>
+                <texture>common/white.png</texture>
+            </control>
+
+            <!-- Movie artwork -->
+            <control type="image">
+                <left>40</left>
+                <top>125</top>
+                <width>280</width>
+                <height>520</height>
+                <aspectratio align="center" aligny="top">keep</aspectratio>
+                <texture>$VAR[PosterImage]</texture>
+            </control>
+            <control type="label">
+                <left>40</left>
+                <top>655</top>
+                <width>280</width>
+                <height>38</height>
+                <font>Small</font>
+                <textcolor>Dark2</textcolor>
+                <align>center</align>
+                <aligny>center</aligny>
+                <label>$INFO[ListItem.Title]</label>
+            </control>
+
+            <!-- Versions / extras -->
+            <control type="list" id="50">
+                <description>video versions / extras list</description>
+                <left>350</left>
+                <top>125</top>
+                <width>380</width>
+                <height>570</height>
+                <onup>50</onup>
+                <ondown>50</ondown>
+                <onleft>50</onleft>
+                <onright>101</onright>
+                <pagecontrol>60</pagecontrol>
+                <scrolltime>200</scrolltime>
+                <itemlayout height="72" width="380">
+                    <control type="label">
+                        <left>18</left>
+                        <right>18</right>
+                        <top>5</top>
+                        <height>34</height>
+                        <font>Small</font>
+                        <textcolor>Black70</textcolor>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                    <control type="label">
+                        <left>18</left>
+                        <right>18</right>
+                        <top>38</top>
+                        <height>27</height>
+                        <font>Mini</font>
+                        <textcolor>Dark3</textcolor>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label2]</label>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="72" width="380">
+                    <control type="image">
+                        <left>0</left>
+                        <right>0</right>
+                        <height>69</height>
+                        <texture border="5" colordiffuse="$VAR[ColorSelectOtherBar]">common/white.png</texture>
+                        <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
+                    </control>
+                    <control type="image">
+                        <left>0</left>
+                        <right>0</right>
+                        <height>69</height>
+                        <texture border="8" colordiffuse="$VAR[ColorHighlightOtherBar]">common/gradient-box-wide.png</texture>
+                        <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
+                    </control>
+                    <control type="label">
+                        <left>18</left>
+                        <right>18</right>
+                        <top>5</top>
+                        <height>34</height>
+                        <font>Small</font>
+                        <textcolor>Selected</textcolor>
+                        <aligny>center</aligny>
+                        <scroll>true</scroll>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                    <control type="label">
+                        <left>18</left>
+                        <right>18</right>
+                        <top>38</top>
+                        <height>27</height>
+                        <font>Mini</font>
+                        <textcolor>Selected</textcolor>
+                        <aligny>center</aligny>
+                        <scroll>true</scroll>
+                        <label>$INFO[ListItem.Label2]</label>
+                    </control>
+                </focusedlayout>
+            </control>
+
+            <control type="scrollbar" id="60">
+                <left>735</left>
+                <top>125</top>
+                <width>12</width>
+                <height>570</height>
+                <onleft>50</onleft>
+                <onright>101</onright>
+                <orientation>vertical</orientation>
+            </control>
+
+            <!-- Kodi core actions. IDs match DialogVideoManager. -->
+            <control type="grouplist" id="101">
+                <left>770</left>
+                <top>125</top>
+                <width>300</width>
+                <height>570</height>
+                <orientation>vertical</orientation>
+                <itemgap>3</itemgap>
+                <scrolltime>200</scrolltime>
+                <onleft>50</onleft>
+                <onright>50</onright>
+                <control type="button" id="21">
+                    <include>DefDialogButtons</include>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <align>left</align><textoffsetx>20</textoffsetx>
+                    <label>$LOCALIZE[208]</label>
+                </control>
+                <control type="button" id="22">
+                    <include>DefDialogButtons</include>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <align>left</align><textoffsetx>20</textoffsetx>
+                    <label>$LOCALIZE[40014]</label>
+                    <visible>Window.IsVisible(managevideoversions)</visible>
+                </control>
+                <control type="button" id="23">
+                    <include>DefDialogButtons</include>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <align>left</align><textoffsetx>20</textoffsetx>
+                    <label>$LOCALIZE[40015]</label>
+                    <visible>Window.IsVisible(managevideoextras)</visible>
+                </control>
+                <control type="button" id="27">
+                    <include>DefDialogButtons</include>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <align>left</align><textoffsetx>20</textoffsetx>
+                    <label>$LOCALIZE[13511]</label>
+                </control>
+                <control type="button" id="24">
+                    <include>DefDialogButtons</include>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <align>left</align><textoffsetx>20</textoffsetx>
+                    <label>$LOCALIZE[40004]</label>
+                    <visible>Window.IsVisible(managevideoversions)</visible>
+                </control>
+                <control type="button" id="28">
+                    <include>DefDialogButtons</include>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <align>left</align><textoffsetx>20</textoffsetx>
+                    <label>$LOCALIZE[118]</label>
+                    <visible>Window.IsVisible(managevideoextras)</visible>
+                </control>
+                <control type="button" id="26">
+                    <include>DefDialogButtons</include>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <align>left</align><textoffsetx>20</textoffsetx>
+                    <label>$LOCALIZE[15015]</label>
+                </control>
+                <control type="button" id="29">
+                    <include>DefDialogButtons</include>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <align>left</align><textoffsetx>20</textoffsetx>
+                    <label>$LOCALIZE[40046]</label>
+                    <visible>Window.IsVisible(managevideoversions)</visible>
+                </control>
+                <control type="button" id="25">
+                    <include>DefDialogButtons</include>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <align>left</align><textoffsetx>20</textoffsetx>
+                    <label>$LOCALIZE[40023]</label>
+                    <visible>Window.IsVisible(managevideoversions)</visible>
+                </control>
+            </control>
+
+            <control type="label">
+                <description>Selected file path</description>
+                <left>350</left>
+                <top>710</top>
+                <width>690</width>
+                <height>36</height>
+                <font>Mini</font>
+                <textcolor>Dark3</textcolor>
+                <align>right</align>
+                <aligny>center</aligny>
+                <scroll>true</scroll>
+                <scrollspeed>40</scrollspeed>
+                <scrollsuffix>  ••  </scrollsuffix>
+                <label>$INFO[Container(50).ListItem.DecodedFileNameAndPath]</label>
+            </control>
+        </control>
+    </controls>
+</window>

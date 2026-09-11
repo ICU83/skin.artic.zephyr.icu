@@ -1,4 +1,5 @@
 <window>
+    <backgroundcolor>Background</backgroundcolor>
     <defaultcontrol always="true">52</defaultcontrol>
     <onload>SetProperty(SkinInitStarted,1,home)</onload>
     <controls>

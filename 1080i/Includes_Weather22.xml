@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Kodi 22 (Piers) weather API compatibility layer.
+     Weather.Data()/Weather.LastUpdated are primary. Legacy Window(Weather).Property()
+     remains as a narrow fallback for providers that have not fully moved to the v22 API. -->
+<includes>
+    <variable name="Weather22_CurrentFanartCode">
+        <value condition="!String.IsEmpty(Weather.Data(Current.FanartCode))">$INFO[Weather.Data(Current.FanartCode)]</value>
+        <value>$INFO[Window(Weather).Property(Current.FanartCode)]</value>
+    </variable>
+    <variable name="Weather22_CurrentConditionIcon">
+        <value condition="!String.IsEmpty(Weather.ConditionsIcon)">$INFO[Weather.ConditionsIcon]</value>
+        <value condition="!String.IsEmpty(Weather.Data(Current.ConditionIcon))">$INFO[Weather.Data(Current.ConditionIcon)]</value>
+        <value>$INFO[Window(Weather).Property(Current.ConditionIcon)]</value>
+    </variable>
+    <variable name="Weather22_CurrentTemperature">
+        <value condition="!String.IsEmpty(Weather.Data(Current.Temperature))">$INFO[Weather.Data(Current.Temperature)]</value>
+        <value>$INFO[Window(Weather).Property(Current.Temperature)]</value>
+    </variable>
+    <variable name="Weather22_CurrentCondition">
+        <value condition="!String.IsEmpty(Weather.Data(Current.Condition))">$INFO[Weather.Data(Current.Condition)]</value>
+        <value>$INFO[Window(Weather).Property(Current.Condition)]</value>
+    </variable>
+    <variable name="Weather22_CurrentFeelsLike">
+        <value condition="!String.IsEmpty(Weather.Data(Current.FeelsLike))">$INFO[Weather.Data(Current.FeelsLike)]</value>
+        <value>$INFO[Window(Weather).Property(Current.FeelsLike)]</value>
+    </variable>
+    <variable name="Weather22_CurrentHumidity">
+        <value condition="!String.IsEmpty(Weather.Data(Current.Humidity))">$INFO[Weather.Data(Current.Humidity)]</value>
+        <value>$INFO[Window(Weather).Property(Current.Humidity)]</value>
+    </variable>
+    <variable name="Weather22_CurrentWind">
+        <value condition="!String.IsEmpty(Weather.Data(Current.Wind))">$INFO[Weather.Data(Current.Wind)]</value>
+        <value>$INFO[Window(Weather).Property(Current.Wind)]</value>
+    </variable>
+    <variable name="Weather22_CurrentLocation">
+        <value condition="!String.IsEmpty(Weather.Data(Current.Location))">$INFO[Weather.Data(Current.Location)]</value>
+        <value>$INFO[Window(Weather).Property(Location)]</value>
+    </variable>
+    <variable name="Weather22_LastUpdated">
+        <value condition="!String.IsEmpty(Weather.LastUpdated)">$INFO[Weather.LastUpdated]</value>
+        <value>$INFO[Window(Weather).Property(Updated)]</value>
+    </variable>
+    <variable name="Weather22_Map1Heading">
+        <value condition="!String.IsEmpty(Weather.Data(Map.1.Heading))">$INFO[Weather.Data(Map.1.Heading)]</value>
+        <value>$INFO[Window(Weather).Property(Map.1.Heading)]</value>
+    </variable>
+    <variable name="Weather22_Map1Area">
+        <value condition="!String.IsEmpty(Weather.Data(Map.1.Area))">$INFO[Weather.Data(Map.1.Area)]</value>
+        <value>$INFO[Window(Weather).Property(Map.1.Area)]</value>
+    </variable>
+    <variable name="Weather22_Map1Layer">
+        <value condition="!String.IsEmpty(Weather.Data(Map.1.Layer))">$INFO[Weather.Data(Map.1.Layer)]</value>
+        <value>$INFO[Window(Weather).Property(Map.1.Layer)]</value>
+    </variable>
+    <variable name="Weather22_Map1Legend">
+        <value condition="!String.IsEmpty(Weather.Data(Map.1.Legend))">$INFO[Weather.Data(Map.1.Legend)]</value>
+        <value>$INFO[Window(Weather).Property(Map.1.Legend)]</value>
+    </variable>
+    <variable name="Weather22_Map2Heading">
+        <value condition="!String.IsEmpty(Weather.Data(Map.2.Heading))">$INFO[Weather.Data(Map.2.Heading)]</value>
+        <value>$INFO[Window(Weather).Property(Map.2.Heading)]</value>
+    </variable>
+    <variable name="Weather22_Map2Area">
+        <value condition="!String.IsEmpty(Weather.Data(Map.2.Area))">$INFO[Weather.Data(Map.2.Area)]</value>
+        <value>$INFO[Window(Weather).Property(Map.2.Area)]</value>
+    </variable>
+    <variable name="Weather22_Map2Layer">
+        <value condition="!String.IsEmpty(Weather.Data(Map.2.Layer))">$INFO[Weather.Data(Map.2.Layer)]</value>
+        <value>$INFO[Window(Weather).Property(Map.2.Layer)]</value>
+    </variable>
+    <variable name="Weather22_Map2Legend">
+        <value condition="!String.IsEmpty(Weather.Data(Map.2.Legend))">$INFO[Weather.Data(Map.2.Legend)]</value>
+        <value>$INFO[Window(Weather).Property(Map.2.Legend)]</value>
+    </variable>
+    <variable name="Weather22_Map3Heading">
+        <value condition="!String.IsEmpty(Weather.Data(Map.3.Heading))">$INFO[Weather.Data(Map.3.Heading)]</value>
+        <value>$INFO[Window(Weather).Property(Map.3.Heading)]</value>
+    </variable>
+    <variable name="Weather22_Map3Area">
+        <value condition="!String.IsEmpty(Weather.Data(Map.3.Area))">$INFO[Weather.Data(Map.3.Area)]</value>
+        <value>$INFO[Window(Weather).Property(Map.3.Area)]</value>
+    </variable>
+    <variable name="Weather22_Map3Layer">
+        <value condition="!String.IsEmpty(Weather.Data(Map.3.Layer))">$INFO[Weather.Data(Map.3.Layer)]</value>
+        <value>$INFO[Window(Weather).Property(Map.3.Layer)]</value>
+    </variable>
+    <variable name="Weather22_Map3Legend">
+        <value condition="!String.IsEmpty(Weather.Data(Map.3.Legend))">$INFO[Weather.Data(Map.3.Legend)]</value>
+        <value>$INFO[Window(Weather).Property(Map.3.Legend)]</value>
+    </variable>
+    <variable name="Weather22_Map4Heading">
+        <value condition="!String.IsEmpty(Weather.Data(Map.4.Heading))">$INFO[Weather.Data(Map.4.Heading)]</value>
+        <value>$INFO[Window(Weather).Property(Map.4.Heading)]</value>
+    </variable>
+    <variable name="Weather22_Map4Area">
+        <value condition="!String.IsEmpty(Weather.Data(Map.4.Area))">$INFO[Weather.Data(Map.4.Area)]</value>
+        <value>$INFO[Window(Weather).Property(Map.4.Area)]</value>
+    </variable>
+    <variable name="Weather22_Map4Layer">
+        <value condition="!String.IsEmpty(Weather.Data(Map.4.Layer))">$INFO[Weather.Data(Map.4.Layer)]</value>
+        <value>$INFO[Window(Weather).Property(Map.4.Layer)]</value>
+    </variable>
+    <variable name="Weather22_Map4Legend">
+        <value condition="!String.IsEmpty(Weather.Data(Map.4.Legend))">$INFO[Weather.Data(Map.4.Legend)]</value>
+        <value>$INFO[Window(Weather).Property(Map.4.Legend)]</value>
+    </variable>
+    <variable name="Weather22_Map5Heading">
+        <value condition="!String.IsEmpty(Weather.Data(Map.5.Heading))">$INFO[Weather.Data(Map.5.Heading)]</value>
+        <value>$INFO[Window(Weather).Property(Map.5.Heading)]</value>
+    </variable>
+    <variable name="Weather22_Map5Area">
+        <value condition="!String.IsEmpty(Weather.Data(Map.5.Area))">$INFO[Weather.Data(Map.5.Area)]</value>
+        <value>$INFO[Window(Weather).Property(Map.5.Area)]</value>
+    </variable>
+    <variable name="Weather22_Map5Layer">
+        <value condition="!String.IsEmpty(Weather.Data(Map.5.Layer))">$INFO[Weather.Data(Map.5.Layer)]</value>
+        <value>$INFO[Window(Weather).Property(Map.5.Layer)]</value>
+    </variable>
+    <variable name="Weather22_Map5Legend">
+        <value condition="!String.IsEmpty(Weather.Data(Map.5.Legend))">$INFO[Weather.Data(Map.5.Legend)]</value>
+        <value>$INFO[Window(Weather).Property(Map.5.Legend)]</value>
+    </variable>
+</includes>

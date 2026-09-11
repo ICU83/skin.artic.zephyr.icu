@@ -367,7 +367,7 @@
                 <width>70</width>
                 <height>70</height>
                 <aspectratio aligny="center" align="center">keep</aspectratio>
-                <texture>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Current.FanartCode),,.png]</texture>
+                <texture>$INFO[Skin.String(weather.icons.path),,/]$VAR[Weather22_CurrentFanartCode].png</texture>
                 <visible>![String.IsEmpty(Skin.String(weather.icons.path)) | String.Contains(Skin.String(weather.icons.path),Default)] + !String.Contains(Skin.String(weather.icons.path),animated) + Skin.HasSetting(weather.icons.override) + !String.Contains(Skin.String(weather.icons.path),White) + !String.Contains(Skin.String(weather.icons.path),Outline) + !String.Contains(Skin.String(weather.icons.path),Transparent) + !String.Contains(Skin.String(weather.icons.path),Monstr)</visible>
                 <include>IconFade</include>
             </control>
@@ -377,7 +377,7 @@
                 <width>70</width>
                 <height>70</height>
                 <aspectratio aligny="center" align="center">keep</aspectratio>
-                <texture colordiffuse="Dark2">$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Current.FanartCode),,.png]</texture>
+                <texture colordiffuse="Dark2">$INFO[Skin.String(weather.icons.path),,/]$VAR[Weather22_CurrentFanartCode].png</texture>
                 <visible>![String.IsEmpty(Skin.String(weather.icons.path)) | String.Contains(Skin.String(weather.icons.path),Default)] + !String.Contains(Skin.String(weather.icons.path),animated) + Skin.HasSetting(weather.icons.override) + [String.Contains(Skin.String(weather.icons.path),White) | String.Contains(Skin.String(weather.icons.path),Outline) | String.Contains(Skin.String(weather.icons.path),Transparent) | String.Contains(Skin.String(weather.icons.path),Monstr)]</visible>
             </control>
             <control type="multiimage">
@@ -386,7 +386,7 @@
                 <width>70</width>
                 <height>70</height>
                 <aspectratio align="center" aligny="center">keep</aspectratio>
-                <imagepath>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Current.FanartCode)]</imagepath>
+                <imagepath>$INFO[Skin.String(weather.icons.path),,/]$VAR[Weather22_CurrentFanartCode]</imagepath>
                 <visible>![String.IsEmpty(Skin.String(weather.icons.path)) | String.Contains(Skin.String(weather.icons.path),Default)] + String.Contains(Skin.String(weather.icons.path),animated) + Skin.HasSetting(weather.icons.override)</visible>
                 <include>IconFade</include>
             </control>
@@ -405,7 +405,7 @@
                 <width>70</width>
                 <height>70</height>
                 <aspectratio aligny="center" align="center">keep</aspectratio>
-                <texture>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Current.FanartCode),,.png]</texture>
+                <texture>$INFO[Skin.String(weather.icons.path),,/]$VAR[Weather22_CurrentFanartCode].png</texture>
                 <visible>String.Contains(Skin.String(weather.icons.path),Default) + Skin.HasSetting(weather.icons.override)</visible>
                 <include>IconFade</include>
             </control>
@@ -427,7 +427,7 @@
                 <height>24</height>
                 <font>Tiny</font>
                 <textcolor>Dark1</textcolor>
-                <label>$INFO[Weather.Temperature], $INFO[Window(Weather).Property(Current.FeelsLike),$LOCALIZE[402] ,°]</label>
+                <label>$INFO[Weather.Temperature], $LOCALIZE[402] $VAR[Weather22_CurrentFeelsLike]°</label>
             </control>
             <control type="label">
                 <left>104</left>
@@ -1886,7 +1886,7 @@
                                     <texture border="5" colordiffuse="Light3" diffuse="diffuse/wall-fanart.png">common/box.png</texture>
                                 </control>
                                 <include content="def_weatherfanart.widgets">
-                                    <param name="FanartCode" value="$INFO[Window(Weather).Property(Day0.FanartCode)]"/>
+                                    <param name="FanartCode" value="$INFO[Weather.Data(Day0.FanartCode)]"/>
                                     <param name="bordertopbottom" value="9"/>
                                     <param name="borderleftright" value="9"/>
                                 </include>
@@ -1896,7 +1896,7 @@
                                     <height>192</height>
                                     <width>192</width>
                                     <aspectratio align="center" aligny="center">keep</aspectratio>
-                                    <texture>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(Weather).Property(Day0.FanartCode),,.png]</texture>
+                                    <texture>$INFO[Skin.String(weather.icons.path),,/]$INFO[Weather.Data(Day0.FanartCode),,.png]</texture>
                                     <visible>!String.IsEmpty(Skin.String(weather.icons.path)) + !String.Contains(Skin.String(weather.icons.path),animated)</visible>
                                 </control>
                                 <control type="multiimage">
@@ -1905,7 +1905,7 @@
                                     <height>192</height>
                                     <width>192</width>
                                     <aspectratio align="center" aligny="center">keep</aspectratio>
-                                    <imagepath>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Day0.FanartCode)]</imagepath>
+                                    <imagepath>$INFO[Skin.String(weather.icons.path),,/]$INFO[Weather.Data(Day0.FanartCode)]</imagepath>
                                     <visible>!String.IsEmpty(Skin.String(weather.icons.path)) + String.Contains(Skin.String(weather.icons.path),animated)</visible>
                                 </control>
                                 <control type="image">
@@ -1914,7 +1914,7 @@
                                     <height>192</height>
                                     <width>192</width>
                                     <aspectratio align="center" aligny="center">keep</aspectratio>
-                                    <texture>$INFO[Window(Weather).Property(Day0.OutlookIcon)]</texture>
+                                    <texture>$INFO[Weather.Data(Day0.OutlookIcon)]</texture>
                                     <visible>String.IsEmpty(Skin.String(weather.icons.path))</visible>
                                 </control>
                                 <control type="label">
@@ -1937,7 +1937,7 @@
                                     <align>right</align>
                                     <font>Large</font>
                                     <textcolor>PanelWhite100</textcolor>
-                                    <label>$INFO[Window(Weather).Property(Day0.HighTemp),[B],[/B]°  ]$INFO[Window(Weather).Property(Day0.LowTemp),,°]</label>
+                                    <label>$INFO[Weather.Data(Day0.HighTemp),[B],[/B]°  ]$INFO[Weather.Data(Day0.LowTemp),,°]</label>
                                 </control>
                                 <control type="label">
                                     <left>292</left>
@@ -1948,7 +1948,7 @@
                                     <align>right</align>
                                     <aligny>center</aligny>
                                     <textcolor>PanelWhite100</textcolor>
-                                    <label>$INFO[Window(Weather).Property(Day0.Outlook)]</label>
+                                    <label>$INFO[Weather.Data(Day0.Outlook)]</label>
                                 </control>
                                 <control type="image">
                                     <left>10</left>
@@ -1970,7 +1970,7 @@
                                     <texture border="5" colordiffuse="Light3" diffuse="diffuse/wall-fanart.png">common/box.png</texture>
                                 </control>
                                 <include content="def_weatherfanart.widgets">
-                                    <param name="FanartCode" value="$INFO[Window(Weather).Property(Day1.FanartCode)]"/>
+                                    <param name="FanartCode" value="$INFO[Weather.Data(Day1.FanartCode)]"/>
                                     <param name="bordertopbottom" value="9"/>
                                     <param name="borderleftright" value="9"/>
                                 </include>
@@ -1980,7 +1980,7 @@
                                     <height>192</height>
                                     <width>192</width>
                                     <aspectratio align="center" aligny="center">keep</aspectratio>
-                                    <texture>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(Weather).Property(Day1.FanartCode),,.png]</texture>
+                                    <texture>$INFO[Skin.String(weather.icons.path),,/]$INFO[Weather.Data(Day1.FanartCode),,.png]</texture>
                                     <visible>!String.IsEmpty(Skin.String(weather.icons.path)) + !String.Contains(Skin.String(weather.icons.path),animated)</visible>
                                 </control>
                                 <control type="multiimage">
@@ -1989,7 +1989,7 @@
                                     <height>192</height>
                                     <width>192</width>
                                     <aspectratio align="center" aligny="center">keep</aspectratio>
-                                    <imagepath>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Day1.FanartCode)]</imagepath>
+                                    <imagepath>$INFO[Skin.String(weather.icons.path),,/]$INFO[Weather.Data(Day1.FanartCode)]</imagepath>
                                     <visible>!String.IsEmpty(Skin.String(weather.icons.path)) + String.Contains(Skin.String(weather.icons.path),animated)</visible>
                                 </control>
                                 <control type="image">
@@ -1998,7 +1998,7 @@
                                     <height>192</height>
                                     <width>192</width>
                                     <aspectratio align="center" aligny="center">keep</aspectratio>
-                                    <texture>$INFO[Window(Weather).Property(Day1.OutlookIcon)]</texture>
+                                    <texture>$INFO[Weather.Data(Day1.OutlookIcon)]</texture>
                                     <visible>String.IsEmpty(Skin.String(weather.icons.path))</visible>
                                 </control>
                                 <control type="label">
@@ -2010,7 +2010,7 @@
                                     <align>right</align>
                                     <aligny>center</aligny>
                                     <textcolor>PanelWhite100</textcolor>
-                                    <label fallback="10006">$INFO[Window(Weather).Property(Day1.Title)]</label>
+                                    <label fallback="10006">$INFO[Weather.Data(Day1.Title)]</label>
                                 </control>
                                 <control type="label">
                                     <left>292</left>
@@ -2021,7 +2021,7 @@
                                     <align>right</align>
                                     <font>Large</font>
                                     <textcolor>PanelWhite100</textcolor>
-                                    <label>$INFO[Window(Weather).Property(Day1.HighTemp),[B],[/B]°  ]$INFO[Window(Weather).Property(Day1.LowTemp),,°]</label>
+                                    <label>$INFO[Weather.Data(Day1.HighTemp),[B],[/B]°  ]$INFO[Weather.Data(Day1.LowTemp),,°]</label>
                                 </control>
                                 <control type="label">
                                     <left>292</left>
@@ -2032,7 +2032,7 @@
                                     <align>right</align>
                                     <aligny>center</aligny>
                                     <textcolor>PanelWhite100</textcolor>
-                                    <label>$INFO[Window(Weather).Property(Day1.Outlook)]</label>
+                                    <label>$INFO[Weather.Data(Day1.Outlook)]</label>
                                 </control>
                                 <control type="image">
                                     <left>10</left>
@@ -2054,7 +2054,7 @@
                                     <texture border="5" colordiffuse="Light3" diffuse="diffuse/wall-fanart.png">common/box.png</texture>
                                 </control>
                                 <include content="def_weatherfanart.widgets">
-                                    <param name="FanartCode" value="$INFO[Window(Weather).Property(Day2.FanartCode)]"/>
+                                    <param name="FanartCode" value="$INFO[Weather.Data(Day2.FanartCode)]"/>
                                     <param name="bordertopbottom" value="9"/>
                                     <param name="borderleftright" value="9"/>
                                 </include>
@@ -2064,7 +2064,7 @@
                                     <height>192</height>
                                     <width>192</width>
                                     <aspectratio align="center" aligny="center">keep</aspectratio>
-                                    <texture>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(Weather).Property(Day2.FanartCode),,.png]</texture>
+                                    <texture>$INFO[Skin.String(weather.icons.path),,/]$INFO[Weather.Data(Day2.FanartCode),,.png]</texture>
                                     <visible>!String.IsEmpty(Skin.String(weather.icons.path)) + !String.Contains(Skin.String(weather.icons.path),animated)</visible>
                                 </control>
                                 <control type="multiimage">
@@ -2073,7 +2073,7 @@
                                     <height>192</height>
                                     <width>192</width>
                                     <aspectratio align="center" aligny="center">keep</aspectratio>
-                                    <imagepath>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Day2.FanartCode)]</imagepath>
+                                    <imagepath>$INFO[Skin.String(weather.icons.path),,/]$INFO[Weather.Data(Day2.FanartCode)]</imagepath>
                                     <visible>!String.IsEmpty(Skin.String(weather.icons.path)) + String.Contains(Skin.String(weather.icons.path),animated)</visible>
                                 </control>
                                 <control type="image">
@@ -2082,7 +2082,7 @@
                                     <height>192</height>
                                     <width>192</width>
                                     <aspectratio align="center" aligny="center">keep</aspectratio>
-                                    <texture>$INFO[Window(Weather).Property(Day2.OutlookIcon)]</texture>
+                                    <texture>$INFO[Weather.Data(Day2.OutlookIcon)]</texture>
                                     <visible>String.IsEmpty(Skin.String(weather.icons.path))</visible>
                                 </control>
                                 <control type="label">
@@ -2094,7 +2094,7 @@
                                     <align>right</align>
                                     <aligny>center</aligny>
                                     <textcolor>PanelWhite100</textcolor>
-                                    <label fallback="10006">$INFO[Window(Weather).Property(Day2.Title)]</label>
+                                    <label fallback="10006">$INFO[Weather.Data(Day2.Title)]</label>
                                 </control>
                                 <control type="label">
                                     <left>292</left>
@@ -2105,7 +2105,7 @@
                                     <align>right</align>
                                     <font>Large</font>
                                     <textcolor>PanelWhite100</textcolor>
-                                    <label>$INFO[Window(Weather).Property(Day2.HighTemp),[B],[/B]°  ]$INFO[Window(Weather).Property(Day2.LowTemp),,°]</label>
+                                    <label>$INFO[Weather.Data(Day2.HighTemp),[B],[/B]°  ]$INFO[Weather.Data(Day2.LowTemp),,°]</label>
                                 </control>
                                 <control type="label">
                                     <left>292</left>
@@ -2116,7 +2116,7 @@
                                     <align>right</align>
                                     <aligny>center</aligny>
                                     <textcolor>PanelWhite100</textcolor>
-                                    <label>$INFO[Window(Weather).Property(Day2.Outlook)]</label>
+                                    <label>$INFO[Weather.Data(Day2.Outlook)]</label>
                                 </control>
                                 <control type="image">
                                     <left>10</left>
@@ -2945,7 +2945,7 @@
                                     <texture border="5" colordiffuse="Panel">common/box.png</texture>
                                 </control>
                                 <include content="def_weatherfanart.widgets">
-                                    <param name="FanartCode" value="$INFO[Window(Weather).Property(Day0.FanartCode)]"/>
+                                    <param name="FanartCode" value="$INFO[Weather.Data(Day0.FanartCode)]"/>
                                     <param name="bordertopbottom" value="9"/>
                                     <param name="borderleftright" value="9"/>
                                 </include>
@@ -2968,7 +2968,7 @@
                                     <randomize>true</randomize>
                                     <aspectratio>scale</aspectratio>
                                     <animation effect="fade" start="100" end="10" condition="true">Conditional</animation>
-                                    <imagepath background="true">$INFO[Skin.String(weather.fanart)]$INFO[Window(Weather).Property(Day0.FanartCode)]/</imagepath>
+                                    <imagepath background="true">$INFO[Skin.String(weather.fanart)]$INFO[Weather.Data(Day0.FanartCode)]/</imagepath>
                                 </control>
                                 <control type="image">
                                     <top>30</top>
@@ -2976,7 +2976,7 @@
                                     <height>192</height>
                                     <width>192</width>
                                     <aspectratio align="center" aligny="center">keep</aspectratio>
-                                    <texture>$INFO[Window(Weather).Property(Day0.OutlookIcon)]</texture>
+                                    <texture>$INFO[Weather.Data(Day0.OutlookIcon)]</texture>
                                     <visible>String.IsEmpty(Skin.String(weather.icons.path))</visible>
                                 </control>
                                 <control type="image">
@@ -2985,7 +2985,7 @@
                                     <height>192</height>
                                     <width>192</width>
                                     <aspectratio align="center" aligny="center">keep</aspectratio>
-                                    <texture>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(Weather).Property(Day0.FanartCode),,.png]</texture>
+                                    <texture>$INFO[Skin.String(weather.icons.path),,/]$INFO[Weather.Data(Day0.FanartCode),,.png]</texture>
                                     <visible>!String.IsEmpty(Skin.String(weather.icons.path)) + !String.Contains(Skin.String(weather.icons.path),animated)</visible>
                                 </control>
                                 <control type="multiimage">
@@ -2994,7 +2994,7 @@
                                     <height>192</height>
                                     <width>192</width>
                                     <aspectratio align="center" aligny="center">keep</aspectratio>
-                                    <imagepath>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Day0.FanartCode)]</imagepath>
+                                    <imagepath>$INFO[Skin.String(weather.icons.path),,/]$INFO[Weather.Data(Day0.FanartCode)]</imagepath>
                                     <visible>!String.IsEmpty(Skin.String(weather.icons.path)) + String.Contains(Skin.String(weather.icons.path),animated)</visible>
                                 </control>
                                 <control type="label">
@@ -3017,7 +3017,7 @@
                                     <align>right</align>
                                     <font>Large</font>
                                     <textcolor>PanelWhite100</textcolor>
-                                    <label>$INFO[Window(Weather).Property(Day0.HighTemp),[B],[/B]°  ]$INFO[Window(Weather).Property(Day0.LowTemp),,°]</label>
+                                    <label>$INFO[Weather.Data(Day0.HighTemp),[B],[/B]°  ]$INFO[Weather.Data(Day0.LowTemp),,°]</label>
                                 </control>
                                 <control type="label">
                                     <left>292</left>
@@ -3028,7 +3028,7 @@
                                     <align>right</align>
                                     <aligny>center</aligny>
                                     <textcolor>PanelWhite100</textcolor>
-                                    <label>$INFO[Window(Weather).Property(Day0.Outlook)]</label>
+                                    <label>$INFO[Weather.Data(Day0.Outlook)]</label>
                                 </control>
                             </control>
                             <control type="group">
@@ -3049,7 +3049,7 @@
                                     <texture border="5" colordiffuse="Panel">common/box.png</texture>
                                 </control>
                                 <include content="def_weatherfanart.widgets">
-                                    <param name="FanartCode" value="$INFO[Window(Weather).Property(Day1.FanartCode)]"/>
+                                    <param name="FanartCode" value="$INFO[Weather.Data(Day1.FanartCode)]"/>
                                     <param name="bordertopbottom" value="9"/>
                                     <param name="borderleftright" value="9"/>
                                 </include>
@@ -3064,7 +3064,7 @@
                                     <randomize>true</randomize>
                                     <aspectratio>scale</aspectratio>
                                     <animation effect="fade" start="100" end="10" condition="true">Conditional</animation>
-                                    <imagepath background="true">$INFO[Skin.String(weather.fanart)]$INFO[Window(Weather).Property(Day2.FanartCode)]/</imagepath>
+                                    <imagepath background="true">$INFO[Skin.String(weather.fanart)]$INFO[Weather.Data(Day2.FanartCode)]/</imagepath>
                                 </control>
                                 <control type="image">
                                     <top>30</top>
@@ -3072,7 +3072,7 @@
                                     <height>192</height>
                                     <width>192</width>
                                     <aspectratio align="center" aligny="center">keep</aspectratio>
-                                    <texture>$INFO[Window(Weather).Property(Day2.OutlookIcon)]</texture>
+                                    <texture>$INFO[Weather.Data(Day2.OutlookIcon)]</texture>
                                     <visible>String.IsEmpty(Skin.String(weather.icons.path))</visible>
                                 </control>
                                 <control type="image">
@@ -3081,7 +3081,7 @@
                                     <height>192</height>
                                     <width>192</width>
                                     <aspectratio align="center" aligny="center">keep</aspectratio>
-                                    <texture>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(Weather).Property(Day2.FanartCode),,.png]</texture>
+                                    <texture>$INFO[Skin.String(weather.icons.path),,/]$INFO[Weather.Data(Day2.FanartCode),,.png]</texture>
                                     <visible>!String.IsEmpty(Skin.String(weather.icons.path)) + !String.Contains(Skin.String(weather.icons.path),animated)</visible>
                                 </control>
                                 <control type="multiimage">
@@ -3090,7 +3090,7 @@
                                     <height>192</height>
                                     <width>192</width>
                                     <aspectratio align="center" aligny="center">keep</aspectratio>
-                                    <imagepath>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Day2.FanartCode)]</imagepath>
+                                    <imagepath>$INFO[Skin.String(weather.icons.path),,/]$INFO[Weather.Data(Day2.FanartCode)]</imagepath>
                                     <visible>!String.IsEmpty(Skin.String(weather.icons.path)) + String.Contains(Skin.String(weather.icons.path),animated)</visible>
                                 </control>
                                 <control type="label">
@@ -3102,7 +3102,7 @@
                                     <align>right</align>
                                     <aligny>center</aligny>
                                     <textcolor>PanelWhite100</textcolor>
-                                    <label fallback="10006">$INFO[Window(Weather).Property(Day2.Title)]</label>
+                                    <label fallback="10006">$INFO[Weather.Data(Day2.Title)]</label>
                                 </control>
                                 <control type="label">
                                     <left>292</left>
@@ -3113,7 +3113,7 @@
                                     <align>right</align>
                                     <font>Large</font>
                                     <textcolor>PanelWhite100</textcolor>
-                                    <label>$INFO[Window(Weather).Property(Day2.HighTemp),[B],[/B]°  ]$INFO[Window(Weather).Property(Day2.LowTemp),,°]</label>
+                                    <label>$INFO[Weather.Data(Day2.HighTemp),[B],[/B]°  ]$INFO[Weather.Data(Day2.LowTemp),,°]</label>
                                 </control>
                                 <control type="label">
                                     <left>292</left>
@@ -3124,7 +3124,7 @@
                                     <align>right</align>
                                     <aligny>center</aligny>
                                     <textcolor>PanelWhite100</textcolor>
-                                    <label>$INFO[Window(Weather).Property(Day2.Outlook)]</label>
+                                    <label>$INFO[Weather.Data(Day2.Outlook)]</label>
                                 </control>
                                 <control type="image">
                                     <left>10</left>
@@ -3161,7 +3161,7 @@
                                     <texture border="5" colordiffuse="Panel">common/box.png</texture>
                                 </control>
                                 <include content="def_weatherfanart.widgets">
-                                    <param name="FanartCode" value="$INFO[Window(Weather).Property(Day2.FanartCode)]"/>
+                                    <param name="FanartCode" value="$INFO[Weather.Data(Day2.FanartCode)]"/>
                                     <param name="bordertopbottom" value="9"/>
                                     <param name="borderleftright" value="9"/>
                                 </include>
@@ -3176,7 +3176,7 @@
                                     <randomize>true</randomize>
                                     <aspectratio>scale</aspectratio>
                                     <animation effect="fade" start="100" end="10" condition="true">Conditional</animation>
-                                    <imagepath background="true">$INFO[Skin.String(weather.fanart)]$INFO[Window(Weather).Property(Day1.FanartCode)]/</imagepath>
+                                    <imagepath background="true">$INFO[Skin.String(weather.fanart)]$INFO[Weather.Data(Day1.FanartCode)]/</imagepath>
                                 </control>
                                 <control type="image">
                                     <top>30</top>
@@ -3184,7 +3184,7 @@
                                     <height>192</height>
                                     <width>192</width>
                                     <aspectratio align="center" aligny="center">keep</aspectratio>
-                                    <texture>$INFO[Window(Weather).Property(Day1.OutlookIcon)]</texture>
+                                    <texture>$INFO[Weather.Data(Day1.OutlookIcon)]</texture>
                                     <visible>String.IsEmpty(Skin.String(weather.icons.path))</visible>
                                 </control>
                                 <control type="image">
@@ -3193,7 +3193,7 @@
                                     <height>192</height>
                                     <width>192</width>
                                     <aspectratio align="center" aligny="center">keep</aspectratio>
-                                    <texture>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(Weather).Property(Day1.FanartCode),,.png]</texture>
+                                    <texture>$INFO[Skin.String(weather.icons.path),,/]$INFO[Weather.Data(Day1.FanartCode),,.png]</texture>
                                     <visible>!String.IsEmpty(Skin.String(weather.icons.path)) + !String.Contains(Skin.String(weather.icons.path),animated)</visible>
                                 </control>
                                 <control type="multiimage">
@@ -3202,7 +3202,7 @@
                                     <height>192</height>
                                     <width>192</width>
                                     <aspectratio align="center" aligny="center">keep</aspectratio>
-                                    <imagepath>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Day1.FanartCode)]</imagepath>
+                                    <imagepath>$INFO[Skin.String(weather.icons.path),,/]$INFO[Weather.Data(Day1.FanartCode)]</imagepath>
                                     <visible>!String.IsEmpty(Skin.String(weather.icons.path)) + String.Contains(Skin.String(weather.icons.path),animated)</visible>
                                 </control>
                                 <control type="label">
@@ -3225,7 +3225,7 @@
                                     <align>right</align>
                                     <font>Large</font>
                                     <textcolor>PanelWhite100</textcolor>
-                                    <label>$INFO[Window(Weather).Property(Day1.HighTemp),[B],[/B]°  ]$INFO[Window(Weather).Property(Day1.LowTemp),,°]</label>
+                                    <label>$INFO[Weather.Data(Day1.HighTemp),[B],[/B]°  ]$INFO[Weather.Data(Day1.LowTemp),,°]</label>
                                 </control>
                                 <control type="label">
                                     <left>292</left>
@@ -3236,7 +3236,7 @@
                                     <align>right</align>
                                     <aligny>center</aligny>
                                     <textcolor>PanelWhite100</textcolor>
-                                    <label>$INFO[Window(Weather).Property(Day1.Outlook)]</label>
+                                    <label>$INFO[Weather.Data(Day1.Outlook)]</label>
                                 </control>
                                 <control type="image">
                                     <left>10</left>
@@ -3265,7 +3265,7 @@
                                     <texture border="5" colordiffuse="Panel">common/box.png</texture>
                                 </control>
                                 <include content="def_weatherfanart.widgets">
-                                    <param name="FanartCode" value="$INFO[Window(Weather).Property(Day3.FanartCode)]"/>
+                                    <param name="FanartCode" value="$INFO[Weather.Data(Day3.FanartCode)]"/>
                                     <param name="bordertopbottom" value="9"/>
                                     <param name="borderleftright" value="9"/>
                                 </include>
@@ -3280,7 +3280,7 @@
                                     <randomize>true</randomize>
                                     <aspectratio>scale</aspectratio>
                                     <animation effect="fade" start="100" end="10" condition="true">Conditional</animation>
-                                    <imagepath background="true">$INFO[Skin.String(weather.fanart)]$INFO[Window(Weather).Property(Day3.FanartCode)]/</imagepath>
+                                    <imagepath background="true">$INFO[Skin.String(weather.fanart)]$INFO[Weather.Data(Day3.FanartCode)]/</imagepath>
                                 </control>
                                 <control type="image">
                                     <top>30</top>
@@ -3288,7 +3288,7 @@
                                     <height>192</height>
                                     <width>192</width>
                                     <aspectratio align="center" aligny="center">keep</aspectratio>
-                                    <texture>$INFO[Window(Weather).Property(Day3.OutlookIcon)]</texture>
+                                    <texture>$INFO[Weather.Data(Day3.OutlookIcon)]</texture>
                                     <visible>String.IsEmpty(Skin.String(weather.icons.path))</visible>
                                 </control>
                                 <control type="image">
@@ -3297,7 +3297,7 @@
                                     <height>192</height>
                                     <width>192</width>
                                     <aspectratio align="center" aligny="center">keep</aspectratio>
-                                    <texture>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(Weather).Property(Day3.FanartCode),,.png]</texture>
+                                    <texture>$INFO[Skin.String(weather.icons.path),,/]$INFO[Weather.Data(Day3.FanartCode),,.png]</texture>
                                     <visible>!String.IsEmpty(Skin.String(weather.icons.path)) + !String.Contains(Skin.String(weather.icons.path),animated)</visible>
                                 </control>
                                 <control type="multiimage">
@@ -3306,7 +3306,7 @@
                                     <height>192</height>
                                     <width>192</width>
                                     <aspectratio align="center" aligny="center">keep</aspectratio>
-                                    <imagepath>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Day3.FanartCode)]</imagepath>
+                                    <imagepath>$INFO[Skin.String(weather.icons.path),,/]$INFO[Weather.Data(Day3.FanartCode)]</imagepath>
                                     <visible>!String.IsEmpty(Skin.String(weather.icons.path)) + String.Contains(Skin.String(weather.icons.path),animated)</visible>
                                 </control>
                                 <control type="label">
@@ -3318,7 +3318,7 @@
                                     <align>right</align>
                                     <aligny>center</aligny>
                                     <textcolor>PanelWhite100</textcolor>
-                                    <label fallback="10006">$INFO[Window(Weather).Property(Day3.Title)]</label>
+                                    <label fallback="10006">$INFO[Weather.Data(Day3.Title)]</label>
                                 </control>
                                 <control type="label">
                                     <left>292</left>
@@ -3329,7 +3329,7 @@
                                     <align>right</align>
                                     <font>Large</font>
                                     <textcolor>PanelWhite100</textcolor>
-                                    <label>$INFO[Window(Weather).Property(Day3.HighTemp),[B],[/B]°  ]$INFO[Window(Weather).Property(Day3.LowTemp),,°]</label>
+                                    <label>$INFO[Weather.Data(Day3.HighTemp),[B],[/B]°  ]$INFO[Weather.Data(Day3.LowTemp),,°]</label>
                                 </control>
                                 <control type="label">
                                     <left>292</left>
@@ -3340,7 +3340,7 @@
                                     <align>right</align>
                                     <aligny>center</aligny>
                                     <textcolor>PanelWhite100</textcolor>
-                                    <label>$INFO[Window(Weather).Property(Day3.Outlook)]</label>
+                                    <label>$INFO[Weather.Data(Day3.Outlook)]</label>
                                 </control>
                                 <control type="image">
                                     <left>10</left>

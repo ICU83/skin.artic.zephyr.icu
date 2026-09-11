@@ -251,6 +251,9 @@
             <widget name="epg-lastplayed" label="$LOCALIZE[31043]" icon="DefaultMovies.png" target="pvr" source="epg">
                 <path>pvr://channels/tv/*?view=lastplayed</path>
             </widget>
+            <widget name="epg-dateadded" label="$LOCALIZE[855]" icon="DefaultTVShows.png" target="pvr" source="epg">
+                <path>pvr://channels/tv/*?view=dateadded</path>
+            </widget>
             <widget name="epg-channels" label="$LOCALIZE[31044]" icon="DefaultTVShows.png" target="pvr" source="epg">
                 <path>pvr://channels/tv/*</path>
             </widget>
@@ -260,6 +263,9 @@
         </group>
         <widget name="LastPlayedChannels" label="$LOCALIZE[31043]" icon="DefaultTVShows.png" target="pvr">
             <path>pvr://channels/tv/*?view=lastplayed</path>
+        </widget>
+        <widget name="RecentlyAddedChannels" label="$LOCALIZE[855]" icon="DefaultTVShows.png" target="pvr">
+            <path>pvr://channels/tv/*?view=dateadded</path>
         </widget>
         <widget name="AllChannels" label="$LOCALIZE[31044]" icon="DefaultTVShows.png" target="pvr">
             <path>pvr://channels/tv/*</path>
@@ -295,6 +301,9 @@
         <widget name="RadioLastPlayedChannels" label="$LOCALIZE[31516]" icon="DefaultAddonPVRClient.png" target="pvr">
             <path>pvr://channels/radio/*?view=lastplayed</path>
         </widget>
+        <widget name="RadioRecentlyAddedChannels" label="$LOCALIZE[855]" icon="DefaultAddonPVRClient.png" target="pvr">
+            <path>pvr://channels/radio/*?view=dateadded</path>
+        </widget>
         <widget name="RadioActiveRecordings" label="$LOCALIZE[10706]" icon="DefaultAddonPVRClient.png" target="pvr">
             <path>pvr://recordings/radio/active?view=flat</path>
         </widget>
@@ -303,10 +312,10 @@
         </widget>
     </group>
     <group name="legacy-widget-group-017" label="$LOCALIZE[8]">
-        <widget name="weatherdaily" label="$LOCALIZE[31288]" icon="special://skin/extras/icons/sun.png" type="widget" target="weather" visible="!String.IsEmpty(Window(Weather).Property(Daily.IsFetched))">
+        <widget name="weatherdaily" label="$LOCALIZE[31288]" icon="special://skin/extras/icons/sun.png" type="widget" target="weather" visible="[!String.IsEmpty(Weather.Data(Daily.IsFetched)) | !String.IsEmpty(Window(Weather).Property(Daily.IsFetched))]">
             <path>$INCLUDE[skinshortcuts-template-WeatherDailyInfoContent]</path>
         </widget>
-        <widget name="weatherhourly" label="$LOCALIZE[31289]" icon="special://skin/extras/icons/sun.png" type="widget" target="weather" visible="!String.IsEmpty(Window(Weather).Property(Hourly.IsFetched))">
+        <widget name="weatherhourly" label="$LOCALIZE[31289]" icon="special://skin/extras/icons/sun.png" type="widget" target="weather" visible="[!String.IsEmpty(Weather.Data(Hourly.IsFetched)) | !String.IsEmpty(Window(Weather).Property(Hourly.IsFetched))]">
             <path>$INCLUDE[skinshortcuts-template-WeatherHourlyInfoContent]</path>
         </widget>
     </group>

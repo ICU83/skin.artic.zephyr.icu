@@ -57,7 +57,7 @@
                         <posy>12</posy>
                         <width>44</width>
                         <height>44</height>
-                        <texture fallback="DefaultAddonNone.png">subs/$INFO[ListItem.Thumb].png</texture>
+                        <texture fallback="DefaultAddonNone.png">subs/$INFO[ListItem.Art(thumb)].png</texture>
                     </control>
                     <control type="image">
                         <left>97</left>
@@ -146,7 +146,7 @@
                         <posy>12</posy>
                         <width>44</width>
                         <height>44</height>
-                        <texture fallback="DefaultAddonNone.png">subs/$INFO[ListItem.Thumb].png</texture>
+                        <texture fallback="DefaultAddonNone.png">subs/$INFO[ListItem.Art(thumb)].png</texture>
                     </control>
                     <control type="image">
                         <left>97</left>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <window id="2600">
+    <backgroundcolor>Background</backgroundcolor>
     <defaultcontrol always="true">9100</defaultcontrol>
     <menucontrol>9000</menucontrol>
     <background>0</background>
@@ -104,7 +105,7 @@
                                 <randomize>true</randomize>
                                 <aspectratio>scale</aspectratio>
                                 <animation effect="fade" start="100" end="10" condition="true">Conditional</animation>
-                                <imagepath background="true">$INFO[Skin.String(weather.fanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]/</imagepath>
+                                <imagepath background="true">$INFO[Skin.String(weather.fanart.path)]$VAR[Weather22_CurrentFanartCode]/</imagepath>
                             </control>
                             <control type="image" description="Fanart">
                                 <visible>!Skin.HasSetting(weather.hidefanart) + !String.Contains(Skin.String(weather.fanart.path),multi) + !String.IsEmpty(Skin.String(weather.fanart.path))</visible>
@@ -112,7 +113,7 @@
                                 <height>100%</height>
                                 <aspectratio>scale</aspectratio>
                                 <animation effect="fade" start="100" end="10" condition="true">Conditional</animation>
-                                <texture background="true">$INFO[Skin.String(weather.fanart.path)]$INFO[Window(Weather).Property(Current.FanartCode),,.jpg]</texture>
+                                <texture background="true">$INFO[Skin.String(weather.fanart.path)]$VAR[Weather22_CurrentFanartCode].jpg</texture>
                             </control>
                             <control type="image">
                                 <centertop>35%</centertop>
@@ -120,7 +121,7 @@
                                 <width>240</width>
                                 <height>240</height>
                                 <aspectratio align="center" aligny="center">keep</aspectratio>
-                                <texture>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Current.FanartCode),,.png]</texture>
+                                <texture>$INFO[Skin.String(weather.icons.path),,/]$VAR[Weather22_CurrentFanartCode].png</texture>
                                 <visible>!String.IsEmpty(Skin.String(weather.icons.path)) + !String.Contains(Skin.String(weather.icons.path),animated)</visible>
                             </control>
                             <control type="multiimage">
@@ -129,7 +130,7 @@
                                 <width>240</width>
                                 <height>240</height>
                                 <aspectratio align="center" aligny="center">keep</aspectratio>
-                                <imagepath>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Current.FanartCode)]</imagepath>
+                                <imagepath>$INFO[Skin.String(weather.icons.path),,/]$VAR[Weather22_CurrentFanartCode]</imagepath>
                                 <visible>!String.IsEmpty(Skin.String(weather.icons.path)) + String.Contains(Skin.String(weather.icons.path),animated)</visible>
                             </control>
                             <control type="image">
@@ -138,7 +139,7 @@
                                 <width>240</width>
                                 <height>240</height>
                                 <aspectratio align="center" aligny="center">keep</aspectratio>
-                                <texture>$INFO[Window(weather).Property(Current.ConditionIcon)]</texture>
+                                <texture>$VAR[Weather22_CurrentConditionIcon]</texture>
                                 <visible>String.IsEmpty(Skin.String(weather.icons.path))</visible>
                             </control>
                             <control type="label">
@@ -157,7 +158,7 @@
                                 <align>center</align>
                                 <font>EpisodeNumber</font>
                                 <textcolor>PanelWhite100</textcolor>
-                                <label fallback="10006">$INFO[Window(Weather).Property(Current.Temperature),[B],[/B]°]</label>
+                                <label fallback="10006">[B]$VAR[Weather22_CurrentTemperature][/B]°</label>
                             </control>
                             <control type="textbox">
                                 <top>76%</top>
@@ -167,7 +168,7 @@
                                 <align>center</align>
                                 <font>Tiny</font>
                                 <textcolor>PanelWhite100</textcolor>
-                                <label fallback="10006">$INFO[Window(Weather).Property(Current.Condition),,[CR]]$INFO[Window(Weather).Property(Current.FeelsLike),$LOCALIZE[402] ,°[CR]]$INFO[Window(Weather).Property(Current.Humidity),, $LOCALIZE[406][CR]]$INFO[Window(Weather).Property(Current.Wind)]</label>
+                                <label fallback="10006">$VAR[Weather22_CurrentCondition][CR]$LOCALIZE[402] $VAR[Weather22_CurrentFeelsLike]°[CR]$VAR[Weather22_CurrentHumidity] $LOCALIZE[406][CR]$VAR[Weather22_CurrentWind]</label>
                             </control>
                         </control>
                         <include content="weatherlistinputpageone">
@@ -177,22 +178,22 @@
                         <include content="weatherlistinputpageone">
                             <param name="left" value="594" />
                             <param name="day" value="1" />
-                            <param name="title" value="$INFO[Window(Weather).Property(Day1.Title)]" />
+                            <param name="title" value="$INFO[Weather.Data(Day1.Title)]" />
                         </include>
                         <include content="weatherlistinputpageone">
                             <param name="left" value="891" />
                             <param name="day" value="2" />
-                            <param name="title" value="$INFO[Window(Weather).Property(Day2.Title)]" />
+                            <param name="title" value="$INFO[Weather.Data(Day2.Title)]" />
                         </include>
                         <include content="weatherlistinputpageone">
                             <param name="left" value="1188" />
                             <param name="day" value="3" />
-                            <param name="title" value="$INFO[Window(Weather).Property(Day3.Title)]" />
+                            <param name="title" value="$INFO[Weather.Data(Day3.Title)]" />
                         </include>
                         <include content="weatherlistinputpageone">
                             <param name="left" value="1485" />
                             <param name="day" value="4" />
-                            <param name="title" value="$INFO[Window(Weather).Property(Day4.Title)]" />
+                            <param name="title" value="$INFO[Weather.Data(Day4.Title)]" />
                         </include>
                     </control>
                     <control type="group">
@@ -239,7 +240,7 @@
                                 <randomize>true</randomize>
                                 <aspectratio>scale</aspectratio>
                                 <animation effect="fade" start="100" end="10" condition="true">Conditional</animation>
-                                <imagepath background="true">$INFO[Skin.String(weather.fanart.path)]$INFO[Window(Weather).Property(Hourly.1.FanartCode)]/</imagepath>
+                                <imagepath background="true">$INFO[Skin.String(weather.fanart.path)]$INFO[Weather.Data(Hourly.1.FanartCode)]/</imagepath>
                             </control>
                             <include content="weatherlist">
                                 <param name="DayId" value="1"/>
@@ -452,7 +453,7 @@
                                 <randomize>true</randomize>
                                 <aspectratio>scale</aspectratio>
                                 <animation effect="fade" start="100" end="10" condition="true">Conditional</animation>
-                                <imagepath background="true">$INFO[Skin.String(weather.fanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]/</imagepath>
+                                <imagepath background="true">$INFO[Skin.String(weather.fanart.path)]$VAR[Weather22_CurrentFanartCode]/</imagepath>
                             </control>
                             <control type="image" description="Fanart">
                                 <visible>!Skin.HasSetting(weather.hidefanart) + !String.Contains(Skin.String(weather.fanart.path),multi) + !String.IsEmpty(Skin.String(weather.fanart.path))</visible>
@@ -460,7 +461,7 @@
                                 <height>100%</height>
                                 <aspectratio>scale</aspectratio>
                                 <animation effect="fade" start="100" end="10" condition="true">Conditional</animation>
-                                <texture background="true">$INFO[Skin.String(weather.fanart.path)]$INFO[Window(Weather).Property(Current.FanartCode),,.jpg]</texture>
+                                <texture background="true">$INFO[Skin.String(weather.fanart.path)]$VAR[Weather22_CurrentFanartCode].jpg</texture>
                             </control>
                             <control type="image">
                                 <centertop>35%</centertop>
@@ -468,8 +469,8 @@
                                 <width>240</width>
                                 <height>240</height>
                                 <aspectratio align="center" aligny="center">keep</aspectratio>
-                                <texture>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Current.FanartCode),,.png]</texture>
-                                <visible>!String.IsEmpty(Skin.String(weather.icons.path)) + !String.Contains(Skin.String(weather.icons.path)),animated</visible>
+                                <texture>$INFO[Skin.String(weather.icons.path),,/]$VAR[Weather22_CurrentFanartCode].png</texture>
+                                <visible>!String.IsEmpty(Skin.String(weather.icons.path)) + !String.Contains(Skin.String(weather.icons.path),animated)</visible>
                             </control>
                             <control type="multiimage">
                                 <centertop>35%</centertop>
@@ -477,7 +478,7 @@
                                 <width>240</width>
                                 <height>240</height>
                                 <aspectratio align="center" aligny="center">keep</aspectratio>
-                                <imagepath>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Current.FanartCode)]</imagepath>
+                                <imagepath>$INFO[Skin.String(weather.icons.path),,/]$VAR[Weather22_CurrentFanartCode]</imagepath>
                                 <visible>!String.IsEmpty(Skin.String(weather.icons.path)) + String.Contains(Skin.String(weather.icons.path),animated)</visible>
                             </control>
                             <control type="image">
@@ -486,7 +487,7 @@
                                 <width>240</width>
                                 <height>240</height>
                                 <aspectratio align="center" aligny="center">keep</aspectratio>
-                                <texture>$INFO[Window(weather).Property(Current.ConditionIcon)]</texture>
+                                <texture>$VAR[Weather22_CurrentConditionIcon]</texture>
                                 <visible>String.IsEmpty(Skin.String(weather.icons.path))</visible>
                             </control>
                             <control type="label">
@@ -505,7 +506,7 @@
                                 <align>center</align>
                                 <font>EpisodeNumber</font>
                                 <textcolor>PanelWhite100</textcolor>
-                                <label fallback="10006">$INFO[Window(Weather).Property(Current.Temperature),[B],[/B]°]</label>
+                                <label fallback="10006">[B]$VAR[Weather22_CurrentTemperature][/B]°</label>
                             </control>
                             <control type="textbox">
                                 <top>76%</top>
@@ -515,7 +516,7 @@
                                 <align>center</align>
                                 <font>Tiny</font>
                                 <textcolor>PanelWhite100</textcolor>
-                                <label fallback="10006">$INFO[Window(Weather).Property(Current.Condition),,[CR]]$INFO[Window(Weather).Property(Current.FeelsLike),$LOCALIZE[402] ,°[CR]]$INFO[Window(Weather).Property(Current.Humidity),, $LOCALIZE[406][CR]]$INFO[Window(Weather).Property(Current.Wind)]</label>
+                                <label fallback="10006">$VAR[Weather22_CurrentCondition][CR]$LOCALIZE[402] $VAR[Weather22_CurrentFeelsLike]°[CR]$VAR[Weather22_CurrentHumidity] $LOCALIZE[406][CR]$VAR[Weather22_CurrentWind]</label>
                             </control>
                         </control>
                         <include content="weatherlistinputpageone">
@@ -525,22 +526,22 @@
                         <include content="weatherlistinputpageone">
                             <param name="left" value="594" />
                             <param name="day" value="1" />
-                            <param name="title" value="$INFO[Window(Weather).Property(Day1.Title)]" />
+                            <param name="title" value="$INFO[Weather.Data(Day1.Title)]" />
                         </include>
                         <include content="weatherlistinputpageone">
                             <param name="left" value="891" />
                             <param name="day" value="2" />
-                            <param name="title" value="$INFO[Window(Weather).Property(Day2.Title)]" />
+                            <param name="title" value="$INFO[Weather.Data(Day2.Title)]" />
                         </include>
                         <include content="weatherlistinputpageone">
                             <param name="left" value="1188" />
                             <param name="day" value="3" />
-                            <param name="title" value="$INFO[Window(Weather).Property(Day3.Title)]" />
+                            <param name="title" value="$INFO[Weather.Data(Day3.Title)]" />
                         </include>
                         <include content="weatherlistinputpageone">
                             <param name="left" value="1485" />
                             <param name="day" value="4" />
-                            <param name="title" value="$INFO[Window(Weather).Property(Day4.Title)]" />
+                            <param name="title" value="$INFO[Weather.Data(Day4.Title)]" />
                         </include>
                     </control>
                     <control type="group">
@@ -769,7 +770,7 @@
                         <label>31094</label>
                         <icon/>
                         <label2>Vier</label2>
-                        <visible>!String.IsEmpty(Window.Property(Daily.IsFetched))</visible>
+                        <visible>[!String.IsEmpty(Weather.Data(Daily.IsFetched)) | !String.IsEmpty(Window(Weather).Property(Daily.IsFetched))]</visible>
                     </item>
                     <item id="2">
                         <label>31093</label>
@@ -777,44 +778,44 @@
                         <label2>Zwei</label2>
                     </item>
                     <item id="3">
-                        <label>$INFO[Window.Property(Map.1.Heading)]</label>
-                        <icon>$INFO[Window.Property(Map.1.Area)]</icon>
-                        <property name="MapLayer">$INFO[Window.Property(Map.1.Layer)]</property>
-                        <property name="Legend">$INFO[Window.Property(Map.1.Legend)]</property>
+                        <label>$VAR[Weather22_Map1Heading]</label>
+                        <icon>$VAR[Weather22_Map1Area]</icon>
+                        <property name="MapLayer">$VAR[Weather22_Map1Layer]</property>
+                        <property name="Legend">$VAR[Weather22_Map1Legend]</property>
                         <label2>Drei</label2>
-                        <visible>!String.IsEmpty(Window.Property(Map.1.Area)) + !String.IsEmpty(Window.Property(Map.IsFetched))</visible>
+                        <visible>[!String.IsEmpty(Weather.Data(Map.1.Area)) | !String.IsEmpty(Window(Weather).Property(Map.1.Area))] + [!String.IsEmpty(Weather.Data(Map.IsFetched)) | !String.IsEmpty(Window(Weather).Property(Map.IsFetched))]</visible>
                     </item>
                     <item id="4">
-                        <label>$INFO[Window.Property(Map.2.Heading)]</label>
-                        <icon>$INFO[Window.Property(Map.2.Area)]</icon>
-                        <property name="MapLayer">$INFO[Window.Property(Map.2.Layer)]</property>
-                        <property name="Legend">$INFO[Window.Property(Map.2.Legend)]</property>
+                        <label>$VAR[Weather22_Map2Heading]</label>
+                        <icon>$VAR[Weather22_Map2Area]</icon>
+                        <property name="MapLayer">$VAR[Weather22_Map2Layer]</property>
+                        <property name="Legend">$VAR[Weather22_Map2Legend]</property>
                         <label2>Drei</label2>
-                        <visible>!String.IsEmpty(Window.Property(Map.2.Area)) + !String.IsEmpty(Window.Property(Map.IsFetched))</visible>
+                        <visible>[!String.IsEmpty(Weather.Data(Map.2.Area)) | !String.IsEmpty(Window(Weather).Property(Map.2.Area))] + [!String.IsEmpty(Weather.Data(Map.IsFetched)) | !String.IsEmpty(Window(Weather).Property(Map.IsFetched))]</visible>
                     </item>
                     <item id="5">
-                        <label>$INFO[Window.Property(Map.3.Heading)]</label>
-                        <icon>$INFO[Window.Property(Map.3.Area)]</icon>
-                        <property name="MapLayer">$INFO[Window.Property(Map.3.Layer)]</property>
-                        <property name="Legend">$INFO[Window.Property(Map.3.Legend)]</property>
+                        <label>$VAR[Weather22_Map3Heading]</label>
+                        <icon>$VAR[Weather22_Map3Area]</icon>
+                        <property name="MapLayer">$VAR[Weather22_Map3Layer]</property>
+                        <property name="Legend">$VAR[Weather22_Map3Legend]</property>
                         <label2>Drei</label2>
-                        <visible>!String.IsEmpty(Window.Property(Map.3.Area)) + !String.IsEmpty(Window.Property(Map.IsFetched))</visible>
+                        <visible>[!String.IsEmpty(Weather.Data(Map.3.Area)) | !String.IsEmpty(Window(Weather).Property(Map.3.Area))] + [!String.IsEmpty(Weather.Data(Map.IsFetched)) | !String.IsEmpty(Window(Weather).Property(Map.IsFetched))]</visible>
                     </item>
                     <item id="6">
-                        <label>$INFO[Window.Property(Map.4.Heading)]</label>
-                        <icon>$INFO[Window.Property(Map.4.Area)]</icon>
-                        <property name="MapLayer">$INFO[Window.Property(Map.4.Layer)]</property>
-                        <property name="Legend">$INFO[Window.Property(Map.4.Legend)]</property>
+                        <label>$VAR[Weather22_Map4Heading]</label>
+                        <icon>$VAR[Weather22_Map4Area]</icon>
+                        <property name="MapLayer">$VAR[Weather22_Map4Layer]</property>
+                        <property name="Legend">$VAR[Weather22_Map4Legend]</property>
                         <label2>Drei</label2>
-                        <visible>!String.IsEmpty(Window.Property(Map.4.Area)) + !String.IsEmpty(Window.Property(Map.IsFetched))</visible>
+                        <visible>[!String.IsEmpty(Weather.Data(Map.4.Area)) | !String.IsEmpty(Window(Weather).Property(Map.4.Area))] + [!String.IsEmpty(Weather.Data(Map.IsFetched)) | !String.IsEmpty(Window(Weather).Property(Map.IsFetched))]</visible>
                     </item>
                     <item id="7">
-                        <label>$INFO[Window.Property(Map.5.Heading)]</label>
-                        <icon>$INFO[Window.Property(Map.5.Area)]</icon>
-                        <property name="MapLayer">$INFO[Window.Property(Map.5.Layer)]</property>
-                        <property name="Legend">$INFO[Window.Property(Map.5.Legend)]</property>
+                        <label>$VAR[Weather22_Map5Heading]</label>
+                        <icon>$VAR[Weather22_Map5Area]</icon>
+                        <property name="MapLayer">$VAR[Weather22_Map5Layer]</property>
+                        <property name="Legend">$VAR[Weather22_Map5Legend]</property>
                         <label2>Drei</label2>
-                        <visible>!String.IsEmpty(Window.Property(Map.5.Area)) + !String.IsEmpty(Window.Property(Map.IsFetched))</visible>
+                        <visible>[!String.IsEmpty(Weather.Data(Map.5.Area)) | !String.IsEmpty(Window(Weather).Property(Map.5.Area))] + [!String.IsEmpty(Weather.Data(Map.IsFetched)) | !String.IsEmpty(Window(Weather).Property(Map.IsFetched))]</visible>
                     </item>
                 </content>
             </control>

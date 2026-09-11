@@ -1,4 +1,5 @@
 <window>
+    <backgroundcolor>Background</backgroundcolor>
     <defaultcontrol>30</defaultcontrol>
     <defaultcontrol always="true">9101</defaultcontrol>
     <onunload>RunScript(script.skinshortcuts,type=buildxml)</onunload>

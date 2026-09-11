@@ -63,7 +63,7 @@
                         <posy>17</posy>
                         <width>85</width>
                         <height>85</height>
-                        <texture>$INFO[ListItem.Thumb]</texture>
+                        <texture>$INFO[ListItem.Art(thumb)]</texture>
                         <aspectratio>keep</aspectratio>
                     </control>
                     <control type="group">
@@ -139,7 +139,7 @@
                         <posy>17</posy>
                         <width>85</width>
                         <height>85</height>
-                        <texture>$INFO[ListItem.Thumb]</texture>
+                        <texture>$INFO[ListItem.Art(thumb)]</texture>
                         <aspectratio>keep</aspectratio>
                     </control>
                     <control type="group">

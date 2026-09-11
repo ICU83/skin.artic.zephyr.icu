@@ -2256,7 +2256,7 @@
     </include>
 
     <include name="def_progresstexture">
-        <progresstexture border="5" colordiffuse="bf777777">$PARAM[progresstexture]</progresstexture>
+        <progresstexture border="5" colordiffuse="FFFFFFFF">$PARAM[progresstexture]</progresstexture>
     </include>
 
     <include name="def_left">

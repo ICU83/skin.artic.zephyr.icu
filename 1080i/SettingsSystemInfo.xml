@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <window id="7">
+    <backgroundcolor>Background</backgroundcolor>
     <defaultcontrol always="true">95</defaultcontrol>
     <controls>
         <include>GlobalBackground</include>

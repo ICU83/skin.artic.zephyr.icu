@@ -2410,7 +2410,7 @@
         <value condition="Window.IsVisible(script-globalsearch.xml)">special://skin/extras/icons/search.png</value>
         <value condition="Window.IsVisible(service-CoreELEC-Settings-mainWindow.xml)">special://skin/extras/icons/coreelec.png</value>
         <value condition="Window.IsVisible(service-LibreELEC-Settings-mainWindow.xml)">special://skin/extras/icons/libreelec.png</value>
-        <value condition="Window.IsVisible(DialogFavourites.xml)">special://skin/extras/icons/favourites.png</value>
+        <value condition="Window.IsVisible(MyFavourites.xml)">special://skin/extras/icons/favourites.png</value>
         <value condition="Window.IsVisible(EventLog.xml)">special://skin/extras/icons/antenna.png</value>
         <value condition="Window.IsVisible(1104) | Window.IsVisible(1105)">special://skin/extras/icons/director.png</value>
         <value condition="Player.HasAudio + [Window.IsVisible(fullscreenvideo) | Window.IsVisible(visualisation) | Window.IsVisible(home)]">special://skin/extras/icons/songs.png</value>
@@ -2441,7 +2441,7 @@
         <value condition="String.Contains(Container.FolderPath,videodb://musicvideos/,Left)">special://skin/extras/icons/musicvideo.png</value>
         <value condition="Window.IsVisible(DialogColorPicker.xml)">special://skin/extras/icons/wand.png</value>
         <value condition="Window.IsVisible(Custom_Blur.xml)">special://skin/extras/icons/wand.png</value>
-        <value condition="Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml)">special://skin/extras/icons/livetv.png</value>
+        <value condition="Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRProviders.xml)">special://skin/extras/icons/livetv.png</value>
         <value condition="Window.IsVisible(MyMusicPlaylistEditor.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyMusicSongs.xml)">special://skin/extras/icons/songs.png</value>
         <value condition="Window.IsVisible(MyPics.xml)">special://skin/extras/icons/pictures.png</value>
         <value condition="Window.IsVisible(MyPrograms.xml) | Window.IsVisible(AddonBrowser.xml)">special://skin/extras/icons/addons.png</value>
@@ -2480,7 +2480,7 @@
         <value condition="Window.IsVisible(service-LibreELEC-Settings-mainWindow.xml)">$LOCALIZE[31643]</value>        
         <value condition="Window.IsVisible(MyMusicPlaylistEditor.xml)">$LOCALIZE[20011]</value>
         <value condition="Window.IsVisible(DialogButtonMenu.xml)">$LOCALIZE[33060]</value>
-        <value condition="Window.IsVisible(DialogFavourites.xml)">$LOCALIZE[1036]</value>
+        <value condition="Window.IsVisible(MyFavourites.xml)">$LOCALIZE[1036]</value>
         <value condition="Window.IsVisible(EventLog.xml)">$LOCALIZE[14111]</value>
         <value condition="[Window.IsVisible(script-globalsearch-main.xml) | Window.IsVisible(script-globalsearch-info.xml)] + [!String.IsEmpty(Control.GetLabel(190)) | !String.IsEmpty(Control.GetLabel(191)) | !String.IsEmpty(Control.GetLabel(199))]">$INFO[Control.GetLabel(190)]$INFO[Control.GetLabel(191)]$INFO[Control.GetLabel(199)]</value>
         <value condition="[Window.IsVisible(script-globalsearch-main.xml) | Window.IsVisible(script-globalsearch-info.xml)] + String.IsEmpty(Control.GetLabel(190)) + String.IsEmpty(Control.GetLabel(191)) + String.IsEmpty(Control.GetLabel(199))">$LOCALIZE[283]</value>
@@ -2496,6 +2496,7 @@
         <value condition="Window.IsVisible(MyVideoNav.xml) + !String.IsEmpty(Container.FolderName)">$INFO[Container.FolderName]</value>
         <value condition="Window.IsVisible(MyVideoNav.xml)">$LOCALIZE[3]</value>
         <value condition="Window.IsVisible(MyPVRChannels.xml)">$LOCALIZE[19019]</value>
+        <value condition="Window.IsVisible(MyPVRProviders.xml)">$LOCALIZE[19334]$INFO[Control.GetLabel(29),  •  ,]</value>
         <value condition="Window.IsVisible(MyPVRGuide.xml)">$LOCALIZE[4]</value>
         <value condition="Window.IsVisible(MyPVRRecordings.xml)">$LOCALIZE[19017]</value>
         <value condition="Window.IsVisible(MyPVRTimers.xml)">$LOCALIZE[19040]</value>
@@ -2528,6 +2529,8 @@
         <value condition="[Window.IsVisible(script-globalsearch-main.xml) | Window.IsVisible(script-globalsearch-info.xml)] + String.IsEmpty(Control.GetLabel(190)) + String.IsEmpty(Control.GetLabel(191)) + String.IsEmpty(Control.GetLabel(199))">$VAR[GlobalSearchHeaderLabel]</value>
         <value condition="Window.IsVisible(LoginScreen.xml)">$LOCALIZE[10029]</value>
         <value condition="Window.IsVisible(DialogColorPicker.xml)">$LOCALIZE[31239] [COLOR=$INFO[Window(home).Property(colorstring)]]$INFO[Window(home).Property(colorstring)][/COLOR]</value>
+        <value condition="Window.IsVisible(MyPVRProviders.xml) + Integer.IsGreater(PVR.ClientCount,1)">[COLOR=$VAR[ColorHighlight]]$INFO[Container.NumItems,,[/COLOR] $LOCALIZE[31101]]  •  [COLOR=$VAR[ColorHighlight]]$INFO[PVR.ClientCount][/COLOR] PVR</value>
+        <value condition="Window.IsVisible(MyPVRProviders.xml)">[COLOR=$VAR[ColorHighlight]]$INFO[Container.NumItems,,[/COLOR] $LOCALIZE[31101]]</value>
         <value condition="[Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml)]">[COLOR=$VAR[ColorHighlight]]$INFO[Container.NumItems,,[/COLOR] $LOCALIZE[31101]]$INFO[Control.GetLabel(3),  •  ,]$INFO[Control.GetLabel(28),  •  ,]</value>
         <value condition="!String.IsEmpty(Container.NumItems) + Window.IsVisible(AddonBrowser.xml) + Integer.IsGreater(System.AddonUpdateCount,0)">[COLOR=$VAR[ColorHighlight]]$INFO[Container.NumItems,,[/COLOR] $LOCALIZE[31101]]  •  [COLOR=$VAR[ColorHighlight]]$INFO[System.AddonUpdateCount,,[/COLOR] $LOCALIZE[24043]]$INFO[Control.GetLabel(3),  •  ,]</value>
         <value condition="!String.IsEmpty(Container.NumItems) + !Window.IsVisible(home)">[COLOR=$VAR[ColorHighlight]]$INFO[Container.NumItems,,[/COLOR] $LOCALIZE[31101]]$INFO[Control.GetLabel(3),  •  ,]</value>
@@ -2545,10 +2548,10 @@
         <value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),musicvideos) | [String.StartsWith(Container(300).ListItem.Property(path),ActivateWindow) + [String.Contains(Container(300).ListItem.Property(path),library://video/musicvideos/) | String.Contains(Container(300).ListItem.Property(path),library://music/musicvideos/)]]">[COLOR=$VAR[ColorHighlight]]$INFO[Window(home).Property(MusicVideos.Count)][/COLOR] $LOCALIZE[20389]  •  [COLOR=$VAR[ColorHighlight]]$INFO[Window(Home).Property(MusicVideos.UnWatched)][/COLOR] $LOCALIZE[31215]</value>
         <value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),livetv) + String.IsEmpty(Pvr.BackendChannels)">$INFO[Pvr.BackendName]</value>
         <value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),livetv) + !String.IsEmpty(Pvr.BackendChannels)">$INFO[Pvr.BackendName]  •  [COLOR=$VAR[ColorHighlight]]$INFO[Pvr.BackendChannels][/COLOR] $LOCALIZE[19019]</value>
-        <value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),weather)">[COLOR=$VAR[ColorHighlight]]$INFO[Weather.Temperature,,[/COLOR]  ]$INFO[Window(Weather).Property(Location)]</value>
-        <value condition="String.IsEqual(Container(300).ListItem.Property(widget),weatherdaily)">[COLOR=$VAR[ColorHighlight]]$INFO[Weather.Temperature,,[/COLOR]  ]$INFO[Window(Weather).Property(Location)]</value>
-        <value condition="String.IsEqual(Container(300).ListItem.Property(widget),weatherhourly)">[COLOR=$VAR[ColorHighlight]]$INFO[Weather.Temperature,,[/COLOR]  ]$INFO[Window(Weather).Property(Location)]</value>
-        <value condition="Window.IsVisible(MyWeather.xml) + !String.IsEmpty(Window(Weather).Property(Location))">[COLOR=$VAR[ColorHighlight]]$INFO[Weather.Temperature,,[/COLOR]  ]$INFO[Window(Weather).Property(Location)]</value>
+        <value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),weather)">[COLOR=$VAR[ColorHighlight]]$INFO[Weather.Temperature,,[/COLOR]  ]$VAR[Weather22_CurrentLocation]</value>
+        <value condition="String.IsEqual(Container(300).ListItem.Property(widget),weatherdaily)">[COLOR=$VAR[ColorHighlight]]$INFO[Weather.Temperature,,[/COLOR]  ]$VAR[Weather22_CurrentLocation]</value>
+        <value condition="String.IsEqual(Container(300).ListItem.Property(widget),weatherhourly)">[COLOR=$VAR[ColorHighlight]]$INFO[Weather.Temperature,,[/COLOR]  ]$VAR[Weather22_CurrentLocation]</value>
+        <value condition="Window.IsVisible(MyWeather.xml) + [!String.IsEmpty(Weather.Data(Current.Location)) | !String.IsEmpty(Window(Weather).Property(Location))]">[COLOR=$VAR[ColorHighlight]]$INFO[Weather.Temperature,,[/COLOR]  ]$VAR[Weather22_CurrentLocation]</value>
         <value condition="!Library.HasContent(Music) + String.IsEmpty(Pvr.BackendChannels)">[COLOR=$VAR[ColorHighlight]]$INFO[Window(home).Property(Movies.Count)][/COLOR] $LOCALIZE[20342]  •  [COLOR=$VAR[ColorHighlight]]$INFO[Window(home).Property(Episodes.Count)][/COLOR] $LOCALIZE[20360]</value>
         <value condition="!Library.HasContent(Music)">[COLOR=$VAR[ColorHighlight]]$INFO[Window(home).Property(Movies.Count)][/COLOR] $LOCALIZE[20342]  •  [COLOR=$VAR[ColorHighlight]]$INFO[Window(home).Property(Episodes.Count)][/COLOR] $LOCALIZE[20360]  •  [COLOR=$VAR[ColorHighlight]]$INFO[Pvr.BackendChannels][/COLOR] $LOCALIZE[19019]</value>
         <value condition="String.IsEmpty(Pvr.BackendChannels)">[COLOR=$VAR[ColorHighlight]]$INFO[Window(home).Property(Movies.Count)][/COLOR] $LOCALIZE[20342]  •  [COLOR=$VAR[ColorHighlight]]$INFO[Window(home).Property(Episodes.Count)][/COLOR] $LOCALIZE[20360]  •  [COLOR=$VAR[ColorHighlight]]$INFO[Window(home).Property(Music.SongsCount)][/COLOR] $LOCALIZE[134]</value>
@@ -2723,7 +2726,7 @@
                         <bottom>39</bottom>
                         <align>right</align>
                         <aspectratio aligny="center" align="center">keep</aspectratio>
-                        <texture>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Current.FanartCode),,.png]</texture>
+                        <texture>$INFO[Skin.String(weather.icons.path),,/]$VAR[Weather22_CurrentFanartCode].png</texture>
                         <visible>![String.IsEmpty(Skin.String(weather.icons.path)) | String.Contains(Skin.String(weather.icons.path),Default)] + !String.Contains(Skin.String(weather.icons.path),animated) + Skin.HasSetting(weather.icons.override) + !String.Contains(Skin.String(weather.icons.path),White) + !String.Contains(Skin.String(weather.icons.path),Outline) + !String.Contains(Skin.String(weather.icons.path),Transparent) + !String.Contains(Skin.String(weather.icons.path),Monstr)</visible>
                         <include>IconFade</include>
                     </control>
@@ -2733,7 +2736,7 @@
                         <bottom>39</bottom>
                         <align>right</align>
                         <aspectratio aligny="center" align="center">keep</aspectratio>
-                        <texture colordiffuse="Dark2">$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Current.FanartCode),,.png]</texture>
+                        <texture colordiffuse="Dark2">$INFO[Skin.String(weather.icons.path),,/]$VAR[Weather22_CurrentFanartCode].png</texture>
                         <visible>![String.IsEmpty(Skin.String(weather.icons.path)) | String.Contains(Skin.String(weather.icons.path),Default)] + !String.Contains(Skin.String(weather.icons.path),animated) + Skin.HasSetting(weather.icons.override) + [String.Contains(Skin.String(weather.icons.path),White) | String.Contains(Skin.String(weather.icons.path),Outline) | String.Contains(Skin.String(weather.icons.path),Transparent) | String.Contains(Skin.String(weather.icons.path),Monstr)]</visible>
                     </control>
                     <control type="image">
@@ -2751,13 +2754,13 @@
                         <bottom>39</bottom>
                         <align>right</align>
                         <aspectratio aligny="center" align="center">keep</aspectratio>
-                        <texture>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Current.FanartCode),,.png]</texture>
+                        <texture>$INFO[Skin.String(weather.icons.path),,/]$VAR[Weather22_CurrentFanartCode].png</texture>
                         <visible>String.Contains(Skin.String(weather.icons.path),Default) + Skin.HasSetting(weather.icons.override)</visible>
                         <include>IconFade</include>
                     </control>
                 </control>
                 <control type="group">
-                    <visible>String.Contains(Weather.Temperature,$LOCALIZE[503]) | String.IsEmpty(Window(Weather).Property(Updated))</visible>
+                    <visible>String.Contains(Weather.Temperature,$LOCALIZE[503]) | String.IsEmpty(Weather.LastUpdated) + String.IsEmpty(Window(Weather).Property(Updated))</visible>
                     <include>Animation.FadeInWeather</include>
                     <include>Animation.FadeOutWeather</include>
                     <orientation>horizontal</orientation>
@@ -2877,7 +2880,7 @@
                     <width>70</width>
                     <height>70</height>
                     <aspectratio aligny="center" align="center">keep</aspectratio>
-                    <texture>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Current.FanartCode),,.png]</texture>
+                    <texture>$INFO[Skin.String(weather.icons.path),,/]$VAR[Weather22_CurrentFanartCode].png</texture>
                     <visible>![String.IsEmpty(Skin.String(weather.icons.path)) | String.Contains(Skin.String(weather.icons.path),Default)] + !String.Contains(Skin.String(weather.icons.path),animated) + Skin.HasSetting(weather.icons.override) + !String.Contains(Skin.String(weather.icons.path),White) + !String.Contains(Skin.String(weather.icons.path),Outline) + !String.Contains(Skin.String(weather.icons.path),Transparent) + !String.Contains(Skin.String(weather.icons.path),Monstr)</visible>
                     <include>IconFade</include>
                 </control>
@@ -2885,14 +2888,14 @@
                     <width>70</width>
                     <height>70</height>
                     <aspectratio aligny="center" align="center">keep</aspectratio>
-                    <texture colordiffuse="Dark2">$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Current.FanartCode),,.png]</texture>
+                    <texture colordiffuse="Dark2">$INFO[Skin.String(weather.icons.path),,/]$VAR[Weather22_CurrentFanartCode].png</texture>
                     <visible>![String.IsEmpty(Skin.String(weather.icons.path)) | String.Contains(Skin.String(weather.icons.path),Default)] + !String.Contains(Skin.String(weather.icons.path),animated) + Skin.HasSetting(weather.icons.override) + [String.Contains(Skin.String(weather.icons.path),White) | String.Contains(Skin.String(weather.icons.path),Outline) | String.Contains(Skin.String(weather.icons.path),Transparent) | String.Contains(Skin.String(weather.icons.path),Monstr)]</visible>
                 </control>
                 <control type="multiimage">
                     <width>70</width>
                     <height>70</height>
                     <aspectratio align="center" aligny="center">keep</aspectratio>
-                    <imagepath>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Current.FanartCode)]</imagepath>
+                    <imagepath>$INFO[Skin.String(weather.icons.path),,/]$VAR[Weather22_CurrentFanartCode]</imagepath>
                     <visible>![String.IsEmpty(Skin.String(weather.icons.path)) | String.Contains(Skin.String(weather.icons.path),Default)] + String.Contains(Skin.String(weather.icons.path),animated) + Skin.HasSetting(weather.icons.override)</visible>
                     <include>IconFade</include>
                 </control>
@@ -2907,7 +2910,7 @@
                     <width>70</width>
                     <height>70</height>
                     <aspectratio aligny="center" align="center">keep</aspectratio>
-                    <texture>$INFO[Skin.String(weather.icons.path),,/]$INFO[Window(weather).Property(Current.FanartCode),,.png]</texture>
+                    <texture>$INFO[Skin.String(weather.icons.path),,/]$VAR[Weather22_CurrentFanartCode].png</texture>
                     <visible>String.Contains(Skin.String(weather.icons.path),Default) + Skin.HasSetting(weather.icons.override)</visible>
                     <include>IconFade</include>
                 </control>

@@ -93,6 +93,14 @@
                     <include>DefContextButtonGradient</include>
                     <align>left</align>
                 </control>
+                <control type="button" id="9020">
+                    <description>Providers</description>
+                    <label>19334</label>
+                    <onclick condition="Window.IsActive(radiochannels) | Window.IsActive(radioguide) | Window.IsActive(radiorecordings) | Window.IsActive(radiotimers) | Window.IsActive(radiotimerrules) | Window.IsActive(radiosearch) | Window.IsActive(radioproviders)">ActivateWindow(RadioProviders)</onclick>
+                    <onclick condition="!Window.IsActive(radiochannels) + !Window.IsActive(radioguide) + !Window.IsActive(radiorecordings) + !Window.IsActive(radiotimers) + !Window.IsActive(radiotimerrules) + !Window.IsActive(radiosearch) + !Window.IsActive(radioproviders)">ActivateWindow(TVProviders)</onclick>
+                    <include>DefContextButtonGradient</include>
+                    <align>left</align>
+                </control>
                 <control type="button" id="28">
                     <description>Group</description>
                     <include>DefContextButtonGradient</include>
@@ -231,7 +239,7 @@
                     <font>Tiny</font>
                     <textcolor>Dark1</textcolor>
                     <selectedcolor>Dark1</selectedcolor>
-                    <label>$INFO[ListItem.Genre]</label>
+                    <label>$INFO[ListItem.Genre]$INFO[ListItem.MediaProviders,  •  ,]</label>
                 </control>
                 <control type="textbox">
                     <top>124</top>
@@ -525,6 +533,43 @@
                                 <visible>!String.IsEqual(ListItem.Label,..)</visible>
                             </control>
                         </control>
+                        <control type="group">
+                            <visible>Window.IsVisible(MyPVRProviders.xml)</visible>
+                            <control type="label">
+                                <left>140</left>
+                                <right>260</right>
+                                <top>12</top>
+                                <aligny>center</aligny>
+                                <height>64</height>
+                                <font>Small</font>
+                                <textcolor>Dark1</textcolor>
+                                <selectedcolor>Dark1</selectedcolor>
+                                <label>$INFO[ListItem.Label]</label>
+                            </control>
+                            <control type="label">
+                                <left>140</left>
+                                <right>260</right>
+                                <bottom>8</bottom>
+                                <aligny>center</aligny>
+                                <height>64</height>
+                                <font>SmallPVR</font>
+                                <textcolor>Dark2</textcolor>
+                                <selectedcolor>Dark2</selectedcolor>
+                                <label>$INFO[ListItem.PVRClientName]$INFO[ListItem.PVRInstanceName,  •  ,]</label>
+                            </control>
+                            <control type="label">
+                                <right>30</right>
+                                <width>220</width>
+                                <height>100%</height>
+                                <align>right</align>
+                                <aligny>center</aligny>
+                                <font>SmallPVR</font>
+                                <textcolor>Dark2</textcolor>
+                                <selectedcolor>Dark2</selectedcolor>
+                                <label>$INFO[ListItem.Property(totalcount),[B],[/B] $LOCALIZE[31101]]</label>
+                                <visible>!String.IsEmpty(ListItem.Property(totalcount))</visible>
+                            </control>
+                        </control>
                     </itemlayout>
                     <focusedlayout height="128" width="1100">
                         <control type="group">
@@ -689,6 +734,43 @@
                                     <aspectratio aligny="top">keep</aspectratio>
                                     <texture>$VAR[PercentWatched]</texture>
                                     <visible>!String.IsEqual(ListItem.Label,..)</visible>
+                                </control>
+                            </control>
+                            <control type="group">
+                                <visible>Window.IsVisible(MyPVRProviders.xml)</visible>
+                                <control type="label">
+                                    <left>140</left>
+                                    <right>260</right>
+                                    <top>12</top>
+                                    <aligny>center</aligny>
+                                    <height>64</height>
+                                    <font>Small</font>
+                                    <textcolor>Light1</textcolor>
+                                    <selectedcolor>Light1</selectedcolor>
+                                    <label>$INFO[ListItem.Label]</label>
+                                </control>
+                                <control type="label">
+                                    <left>140</left>
+                                    <right>260</right>
+                                    <bottom>8</bottom>
+                                    <aligny>center</aligny>
+                                    <height>64</height>
+                                    <font>SmallPVR</font>
+                                    <textcolor>Light2</textcolor>
+                                    <selectedcolor>Light2</selectedcolor>
+                                    <label>$INFO[ListItem.PVRClientName]$INFO[ListItem.PVRInstanceName,  •  ,]</label>
+                                </control>
+                                <control type="label">
+                                    <right>30</right>
+                                    <width>220</width>
+                                    <height>100%</height>
+                                    <align>right</align>
+                                    <aligny>center</aligny>
+                                    <font>SmallPVR</font>
+                                    <textcolor>Light2</textcolor>
+                                    <selectedcolor>Light2</selectedcolor>
+                                    <label>$INFO[ListItem.Property(totalcount),[B],[/B] $LOCALIZE[31101]]</label>
+                                    <visible>!String.IsEmpty(ListItem.Property(totalcount))</visible>
                                 </control>
                             </control>
                         </control>

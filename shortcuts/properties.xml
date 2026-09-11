@@ -8,7 +8,7 @@
             <option value="album" label="$LOCALIZE[558]" />
             <option value="tracknumber" label="$LOCALIZE[554]" condition="widgetType=songs" />
             <option value="channelnumber" label="$LOCALIZE[19029]" />
-            <option value="dateadded" label="$LOCALIZE[570]" condition="!widgetType=pvr" />
+            <option value="dateadded" label="$LOCALIZE[570]" />
             <option value="random" label="$LOCALIZE[590]" />
             <option value="tvshowtitle" label="$LOCALIZE[36902]" />
             <option value="date" label="$LOCALIZE[552]" condition="widgetType=episodes" />
@@ -28,7 +28,7 @@
             <option value="album" label="$LOCALIZE[558]" />
             <option value="tracknumber" label="$LOCALIZE[554]" condition="widgetType.2=songs" />
             <option value="channelnumber" label="$LOCALIZE[19029]" />
-            <option value="dateadded" label="$LOCALIZE[570]" condition="!widgetType.2=pvr" />
+            <option value="dateadded" label="$LOCALIZE[570]" />
             <option value="random" label="$LOCALIZE[590]" />
             <option value="tvshowtitle" label="$LOCALIZE[36902]" />
             <option value="date" label="$LOCALIZE[552]" condition="widgetType.2=episodes" />
@@ -48,7 +48,7 @@
             <option value="album" label="$LOCALIZE[558]" />
             <option value="tracknumber" label="$LOCALIZE[554]" condition="widgetType.3=songs" />
             <option value="channelnumber" label="$LOCALIZE[19029]" />
-            <option value="dateadded" label="$LOCALIZE[570]" condition="!widgetType.3=pvr" />
+            <option value="dateadded" label="$LOCALIZE[570]" />
             <option value="random" label="$LOCALIZE[590]" />
             <option value="tvshowtitle" label="$LOCALIZE[36902]" />
             <option value="date" label="$LOCALIZE[552]" condition="widgetType.3=episodes" />
@@ -68,7 +68,7 @@
             <option value="album" label="$LOCALIZE[558]" />
             <option value="tracknumber" label="$LOCALIZE[554]" condition="widgetType.4=songs" />
             <option value="channelnumber" label="$LOCALIZE[19029]" />
-            <option value="dateadded" label="$LOCALIZE[570]" condition="!widgetType.4=pvr" />
+            <option value="dateadded" label="$LOCALIZE[570]" />
             <option value="random" label="$LOCALIZE[590]" />
             <option value="tvshowtitle" label="$LOCALIZE[36902]" />
             <option value="date" label="$LOCALIZE[552]" condition="widgetType.4=episodes" />
@@ -88,7 +88,7 @@
             <option value="album" label="$LOCALIZE[558]" />
             <option value="tracknumber" label="$LOCALIZE[554]" condition="widgetType.5=songs" />
             <option value="channelnumber" label="$LOCALIZE[19029]" />
-            <option value="dateadded" label="$LOCALIZE[570]" condition="!widgetType.5=pvr" />
+            <option value="dateadded" label="$LOCALIZE[570]" />
             <option value="random" label="$LOCALIZE[590]" />
             <option value="tvshowtitle" label="$LOCALIZE[36902]" />
             <option value="date" label="$LOCALIZE[552]" condition="widgetType.5=episodes" />
@@ -108,7 +108,7 @@
             <option value="album" label="$LOCALIZE[558]" />
             <option value="tracknumber" label="$LOCALIZE[554]" condition="widgetType.6=songs" />
             <option value="channelnumber" label="$LOCALIZE[19029]" />
-            <option value="dateadded" label="$LOCALIZE[570]" condition="!widgetType.6=pvr" />
+            <option value="dateadded" label="$LOCALIZE[570]" />
             <option value="random" label="$LOCALIZE[590]" />
             <option value="tvshowtitle" label="$LOCALIZE[36902]" />
             <option value="date" label="$LOCALIZE[552]" condition="widgetType.6=episodes" />

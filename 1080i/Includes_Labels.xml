@@ -620,7 +620,7 @@
         <value condition="String.IsEqual(Container(300).ListItem.Property(widget),NextAired)">$INFO[Container(301).ListItem.Label2,,[CR]]$INFO[Container(301).ListItem.Property(Plot)]</value>
         <value condition="[String.Contains(Container(300).ListItem.Property(widgetType),music) | String.Contains(Container(300).ListItem.Property(widgetType),albums) | String.Contains(Container(300).ListItem.Property(widgetType),artists) | String.Contains(Container(300).ListItem.Property(widgetType),songs)] + !String.IsEmpty(Container(301).ListItem.Property(Album_Description))">$INFO[Container(301).ListItem.Property(Album_Description)]</value>
         <value condition="[String.Contains(Container(300).ListItem.Property(widgetType),music) | String.Contains(Container(300).ListItem.Property(widgetType),albums) | String.Contains(Container(300).ListItem.Property(widgetType),artists) | String.Contains(Container(300).ListItem.Property(widgetType),songs)] + !String.IsEmpty(Container(301).ListItem.Property(Artist_Description))">$INFO[Container(301).ListItem.Property(Artist_Description)]</value>
-        <value condition="[String.IsEqual(Container(300).ListItem.Property(widget),weatherdaily) | String.IsEqual(Container(300).ListItem.Property(widget),weatherhourly)]">$INFO[Window(Weather).Property(Current.Condition),,[CR]]$INFO[Window(Weather).Property(Current.FeelsLike),$LOCALIZE[402] ,°[CR]]$INFO[Window(Weather).Property(Current.Humidity),, $LOCALIZE[406][CR]]$INFO[Window(Weather).Property(Current.Wind)]</value>
+        <value condition="[String.IsEqual(Container(300).ListItem.Property(widget),weatherdaily) | String.IsEqual(Container(300).ListItem.Property(widget),weatherhourly)]">$VAR[Weather22_CurrentCondition][CR]$LOCALIZE[402] $VAR[Weather22_CurrentFeelsLike]°[CR]$VAR[Weather22_CurrentHumidity] $LOCALIZE[406][CR]$VAR[Weather22_CurrentWind]</value>
         <value condition="!String.IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
         <value condition="!String.IsEmpty(Container(301).ListItem.Plot)">$INFO[Container(301).ListItem.Plot]</value>
         <value condition="!String.IsEmpty(Container(301).ListItem.AddonDescription)">$INFO[Container(301).ListItem.AddonDescription]</value>
@@ -1370,6 +1370,8 @@
         <value condition="Control.HasFocus(6) + Window.IsVisible(DialogPVRInfo.xml) + ListItem.IsRecording">$LOCALIZE[265]</value>
         <value condition="Control.HasFocus(6) + Window.IsVisible(DialogPVRInfo.xml) + [ListItem.HasTimer | ListItem.IsRecording | ListItem.HasReminder | ListItem.HasReminderRule]">$LOCALIZE[19060]</value>
         <value condition="Control.HasFocus(6) + Window.IsVisible(DialogPVRInfo.xml)">$LOCALIZE[264]</value>
+        <value condition="Control.HasFocus(14) + Window.IsVisible(DialogVideoInfo.xml)">$LOCALIZE[40000]</value>
+        <value condition="Control.HasFocus(15) + Window.IsVisible(DialogVideoInfo.xml)">$LOCALIZE[40211]</value>
         <value condition="Control.HasFocus(9019) + Window.IsVisible(DialogVideoInfo.xml)">$LOCALIZE[31037]</value>
         <value condition="Control.HasFocus(9001) + Window.IsVisible(DialogMusicInfo.xml)">$LOCALIZE[31037]</value>
         <value condition="Control.HasFocus(9020)">$LOCALIZE[31141]</value>
