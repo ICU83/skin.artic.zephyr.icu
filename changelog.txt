@@ -1,3 +1,8 @@
+1.0.33
+- Added direct HDR10+ detection for Kodi 22 using the native hdr10plus HdrType value.
+- Kept filename-based HDR10+ detection as a fallback.
+- Prioritized HDR10+ over HDR10 so the dedicated HDR10+ media flag is selected.
+
 1.0.32
 - Fixed focused EPG programme cells overlapping neighbouring grid entries.
 - Restored scrolling/fade-label behavior for very short EPG programme titles, including 5-minute events.

@@ -4,6 +4,13 @@ Dieses Dokument trennt die **ICU-Entwicklung** von der geerbten Upstream-Histori
 
 ## ICU-Releases
 
+### 1.0.33
+
+- HDR10+-Erkennung für Kodi 22 erweitert: `ListItem.HdrType` und `VideoPlayer.HdrType` erkennen jetzt den nativen Wert `hdr10plus` direkt.
+- Dateinamenerkennung für `hdr10plus` bleibt als Fallback erhalten.
+- HDR10+ wird vor der normalen HDR10-Bedingung priorisiert, sodass das dedizierte `hdr10plus.png`-Logo verwendet wird statt auf HDR10 zurückzufallen.
+- EPG-Fixes aus 1.0.32 bleiben unverändert erhalten.
+
 ### 1.0.32
 
 - Überlagerung des fokussierten EPG-Programmeintrags (`Control 10`) mit benachbarten Grid-Einträgen behoben; der zusätzliche `common/box21.png`-Focus-Layer wurde entfernt.

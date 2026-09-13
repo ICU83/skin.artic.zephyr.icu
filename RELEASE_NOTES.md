@@ -1,23 +1,30 @@
-# Artic: Zephyr ICU 1.0.32
-## EPG Focus Maintenance Release
+# Artic: Zephyr ICU 1.0.33
+## HDR10+ Maintenance Release
 
-Version 1.0.32 übernimmt den Kodi-22-/EPG-Stand aus 1.0.31 und korrigiert zwei Darstellungsfehler im EPG-Grid.
+Version 1.0.33 übernimmt den bestätigten EPG-Stand aus 1.0.32 und korrigiert die Auswahl des HDR10+-Media-Flags unter Kodi 22.
+
+### HDR / Media Flags
+
+- `IsVideoHDR10Plus` erkennt Kodis nativen HDR-Typ `hdr10plus` jetzt direkt über `ListItem.HdrType` und `VideoPlayer.HdrType`.
+- Dateinamen mit `hdr10plus` bleiben als Fallback-Erkennung erhalten.
+- Die normale HDR10-Bedingung schließt HDR10+ weiterhin explizit aus, damit bei erkannten HDR10+-Titeln `hdr10plus.png` statt `hdr10.png` ausgewählt wird.
+- Vorhandene HDR-, HLG- und Dolby-Vision-Erkennung bleibt unverändert.
 
 ### EPG / PVR
 
-- Überlagerung des fokussierten Programmeintrags in `MyPVRGuide.xml` (`epggrid` / Control 10) mit benachbarten Grid-Einträgen behoben.
-- Den zusätzlichen `common/box21.png`-Focus-Rahmen entfernt, der durch Kodis Render-Reihenfolge des fokussierten EPG-Elements über Nachbareinträge gezeichnet werden konnte.
-- Fade-/Scroll-Darstellung des fokussierten Programmtitels wieder aktiviert, damit auch sehr kurze Sendungen (z. B. 5 Minuten) lesbar dargestellt werden.
-- Timer-/Recording-Darstellung sowie die 1-Minuten-Zeitskala (`170` Timeblocks, `minspertimeblock=1`, `rulerunit=6`) bleiben unverändert.
+- Die in 1.0.32 bestätigten EPG-Korrekturen bleiben unverändert erhalten: keine Focus-Überlagerung bei Control 10 und aktive Fade-/Scroll-Darstellung für sehr kurze Sendungen.
+- Die 1-Minuten-EPG-Skalierung bleibt unverändert.
 
 ### Basis
 
-- Enthält weiterhin sämtliche Kodi-22-„Piers“-Kompatibilitätsanpassungen aus Version 1.0.31.
+- Kodi Piers / v22
+- `xbmc.gui` 5.18.0
+- Skin Shortcuts 3.0.1
 - Release-Paket verwendet weiterhin `media/Textures.xbt`.
 
 ### Validierung
 
 - XML-Struktur des Skins geprüft.
 - ZIP-Integrität geprüft.
-- Versionsangaben und Release-Metadaten auf 1.0.32 abgeglichen.
-- `MyPVRGuide.xml` entspricht dem bestätigten Stand mit behobener Focus-Überlagerung und aktiver Fade-/Scroll-Darstellung.
+- Versionsangaben und Release-Metadaten auf 1.0.33 abgeglichen.
+- HDR10+-Erkennung gegen den bestätigten 1.0.32-Testfix abgeglichen.

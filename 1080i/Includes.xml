@@ -140,8 +140,8 @@
         | [VideoPlayer.IsFullscreen + [String.IsEqual(VideoPlayer.AudioCodec,dts_96_24) | String.IsEqual(VideoPlayer.AudioCodec,dts_es) | String.IsEqual(VideoPlayer.AudioCodec,dts_express)]]
     </expression>
     <expression name="IsVideoHDR10Plus">
-        String.IsEmpty(ListItem.HdrType) + String.IsEmpty(VideoPlayer.HdrType) + [String.Contains(ListItem.FileNameAndPath,hdr10plus)
-        | [VideoPlayer.IsFullscreen + String.Contains(Player.FileNameAndPath,hdr10plus)]]
+        [String.IsEqual(ListItem.HdrType,hdr10plus) | String.Contains(ListItem.FileNameAndPath,hdr10plus)
+        | [VideoPlayer.IsFullscreen + [String.IsEqual(VideoPlayer.HdrType,hdr10plus) | String.Contains(Player.FileNameAndPath,hdr10plus)]]]
     </expression>
     <expression name="IsVideoHDR10">
         [String.IsEqual(ListItem.HdrType,hdr10) | String.Contains(ListItem.FileNameAndPath,hdr10)
