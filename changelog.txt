@@ -1,3 +1,7 @@
+1.0.32
+- Fixed focused EPG programme cells overlapping neighbouring grid entries.
+- Restored scrolling/fade-label behavior for very short EPG programme titles, including 5-minute events.
+
 1.0.30
 - Home Now Playing Extra Fanart now prioritizes album fanart before artist fanart.
 - Album and artist fanart use separate slideshow pools; artist fanart is only used when album fanart is unavailable.

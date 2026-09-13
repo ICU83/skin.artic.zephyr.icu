@@ -4,6 +4,12 @@ Dieses Dokument trennt die **ICU-Entwicklung** von der geerbten Upstream-Histori
 
 ## ICU-Releases
 
+### 1.0.32
+
+- Überlagerung des fokussierten EPG-Programmeintrags (`Control 10`) mit benachbarten Grid-Einträgen behoben; der zusätzliche `common/box21.png`-Focus-Layer wurde entfernt.
+- Fade-/Scroll-Darstellung für Titel sehr kurzer EPG-Sendungen, insbesondere 5-Minuten-Einträge, im fokussierten Grid wiederhergestellt.
+- Bewährte 1-Minuten-EPG-Skalierung aus 1.0.31 (`170` Timeblocks, `minspertimeblock=1`, `rulerunit=6`) unverändert beibehalten.
+
 ### 1.0.31
 
 - Kodi-22-„Piers“-Kompatibilität ausgebaut und Skin-Version auf 1.0.31 erhöht.

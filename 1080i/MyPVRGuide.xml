@@ -401,14 +401,6 @@
                             <animation effect="fade" start="100" end="100" condition="true">Conditional</animation>
                             <visible>ListItem.IsPlaying</visible>
                         </control>
-                        <control type="image">
-                            <left>1</left>
-                            <right>2</right>
-                            <top>1</top>
-                            <height>67</height>
-                            <texture border="4" infill="false" colordiffuse="$VAR[ColorHighlight]">common/box21.png</texture>
-                            <visible>!Control.HasFocus(11) + !Control.HasFocus(11441)</visible>
-                        </control>
                         <control type="label" id="1">
                             <left>5</left>
                             <right>5</right>
