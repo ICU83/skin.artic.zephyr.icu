@@ -2169,6 +2169,12 @@
                             </control>
                         </control>
                         <include content="DefSkinAddons">
+                            <param name="id" value="11021"/>
+                            <param name="visible" value="ControlGroup(9100).HasFocus(9113)"/>
+                            <param name="addonname" value="service.artic.zephyr.icu.daynight"/>
+                        </include>
+
+                        <include content="DefSkinAddons">
                             <param name="id" value="11010"/>
                             <param name="visible" value="ControlGroup(9100).HasFocus(9113)"/>
                             <param name="addonname" value="script.cu.lrclyrics"/>
@@ -2197,11 +2203,6 @@
                             <param name="id" value="11020"/>
                             <param name="visible" value="ControlGroup(9100).HasFocus(9113)"/>
                             <param name="addonname" value="plugin.video.imdb.trailers"/>
-                        </include>
-                        <include content="DefSkinAddons">
-                            <param name="id" value="11021"/>
-                            <param name="visible" value="ControlGroup(9100).HasFocus(9113)"/>
-                            <param name="addonname" value="script.arctic.zephyr.mod.autocolors"/>
                         </include>
                         <include content="DefSkinAddons">
                             <param name="id" value="11022"/>
@@ -2256,14 +2257,13 @@
                                 <label>31078</label>
                             </control>
                         </control>
-                        <control type="radiobutton" id="9804" description="Autocolor">
+                        <control type="button" id="9804" description="Day/Night Colors">
                             <width>1360</width>
-                            <visible>ControlGroup(9100).HasFocus(9106) + System.HasAddon(script.arctic.zephyr.mod.autocolors)</visible>
+                            <visible>ControlGroup(9100).HasFocus(9106) + System.HasAddon(service.artic.zephyr.icu.daynight)</visible>
                             <include>DefSettingsButtonGradientSkinSettings</include>
-                            <label>$LOCALIZE[14078] $LOCALIZE[15111] $LOCALIZE[14013] $LOCALIZE[33027]/$LOCALIZE[33028]</label>
-                            <selected>Skin.HasSetting(daynight.autocolor)</selected>
-                            <onclick>Skin.ToggleSetting(daynight.autocolor)</onclick>
-                            <enable>System.AddonIsEnabled(script.arctic.zephyr.mod.autocolors)</enable>
+                            <label>Day / Night Colors</label>
+                            <onclick>Addon.OpenSettings(service.artic.zephyr.icu.daynight)</onclick>
+                            <enable>System.AddonIsEnabled(service.artic.zephyr.icu.daynight)</enable>
                         </control>
                         <control type="radiobutton" id="9251" description="Header">
                             <width>1360</width>

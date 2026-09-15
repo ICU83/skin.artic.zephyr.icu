@@ -4,6 +4,14 @@ Dieses Dokument trennt die **ICU-Entwicklung** von der geerbten Upstream-Histori
 
 ## ICU-Releases
 
+### 1.0.34
+
+- Veraltete Integration von `script.arctic.zephyr.mod.autocolors` durch den ICU-eigenen Service `service.artic.zephyr.icu.daynight` ersetzt.
+- Eintrag unter „Supported Addons“ auf den neuen Day/Night-Service umgestellt.
+- Alten `Autocolor`-Radiobutton entfernt; der Eintrag „Day / Night Colors“ öffnet nun direkt die Einstellungen des Services.
+- Obsolete Skin-Einstellung `daynight.autocolor` wird an dieser Stelle nicht mehr verwendet.
+- EPG- und HDR10+-Fixes aus 1.0.32/1.0.33 bleiben unverändert erhalten.
+
 ### 1.0.33
 
 - HDR10+-Erkennung für Kodi 22 erweitert: `ListItem.HdrType` und `VideoPlayer.HdrType` erkennen jetzt den nativen Wert `hdr10plus` direkt.

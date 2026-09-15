@@ -1,3 +1,8 @@
+1.0.34
+- Replaced the legacy script.arctic.zephyr.mod.autocolors integration with service.artic.zephyr.icu.daynight.
+- Supported Addons now targets the ICU Day/Night Colors service.
+- Replaced the obsolete Autocolor toggle with a button that opens the service settings directly.
+
 1.0.33
 - Added direct HDR10+ detection for Kodi 22 using the native hdr10plus HdrType value.
 - Kept filename-based HDR10+ detection as a fallback.

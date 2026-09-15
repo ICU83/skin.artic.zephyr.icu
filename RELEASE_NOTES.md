@@ -1,30 +1,31 @@
-# Artic: Zephyr ICU 1.0.33
-## HDR10+ Maintenance Release
+# Artic: Zephyr ICU 1.0.34
+## ICU Day/Night Integration Release
 
-Version 1.0.33 übernimmt den bestätigten EPG-Stand aus 1.0.32 und korrigiert die Auswahl des HDR10+-Media-Flags unter Kodi 22.
+Version 1.0.34 ersetzt die veraltete Arctic-Zephyr-Mod-AutoColors-Anbindung durch den ICU-eigenen Day/Night-Service.
 
-### HDR / Media Flags
+### Day / Night Colors
 
-- `IsVideoHDR10Plus` erkennt Kodis nativen HDR-Typ `hdr10plus` jetzt direkt über `ListItem.HdrType` und `VideoPlayer.HdrType`.
-- Dateinamen mit `hdr10plus` bleiben als Fallback-Erkennung erhalten.
-- Die normale HDR10-Bedingung schließt HDR10+ weiterhin explizit aus, damit bei erkannten HDR10+-Titeln `hdr10plus.png` statt `hdr10.png` ausgewählt wird.
-- Vorhandene HDR-, HLG- und Dolby-Vision-Erkennung bleibt unverändert.
+- `script.arctic.zephyr.mod.autocolors` wurde in den Skin-Einstellungen durch `service.artic.zephyr.icu.daynight` ersetzt.
+- Der Eintrag unter „Supported Addons“ verwendet jetzt den ICU-Day/Night-Service.
+- Der bisherige `Autocolor`-Radiobutton mit `Skin.HasSetting(daynight.autocolor)` wurde entfernt.
+- Unter „Furniture“ öffnet „Day / Night Colors“ jetzt direkt `Addon.OpenSettings(service.artic.zephyr.icu.daynight)`.
+- Der Service bleibt ein separates Kodi-Add-on und wird nicht als feste Skin-Abhängigkeit in `addon.xml` eingetragen.
 
-### EPG / PVR
+### Unverändert
 
-- Die in 1.0.32 bestätigten EPG-Korrekturen bleiben unverändert erhalten: keine Focus-Überlagerung bei Control 10 und aktive Fade-/Scroll-Darstellung für sehr kurze Sendungen.
-- Die 1-Minuten-EPG-Skalierung bleibt unverändert.
+- HDR10+-Erkennung aus 1.0.33 bleibt unverändert erhalten.
+- EPG-Korrekturen und 1-Minuten-Skalierung aus 1.0.32 bleiben unverändert erhalten.
+- Release-Paket verwendet weiterhin `media/Textures.xbt`.
 
 ### Basis
 
 - Kodi Piers / v22
 - `xbmc.gui` 5.18.0
 - Skin Shortcuts 3.0.1
-- Release-Paket verwendet weiterhin `media/Textures.xbt`.
 
 ### Validierung
 
 - XML-Struktur des Skins geprüft.
 - ZIP-Integrität geprüft.
-- Versionsangaben und Release-Metadaten auf 1.0.33 abgeglichen.
-- HDR10+-Erkennung gegen den bestätigten 1.0.32-Testfix abgeglichen.
+- Versionsangaben und Release-Metadaten auf 1.0.34 abgeglichen.
+- Änderungen gegen 1.0.33 auf die geplanten Skin-/Release-Dateien begrenzt.
